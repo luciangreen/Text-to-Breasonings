@@ -20,6 +20,8 @@ Install List Prolog Interpreter Repository (https://github.com/luciangreen/listp
 
 ### Caution:
 
+* Before running texttobr, think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.
+
 follow instructions in <a href="https://github.com/luciangreen/listprologinterpreter/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 
 # Installing and Running
