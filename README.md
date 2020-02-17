@@ -2,7 +2,7 @@
 
 * TextToBreasoning is a set of algorithms that allow breasoning out (in this case, the computer thinks of the x, y and z dimensions of) objects to help earn high distinctions, have healthy children, earn jobs, sell products, <a href="https://github.com/luciangreen/mindreader">read minds, display spiritual screens</a> or time travel.
 
-* TextToBreasonings can (1) breason out words over a local machine and a VPS host, (2) breason out characters over a local machine or (3) breason out words, breathsonings (judgement adjectives and adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action over a local machine.
+* TextToBreasonings can (1) breason out words over a local machine and a Virtual Private Server (a server that you can use as central which has environmental advantages) (VPS) host, (2) breason out characters over a local machine or (3) breason out words, breathsonings (judgement adjectives and adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action over a local machine.
 
 * Generally, 80 word breasonings are needed to earn a high distinction at undergraduate level and below, have healthy children or sell products.  This increases to 2 * 15 * 80=2400 breasonings per Honours level chapter, approximately 2 * 50 * 80=8000 breasonings per Masters level assignment and approximately 2 * 4 * 50 * 80=32,000 breasonings per PhD level assignment.
 
