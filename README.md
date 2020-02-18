@@ -88,7 +88,6 @@ follow instructions in <a href="https://github.com/luciangreen/listprologinterpr
 * Uncomment (delete "%%") the lines "%%{writeln(L)}" and (another below it) "%%{writeln(L)}" and save the file.
 <img width="435" alt="Screen Shot 2019-12-13 at 10 47 02 pm" src="https://user-images.githubusercontent.com/15845542/70798775-f43f3000-1dfb-11ea-8eca-b96d68292e98.png">
 * Load Text to Breasonings with: [meditationnoreplace]. ['texttobrall2'].
-<img width="303" alt="Screen Shot 2019-12-13 at 10 49 39 pm" src="https://user-images.githubusercontent.com/15845542/70798777-f4d7c680-1dfb-11ea-9cd6-daeea11d47db.png">
 * Run Text to Breasonings with i.e. "N=u,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false).".
 <img width="1076" alt="Screen Shot 2019-12-13 at 10 47 52 pm" src="https://user-images.githubusercontent.com/15845542/70798776-f4d7c680-1dfb-11ea-9753-3159cd704d54.png">
 * Read the final dictionary entry before the error.
@@ -102,7 +101,6 @@ follow instructions in <a href="https://github.com/luciangreen/listprologinterpr
 * Reenter the comments ("%%") that were removed before.
 <img width="442" alt="Screen Shot 2019-12-13 at 10 52 32 pm" src="https://user-images.githubusercontent.com/15845542/70798787-f73a2080-1dfb-11ea-8fd5-711f492f3306.png">
 * Load Text to Breasonings with: [meditationnoreplace]. ['texttobrall2'].
-<img width="303" alt="Screen Shot 2019-12-13 at 10 49 39 pm" src="https://user-images.githubusercontent.com/15845542/70798777-f4d7c680-1dfb-11ea-9cd6-daeea11d47db.png">
 * Run Text to Breasonings with i.e. "N=u,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false)." to check the dictionary file is not corrupt.
 <img width="1052" alt="Screen Shot 2019-12-13 at 10 53 25 pm" src="https://user-images.githubusercontent.com/15845542/70798790-f7d2b700-1dfb-11ea-9c37-8d4ab5976a9b.png">
 
