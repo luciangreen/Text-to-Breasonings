@@ -77,6 +77,8 @@ follow instructions in <a href="https://github.com/luciangreen/listprologinterpr
 
 # Installing and Running T2B with VPS Synchronisation
 
+* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS.
+
 * Install this repository using the instructions above.
 
 * To install, in <a href="in username folder/texttobr2.sh">in username folder/texttobr2.sh</a> replace the the path `/username/codefolder/` with the location of the installation of this repository and move the file to i.e. your `/username/` folder.
