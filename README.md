@@ -75,6 +75,14 @@ follow instructions in <a href="https://github.com/luciangreen/listprologinterpr
 `texttobr2(u,u,u,u,true,true,true,true,true,true).`
 * where the first four arguments may be changed as in (1) above, and words, breathsonings (judgement adjectives and judgement adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action are breasoned out.
 
+# Installing and Running T2B with VPS Synchronisation
+
+* Install this repository using the instructions above.
+
+* To install, in <a href="in username folder/texttobr2.sh">in username folder/texttobr2.sh</a> replace the the path `/username/codefolder/` with the location of the installation of this repository and move the file to i.e. your `/username/` folder.
+
+* To run, type `./texttobr2.sh` in the `/username/` folder and T2B wil run (breasoning out only breasonings, not breathsonings, etc.), syncing with the VPS.
+
 # Editing Corrupt Dictionary Files
 
 * If you accidentally enter a mistake in Text to Breasonings, you can edit the dictionary files using the following method.
