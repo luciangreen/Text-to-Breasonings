@@ -77,7 +77,7 @@ follow instructions in <a href="https://github.com/luciangreen/listprologinterpr
 
 # Installing and Running T2B with VPS Synchronisation
 
-* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS.
+* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS (by pasting <a href="https://github.com/luciangreen/listprologinterpreter/blob/master/rcaw.paste">rcaw.paste</a> into the terminal).
 
 * Install this repository using the instructions above.
 
