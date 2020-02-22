@@ -1,6 +1,6 @@
 # TextToBreasoning Documentation
 
-* TextToBreasoning is a set of algorithms that allow breasoning out (in this case, the computer thinks of the x, y and z dimensions of) objects to help earn high distinctions, have healthy children, earn jobs, sell products, produce quantum energy, <a href="https://github.com/luciangreen/mindreader">read minds, display spiritual screens</a> or time travel.
+* TextToBreasoning (T2B) is a set of algorithms that allow breasoning out (in this case, the computer thinks of the x, y and z dimensions of) objects to help earn high distinctions, have healthy children, earn jobs, sell products, produce quantum energy, <a href="https://github.com/luciangreen/mindreader">read minds, display spiritual screens</a> or time travel.  T2B automates breasoning, where breasoning prevents possible health problems of other methods (see Disclaimer).
 
 * TextToBreasonings can (1) breason out words over a local machine and a Virtual Private Server (a server that you can use as central which has environmental advantages) (VPS) host, (2) breason out characters over a local machine or (3) breason out words, breathsonings (judgement adjectives and adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action over a local machine.
 
