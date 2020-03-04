@@ -77,7 +77,7 @@ follow instructions in <a href="https://github.com/luciangreen/listprologinterpr
 
 # Installing and Running T2B with VPS Synchronisation
 
-* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS (by pasting <a href="https://github.com/luciangreen/listprologinterpreter/blob/master/rcaw.paste">rcaw.paste</a> into the terminal).
+* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS (by pasting <a href="https://github.com/luciangreen/listprologinterpreter/blob/master/rcaw.paste">rcaw.paste</a> into the terminal.  An algorithm run by rcaw.paste requires the <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Algorithm Writer with Lists Repository</a> to be installed with <https://github.com/luciangreen/Algorithm-Writer-with-Lists/blob/master/algwriter/grammar_logic_to_alg_random.pl">grammar_logic_to_alg_random.pl</a> in the SAME directory as rcaw.paste, not in the other directory as in the instructions).
 
 * Install this repository using the instructions above.
 
@@ -130,4 +130,4 @@ I licensed this project under the BSD3 License - see the LICENSE.md file for det
 
 # Addendum
 
-<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/rcaw.paste">rcaw.paste</a> added - this can be run each day to meet daily regimen requirements, such as preventing unwanted thoughts (<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadtestsec.pl">mindreadtestsec.pl</a>), giving meditators thoughts (<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadingcaw.pl">mindreadingcaw.pl</a>) and giving thoughts about psychoanalysis (<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadtestpsychiatrist.pl">mindreadtestpsychiatrist.pl</a>).
+<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/rcaw.paste">rcaw.paste</a> added - this can be run each day to meet daily regimen requirements, such as preventing unwanted thoughts (<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadtestsec.pl">mindreadtestsec.pl</a>), giving meditators thoughts (<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadingcaw.pl">mindreadingcaw.pl</a>), giving thoughts about psychoanalysis (<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadtestpsychiatrist.pl">mindreadtestpsychiatrist.pl</a>) and giving philosophical details(<a href="https://github.com/luciangreen/listprologinterpreter/blob/master/mindreadtestsecthoughts.pl">mindreadtestsecthoughts.pl</a>).

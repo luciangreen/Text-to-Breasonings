@@ -225,4 +225,66 @@ texttobr2(LengthMeditatorsandDoctors2).
 
 halt.
 
+
+%% Thoughts
+
+%% First half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./tfile1.txt',
+FileName3='tfile1.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestsecthoughts].
+
+sectest0.
+
+noprotocol.
+
+[meditationnoreplace].
+
+FileName2='./tfile1.txt',
+FileName3='tfile1.txt',
+
+time((texttobr2(u,FileName3,u,u),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Thoughts 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+%% Second half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./sfile2.txt',
+FileName3='sfile2.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestsecthoughts].
+
+sectest1.
+
+noprotocol.
+
+[meditationnoreplace].
+
+FileName2='./sfile2.txt',
+FileName3='sfile2.txt',
+
+time((texttobr2(u,FileName3,u,u),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Thoughts 2" luciangreen@lucianacademy.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+
 logout
