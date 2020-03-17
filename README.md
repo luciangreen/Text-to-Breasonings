@@ -77,8 +77,7 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 
 # Installing and Running T2B with VPS Synchronisation
 
-* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS (by pasting <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/rcaw.paste">rcaw.paste</a> into the terminal.  An algorithm run by rcaw.paste requires the <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Algorithm Writer with Lists Repository</a> to be installed with <https://github.com/luciangreen/Algorithm-Writer-with-Lists/blob/master/algwriter/grammar_logic_to_alg_random.pl">grammar_logic_to_alg_random.pl</a> in the SAME directory as rcaw.paste, not in the other directory as in the instructions).
-
+* Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS (by pasting <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/rcaw.paste">rcaw.paste</a> into the terminal.  
 * Install this repository using the instructions above.
 
 * To install, in <a href="in username folder/texttobr2.sh">in username folder/texttobr2.sh</a> replace the the path `/username/codefolder/` with the location of the installation of this repository and move the file to i.e. your `/username/` folder.
