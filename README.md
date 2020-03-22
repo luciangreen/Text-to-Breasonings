@@ -24,6 +24,11 @@ Install List Prolog Interpreter Repository (https://github.com/luciangreen/listp
 
 follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 
+
+# Installation from List Prolog Package Manager (LPPM)
+
+* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>, loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Text-to-Breasonings").`.
+
 # Installing and Running
 
 * Please download and install SWI-Prolog for your machine at https://www.swi-prolog.org/build/.
