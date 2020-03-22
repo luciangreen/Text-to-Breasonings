@@ -9,7 +9,7 @@
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('mergetexttobrdict.pl').
-:- include('la_strings').
+:- include('../listprologinterpreter/la_strings').
 
 texttobr2(N1,Filex1,Stringx1,M1) :-
 
