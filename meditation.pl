@@ -4,11 +4,11 @@
 %% Stops linking in meditators 100 years after date of learning LM
 
 %%:- include('qb2.pl').
-:- include('listprolog').
+:- include('../listprologinterpreter/listprolog').
 :- include('texttobr').
 %%:- include('texttobr2qb').
 %%:- include('texttobrqb').
-:- include('la_strings').
+:- include('../listprologinterpreter/la_strings').
 :- include('mergetexttobrdict').
 :- include('edit.pl').
 
