@@ -16,7 +16,9 @@ Please read the following instructions on how to install the project on your com
 
 # Prerequisites
 
-Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter) first.
+Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter).
+
+Install Algorithm Writer with Lists Repository (https://github.com/luciangreen/Algorithm-Writer-with-Lists).
 
 ### Caution:
 
