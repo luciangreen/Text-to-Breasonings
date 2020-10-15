@@ -38,7 +38,7 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 * Download the repository to your machine.
 
 * (1) To breason out words over a local machine and a VPS host, in the SWI-Prolog environment, enter:
-`[listprolog].`
+`['../listprologinterpreter/listprolog'].`
 `[texttobr2].`
 
 * Please follow the instructions in <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Setting_up_a_VPS_with_TextToBr.txt">"Setting up a VPS with TextToBr.txt"</a> to set up a VPS with TextToBr up to and including "Upload them to the VPS's...".
@@ -91,9 +91,9 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 
 * To run, type `./texttobr2.sh` in the `/username/` folder and T2B wil run (breasoning out only breasonings, not breathsonings, etc.), syncing with the VPS.
 
-# Editing Corrupt Dictionary Files
+# Repairing Corrupt Dictionary Files
 
-* If you accidentally enter a mistake in Text to Breasonings, you can edit the dictionary files using the following method.
+* If you accidentally enter a mistake in Text to Breasonings, you can repair the dictionary files using the following method.
 
 * Find texttobrall2.pl or your Text to Breasonings algorithm file.
 <img width="276" alt="Screen Shot 2019-12-13 at 10 46 18 pm" src="https://user-images.githubusercontent.com/15845542/70798770-f3a69980-1dfb-11ea-963e-5ac741275c98.png">
