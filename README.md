@@ -71,8 +71,7 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 * Breasons out the first two characters in "abc" ("a" and "b") 3 times.
 
 * (3) To breason out words, breathsonings (judgement adjectives and judgement adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action over a local machine, in the SWI-Prolog environment, enter:
-`[meditationnoreplace].`
-`['texttobrall2'].`
+`['text_to_breasonings.pl'].`
 
 * In the SWI-Prolog environment, enter:
 `texttobr2(u,u,u,u,false,false,false,false,false,false).`
@@ -103,7 +102,7 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 <img width="434" alt="Screen Shot 2019-12-13 at 10 46 48 pm" src="https://user-images.githubusercontent.com/15845542/70798773-f3a69980-1dfb-11ea-8613-70fbc3a3715f.png">
 * Uncomment (delete "%%") the lines "%%{writeln(L)}" and (another below it) "%%{writeln(L)}" and save the file.
 <img width="435" alt="Screen Shot 2019-12-13 at 10 47 02 pm" src="https://user-images.githubusercontent.com/15845542/70798775-f43f3000-1dfb-11ea-8eca-b96d68292e98.png">
-* Load Text to Breasonings with: [meditationnoreplace]. ['texttobrall2'].
+* Load Text to Breasonings with: ['text_to_breasonings.pl'].
 * Run Text to Breasonings with i.e. "N=u,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false).".
 <img width="1076" alt="Screen Shot 2019-12-13 at 10 47 52 pm" src="https://user-images.githubusercontent.com/15845542/70798776-f4d7c680-1dfb-11ea-9753-3159cd704d54.png">
 * Read the final dictionary entry before the error.
@@ -116,7 +115,7 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 <img width="770" alt="Screen Shot 2019-12-13 at 10 52 12 pm" src="https://user-images.githubusercontent.com/15845542/70798786-f6a18a00-1dfb-11ea-9c89-9b8104d7e87f.png">
 * Reenter the comments ("%%") that were removed before.
 <img width="442" alt="Screen Shot 2019-12-13 at 10 52 32 pm" src="https://user-images.githubusercontent.com/15845542/70798787-f73a2080-1dfb-11ea-8fd5-711f492f3306.png">
-* Load Text to Breasonings with: [meditationnoreplace]. ['texttobrall2'].
+* Load Text to Breasonings with: ['text_to_breasonings.pl']. ['texttobrall2'].
 * Run Text to Breasonings with i.e. "N=u,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false)." to check the dictionary file is not corrupt.
 <img width="1052" alt="Screen Shot 2019-12-13 at 10 53 25 pm" src="https://user-images.githubusercontent.com/15845542/70798790-f7d2b700-1dfb-11ea-9c37-8d4ab5976a9b.png">
 
