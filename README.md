@@ -29,7 +29,11 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 
 # Installation from List Prolog Package Manager (LPPM)
 
-* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>, loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Text-to-Breasonings").`.
+* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>,
+```
+git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
+```
+loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Text-to-Breasonings").`.
 
 # Installing and Running
 
