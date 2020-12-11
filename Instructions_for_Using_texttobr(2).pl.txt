@@ -1,5 +1,7 @@
 Instructions for Using texttobr(2).pl
 
+This software is not for use for human conception.
+
 Use the computer as an extension of yourself to breason out texts.
 
 
