@@ -33,6 +33,7 @@ follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonin
 ```
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
 cd List-Prolog-Package-Manager
+swipl
 ```
 loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Text-to-Breasonings").`.
 
