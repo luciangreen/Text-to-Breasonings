@@ -92,7 +92,7 @@ loading LPPM with `['lppm'].` then installing the package by running `lppm_insta
 * The algorithm often runs too quickly.  To notice a number of words ("read them") in unread texts, where Master=6 algorithms, PhD=~16 algorithms and professor/politician=~50 algorithms, run with:
 ```
 ['texttobrall2_reading.pl'].
-W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W)
+W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 % where W is the number of words to read
 % 50 is the number of algorithms,
 % and there are approximately 4 words per algorithm.
