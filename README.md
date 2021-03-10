@@ -87,6 +87,17 @@ loading LPPM with `['lppm'].` then installing the package by running `lppm_insta
 `texttobr2(u,u,u,u,true,true,true,true,true,true).`
 * where the first four arguments may be changed as in (1) above, and words, breathsonings (judgement adjectives and judgement adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action are breasoned out.
 
+# Reading Algorithm
+
+* The algorithm often runs too quickly.  To notice a number of words ("read them") in unread texts, where Master=6 algorithms, PhD=~16 algorithms and professor/politician=~50 algorithms, run with:
+```
+['texttobrall2_reading.pl'].
+W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W)
+% where W is the number of words to read
+% 50 is the number of algorithms,
+% and there are approximately 4 words per algorithm.
+```
+
 # Installing and Running T2B with VPS Synchronisation
 
 * Use a Virtual Private Server (VPS) Sync to breason out new meditators' names on your machine, sync with the VPS, and run meditation and text to breasonings on the VPS (by pasting <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/rcaw.paste">rcaw.paste</a> into the terminal.  
