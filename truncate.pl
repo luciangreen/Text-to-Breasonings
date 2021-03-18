@@ -1,6 +1,6 @@
 %:-include('la_strings2.pl').
-:-include('la_strings.pl').
-:-include('la_strings_string.pl').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('../listprologinterpreter/la_strings_string.pl').
 
 % word_count(["file","file.txt"],Words).
 % Words = 69.

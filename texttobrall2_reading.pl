@@ -13,7 +13,7 @@
 %% brdict1.txt contains word and object name, brdict2.txt contains object name and x, y and z
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
-:- include('mergetexttobrdict.pl').
+:- include('../Text-to-Breasonings/mergetexttobrdict.pl').
 :- include('../listprologinterpreter/la_strings').
 
 %% Brth is true or false
@@ -25,7 +25,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 	((number(N1),N=N1)->true;
 	(N1=u,N=1)),
 
-	((Filex1=u,Filex="file.txt")->true;
+	((Filex1=u,Filex="../Text-to-Breasonings/file.txt")->true;
 	Filex=Filex1),
 
 	((number(M1),M=M1)->true;
@@ -35,14 +35,14 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 	br2(List1,BrDict03,BrDict2,BrDict03t,BrDict03t2,N,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04),
 	sort(BrDict2,BrDict3),
 	(BrDict03=BrDict3->true;
-	(open_s("brdict1.txt",write,Stream),
+	(open_s("../Text-to-Breasonings/brdict1.txt",write,Stream),
 %%	string_codes(BrDict3),
 	write(Stream,BrDict3),
 	close(Stream))),
 
 	sort(BrDict03t2,BrDict03t3),
 	(BrDict03t=BrDict03t3->true;
-	(open_s("brdict2.txt",write,Stream2),
+	(open_s("../Text-to-Breasonings/brdict2.txt",write,Stream2),
 %%	string_codes(BrDict3),
 	write(Stream2,BrDict03t3),
  	close(Stream2))),
@@ -50,7 +50,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	((Brth=true,
  	sort(BrthDict04,BrthDict044),
 	(BrthDict03=BrthDict044->true;
-	(open_s("brthdict.txt",write,Stream3),
+	(open_s("../Text-to-Breasonings/brthdict.txt",write,Stream3),
 %%	string_codes(BrDict3),
 	write(Stream3,BrthDict044),
  	close(Stream3))))->true;true),
@@ -58,7 +58,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	((Room=true,
  	sort(RoomDict04,RoomDict044),
 	(RoomDict04=RoomDict044->true;
-	(open_s("roomdict.txt",write,Stream4),
+	(open_s("../Text-to-Breasonings/roomdict.txt",write,Stream4),
 %%	string_codes(BrDict3),
 	write(Stream4,RoomDict044),
  	close(Stream4))))->true;true),
@@ -66,7 +66,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	((PartOfRoom=true,
  	sort(PartOfRoomDict04,PartOfRoomDict044),
 	(PartOfRoomDict04=PartOfRoomDict044->true;
-	(open_s("partofroomdict.txt",write,Stream5),
+	(open_s("../Text-to-Breasonings/partofroomdict.txt",write,Stream5),
 %%	string_codes(BrDict3),
 	write(Stream5,PartOfRoomDict044),
  	close(Stream5))))->true;true),
@@ -74,7 +74,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	((Direction=true,
  	sort(DirectionDict04,DirectionDict044),
 	(DirectionDict04=DirectionDict044->true;
-	(open_s("directiondict.txt",write,Stream6),
+	(open_s("../Text-to-Breasonings/directiondict.txt",write,Stream6),
 %%	string_codes(BrDict3),
 	write(Stream6,DirectionDict044),
  	close(Stream6))))->true;true),
@@ -82,7 +82,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	((ObjectToPrepare=true,
  	sort(ObjectToPrepareDict04,ObjectToPrepareDict044),
 	(ObjectToPrepareDict04=ObjectToPrepareDict044->true;
-	(open_s("objecttopreparedict.txt",write,Stream7),
+	(open_s("../Text-to-Breasonings/objecttopreparedict.txt",write,Stream7),
 %%	string_codes(BrDict3),
 	write(Stream7,ObjectToPrepareDict044),
  	close(Stream7))))->true;true),
@@ -90,7 +90,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	((ObjectToFinish=true,
  	sort(ObjectToFinishDict04,ObjectToFinishDict044),
 	(ObjectToFinishDict04=ObjectToFinishDict044->true;
-	(open_s("objecttofinishdict.txt",write,Stream8),
+	(open_s("../Text-to-Breasonings/objecttofinishdict.txt",write,Stream8),
 %%	string_codes(BrDict3),
 	write(Stream8,ObjectToFinishDict044),
  	close(Stream8))))->true;true),
@@ -146,7 +146,7 @@ truncate(List1,M,String0) :-
 	String0=List1),!.
 	
 prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03) :-
-	phrase_from_file_s(string(BrDict0), "brdict1.txt"),
+	phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),
 	%%Chars="’",
 	SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
@@ -166,7 +166,7 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	
 	%%writeln(''),
 	%%writeln([brdict2]),
-	phrase_from_file_s(string(BrDict0t), "brdict2.txt"),
+	phrase_from_file_s(string(BrDict0t), "../Text-to-Breasonings/brdict2.txt"),
 	%%Chars="’",
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
 %%writeln([brDict0,BrDict0]),
@@ -210,33 +210,33 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	
 	
 	((Brth=true,
-		phrase_from_file_s(string(BrthDict0), "brthdict.txt"),		splitfurther(BrthDict0,BrthDict01),
+		phrase_from_file_s(string(BrthDict0), "../Text-to-Breasonings/brthdict.txt"),		splitfurther(BrthDict0,BrthDict01),
 	sort(BrthDict01,BrthDict03),
 	length(BrthDict03,BrthLength0),write("Number of unique breathsonings in dictionary: "), writeln(BrthLength0))->true;true),
 	
 	
 	((Room=true,
-		phrase_from_file_s(string(RoomDict0), "roomdict.txt"),		splitfurther(RoomDict0,RoomDict01),
+		phrase_from_file_s(string(RoomDict0), "../Text-to-Breasonings/roomdict.txt"),		splitfurther(RoomDict0,RoomDict01),
 	sort(RoomDict01,RoomDict03),
 	length(RoomDict03,RoomLength0),write("Number of unique rooms in dictionary: "), writeln(RoomLength0))->true;true),
 
 	((PartOfRoom=true,
-		phrase_from_file_s(string(PartOfRoomDict0), "partofroomdict.txt"),		splitfurther(PartOfRoomDict0,PartOfRoomDict01),
+		phrase_from_file_s(string(PartOfRoomDict0), "../Text-to-Breasonings/partofroomdict.txt"),		splitfurther(PartOfRoomDict0,PartOfRoomDict01),
 	sort(PartOfRoomDict01,PartOfRoomDict03),
 	length(PartOfRoomDict03,PartOfRoomLength0),write("Number of unique parts of rooms in dictionary: "), writeln(PartOfRoomLength0))->true;true),
 
 	((Direction=true,
-		phrase_from_file_s(string(DirectionDict0), "directiondict.txt"),		splitfurther(DirectionDict0,DirectionDict01),
+		phrase_from_file_s(string(DirectionDict0), "../Text-to-Breasonings/directiondict.txt"),		splitfurther(DirectionDict0,DirectionDict01),
 	sort(DirectionDict01,DirectionDict03),
 	length(DirectionDict03,DirectionLength0),write("Number of unique directions in dictionary: "), writeln(DirectionLength0))->true;true),
 
 	((ObjectToPrepare=true,
-		phrase_from_file_s(string(ObjectToPrepareDict0), "objecttopreparedict.txt"),		splitfurther(ObjectToPrepareDict0,ObjectToPrepareDict01),
+		phrase_from_file_s(string(ObjectToPrepareDict0), "../Text-to-Breasonings/objecttopreparedict.txt"),		splitfurther(ObjectToPrepareDict0,ObjectToPrepareDict01),
 	sort(ObjectToPrepareDict01,ObjectToPrepareDict03),
 	length(ObjectToPrepareDict03,ObjectToPrepareLength0),write("Number of unique objects to prepare in dictionary: "), writeln(ObjectToPrepareLength0))->true;true),
 
 	((ObjectToFinish=true,
-		phrase_from_file_s(string(ObjectToFinishDict0), "objecttofinishdict.txt"),		splitfurther(ObjectToFinishDict0,ObjectToFinishDict01),
+		phrase_from_file_s(string(ObjectToFinishDict0), "../Text-to-Breasonings/objecttofinishdict.txt"),		splitfurther(ObjectToFinishDict0,ObjectToFinishDict01),
 	sort(ObjectToFinishDict01,ObjectToFinishDict03),
 	length(ObjectToFinishDict03,ObjectToFinishLength0),write("Number of unique objects to finish in dictionary: "), writeln(ObjectToFinishLength0))->true;true)
 
