@@ -4,7 +4,7 @@
 :- include('../listprologinterpreter/listprolog').
 :- include('../Text-to-Breasonings/texttobr2qb').
 %%:- include('texttobrqb').
-:- include('../listprologinterpreter/la_strings').
+%:- include('../listprologinterpreter/la_strings').
 %:- include('mergetexttobrdict').
 %:- include('edit.pl').
 %:- include('meditatorsanddoctors').

@@ -14,7 +14,7 @@
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('../Text-to-Breasonings/mergetexttobrdict.pl').
-:- include('../listprologinterpreter/la_strings').
+%:- include('../listprologinterpreter/la_strings').
 
 %% Brth is true or false
 texttobr2(N1,Filex1,Stringx1,M1) :-
