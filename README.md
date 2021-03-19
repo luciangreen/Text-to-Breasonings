@@ -91,7 +91,7 @@ loading LPPM with `['lppm'].` then installing the package by running `lppm_insta
 
 * The algorithm often runs too quickly.  To notice a number of words ("read them") in unread texts, where Master=6 algorithms, PhD=~16 algorithms and professor/politician=~50 algorithms, run with:
 ```
-['texttobrall2_reading.pl'].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 % where W is the number of words to read
 % 50 is the number of algorithms,
@@ -111,7 +111,7 @@ W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 
 * If you accidentally enter a mistake in Text to Breasonings, you can repair the dictionary files using the following method.
 
-* Find texttobrall2.pl or your Text to Breasonings algorithm file.
+* Find texttobrall2_reading.pl or your Text to Breasonings algorithm file.
 <img width="276" alt="Screen Shot 2019-12-13 at 10 46 18 pm" src="https://user-images.githubusercontent.com/15845542/70798770-f3a69980-1dfb-11ea-963e-5ac741275c98.png">
 * Open with BBEdit.
 <img width="29" alt="Screen Shot 2019-12-13 at 10 46 32 pm" src="https://user-images.githubusercontent.com/15845542/70798772-f3a69980-1dfb-11ea-9667-f8d39ac8ab67.png">
@@ -132,7 +132,8 @@ W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 <img width="770" alt="Screen Shot 2019-12-13 at 10 52 12 pm" src="https://user-images.githubusercontent.com/15845542/70798786-f6a18a00-1dfb-11ea-9c89-9b8104d7e87f.png">
 * Reenter the comments ("%%") that were removed before.
 <img width="442" alt="Screen Shot 2019-12-13 at 10 52 32 pm" src="https://user-images.githubusercontent.com/15845542/70798787-f73a2080-1dfb-11ea-8fd5-711f492f3306.png">
-* Load Text to Breasonings with: ['text_to_breasonings.pl']. ['texttobrall2'].
+* Load Text to Breasonings with: 
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 * Run Text to Breasonings with i.e. "N=u,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false)." to check the dictionary file is not corrupt.
 <img width="1052" alt="Screen Shot 2019-12-13 at 10 53 25 pm" src="https://user-images.githubusercontent.com/15845542/70798790-f7d2b700-1dfb-11ea-9c37-8d4ab5976a9b.png">
 

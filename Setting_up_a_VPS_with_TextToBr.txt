@@ -59,13 +59,13 @@ notrace,noprotocol.
 
 halt.
 swipl -G100g -T20g -L2g
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 time((N is 21*3*3*3*4, M is 4000,  texttobr2(N,u,u,M),texttobr(N,u,u,M))).
 
 halt.
 swipl -G100g -T20g -L2g
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 time((N is 21*3*3*2*4, M is 4000,  texttobr2(N,u,u,M),texttobr(N,u,u,M))).
 

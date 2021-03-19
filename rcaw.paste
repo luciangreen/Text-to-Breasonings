@@ -35,7 +35,7 @@ notrace,noprotocol.
 %% ** Stop - close window x halt (last time I stopped here)
 halt.
 swipl -G100g -T20g -L2g
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 [meditatorsanddoctors].
 meditators(Meditators),doctors(Doctors),append(Meditators,Doctors,MeditatorsandDoctors),length(MeditatorsandDoctors,LengthMeditatorsandDoctors),
@@ -72,7 +72,7 @@ sectest0.
 
 noprotocol.
 
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 FileName2='./sfile1.txt',
 FileName3='sfile1.txt',
@@ -101,7 +101,7 @@ sectest1.
 
 noprotocol.
 
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 FileName2='./sfile2.txt',
 FileName3='sfile2.txt',
@@ -139,7 +139,7 @@ swipl -G100g -T20g -L2g
 caw00(off,[n,f],[[[n,append],2,1],[[n,delete],2,1],[[n,head],1,1],[[n,tail],1,1],[[n,member],1,1]],2,8,_InputVarList,_OutputVarList,[],_Program2,Ps),Ps=[[Query,Functions,_Result1]|_Rest],leash(-all),visible(+all),protocol("./andrew.txt"),trace,interpret(off,Query,Functions,_Result2),notrace,noprotocol.
 halt.
 swipl -G100g -T20g -L2g
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 time((N is 2, M is 8000,  texttobr2(N,"andrew.txt",u,M),texttobr(N,"andrew.txt",u,M))).
 %% Give the meditator the As.
 [texttobr2qb].
@@ -167,7 +167,7 @@ sectest0.
 
 noprotocol.
 
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 FileName2='./pfile1.txt',
 FileName3='pfile1.txt',
@@ -196,7 +196,7 @@ sectest1.
 
 noprotocol.
 
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 FileName2='./pfile2.txt',
 FileName3='pfile2.txt',
@@ -244,7 +244,7 @@ sectest0.
 
 noprotocol.
 
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 FileName2='./tfile1.txt',
 FileName3='tfile1.txt',
@@ -273,7 +273,7 @@ sectest1.
 
 noprotocol.
 
-[meditationnoreplace].
+['../Text-to-Breasonings/text_to_breasonings.pl'].
 
 FileName2='./sfile2.txt',
 FileName3='sfile2.txt',

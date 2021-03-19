@@ -1,4 +1,4 @@
-% ['texttobrall2_reading.pl'].
+% ['../Text-to-Breasonings/text_to_breasonings.pl'].
 % W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W)
 % where W is the number of words to read
 % and there are approximately 4 words per algorithm.
@@ -17,6 +17,12 @@
 :- include('../listprologinterpreter/la_strings').
 
 %% Brth is true or false
+texttobr2(N1,Filex1,Stringx1,M1) :-
+	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0).
+texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
+		ObjectToPrepare,ObjectToFinish) :-
+	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
+	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0).
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read) :-
 
 	retractall(words_to_read(_)),
