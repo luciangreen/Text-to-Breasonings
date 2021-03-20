@@ -1,6 +1,9 @@
 :- dynamic debug/1.
 :- include('texttobr2qb').
 :- include('mindreadtestshared').
+:- include('listprologinterpreter1listrecursion4.pl').
+:- include('listprologinterpreter3preds5.pl').
+:- include('grammar.pl').
 
 %% Silly to mind read caw inputs, because they are mostly unused.  Use mind reading for definitely used multi choice answer
 
@@ -127,8 +130,7 @@ caw1(Query,PredicateName,Rules,MaxLength,VarList,InputVars1,InputVars2,InputVars
 
         %%writeln([interpret(Debug,Query,Program2,OutputVarList2)]),
 
-	%interpret(Debug,Query,Program2,OutputVarList2),
-	international_interpret([lang,"en"],Debug,Query,Program2,OutputVarList2),
+	interpret(Debug,Query,Program2,OutputVarList2),
         %%writeln([interpret(Debug,Query,Program2,OutputVarList2)]),
 	append(Programs2,[[Query,Program2,OutputVarList2]],Ps1).%% ,Programs3->Ps1
 	%%caw1a(Query,PredicateName,Rules,MaxLength2,VarList,InputVars1,InputVars2,InputVars3,OutputVarList,OutputVars,[],_Program2,Programs3,Ps1),!.
