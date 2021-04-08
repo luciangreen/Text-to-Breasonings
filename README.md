@@ -8,40 +8,42 @@
 
 * 50 As (50 * 80=4000 breasonings) are required to earn a job.
 
-* A time machine is being developed.
-
 # Getting Started
 
 Please read the following instructions on how to install the project on your computer for breasoning.
 
 # Prerequisites
 
-Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter).
+* Please download and install SWI-Prolog for your machine at `https://www.swi-prolog.org/build/`.
 
-Install Algorithm Writer with Lists Repository (https://github.com/luciangreen/Algorithm-Writer-with-Lists).
+# 1. Install manually
 
-### Caution:
+Download <a href="http://github.com/luciangreen/Text-to-Breasonings/">this repository</a>, the <a href="https://github.com/luciangreen/listprologinterpreter">List Prolog Interpreter Repository</a> and the <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Algorithm Writer with Lists Repository</a>.
 
-* Before running texttobr, think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.
+# 2. Or Install from List Prolog Package Manager (LPPM)
 
-follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
+* Download the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>:
 
-
-# Installation from List Prolog Package Manager (LPPM)
-
-* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>,
 ```
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
 cd List-Prolog-Package-Manager
 swipl
+['lppm'].
+lppm_install("luciangreen","Text-to-Breasonings")
+halt
 ```
-loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Text-to-Breasonings").`.
 
-# Installing and Running
+# Caution:
 
-* Please download and install SWI-Prolog for your machine at https://www.swi-prolog.org/build/.
+* Before running texttobr, think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.
 
-* Download the repository to your machine.
+* Follow instructions in <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
+
+# Running
+
+* In Shell:
+`cd Text-to-Breasonings`
+`swipl`
 
 * (1) To breason out words over a local machine and a VPS host, in the SWI-Prolog environment, enter:
 `['../listprologinterpreter/listprolog'].`
