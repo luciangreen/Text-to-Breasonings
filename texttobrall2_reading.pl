@@ -101,6 +101,13 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 	write(Stream8,ObjectToFinishDict044),
  	close(Stream8))))->true;true),
  	
+ 	length(List1,List1_length_a),
+ 	Dividend_a is ceiling(List1_length_a/250),
+ 	Dividend_b is Dividend_a*3, % for graciously giving
+ 	texttobr2_a(Dividend_b,meditation),
+ 	texttobr2_a(Dividend_b,medicine),
+ 	texttobr2_a(Dividend_b,pedagogy),
+ 	
  	!.
 
 
