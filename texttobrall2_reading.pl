@@ -24,6 +24,8 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0).
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read) :-
+	retractall(complete_display(_)),
+	assertz(complete_display(false)),
 
 	retractall(words_to_read(_)),
 	assertz(words_to_read(Words_to_read)),
@@ -251,9 +253,9 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	((ObjectToFinish=true,
 		phrase_from_file_s(string(ObjectToFinishDict0), "../Text-to-Breasonings/objecttofinishdict.txt"),		splitfurther(ObjectToFinishDict0,ObjectToFinishDict01),
 	sort(ObjectToFinishDict01,ObjectToFinishDict03),
-	length(ObjectToFinishDict03,ObjectToFinishLength0),write("Number of unique objects to finish in dictionary: "), writeln(ObjectToFinishLength0))->true;true)
+	length(ObjectToFinishDict03,ObjectToFinishLength0),write("Number of unique objects to finish in dictionary: "), writeln(ObjectToFinishLength0))->true;true),
 
-/**
+(complete_display(true)->
 	((Stringx1=u, %% Use file, not string as input.
 	
 	%%maplist(downcase_atom, List2, List3),
@@ -352,8 +354,8 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 
 	
 
-)->true;(string(Filex),writeln("Number of words, unique words, unique breathsonings, words remaining to define, undefined breasonings, orphaned breasonings, undefined breathsonings and orphaned breathsonings skipped for speed when breasoning out a string.")))
-**/
+)->true;(string(Filex),writeln("Number of words, unique words, unique breathsonings, words remaining to define, undefined breasonings, orphaned breasonings, undefined breathsonings and orphaned breathsonings skipped for speed when breasoning out a string.")));true)
+
 ,!.
 
 br2(_,A,A,B,B,0,_Brth,BrthDict03,BrthDict03,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :- !.
