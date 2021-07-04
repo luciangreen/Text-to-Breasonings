@@ -20,11 +20,11 @@ meditation :-
 	%%File="I love you, I love you, I love you.  Arem.",
 	%% dailyregimen,noheadachesapp,nobodyproblemsapp,arem
 	DotsandUtterances is 4*80, %% With radio button for graciously give or blame and graciously give or blame
-	texttobr2(DotsandUtterances), %% arem
-	texttobr2(DotsandUtterances), %% lucian
-	texttobr2(DotsandUtterances), %% green
-	texttobr2(DotsandUtterances), %% yoga
-	texttobr2(DotsandUtterances), %% dao
+	texttobr2_1(DotsandUtterances), %% arem
+	texttobr2_1(DotsandUtterances), %% lucian
+	texttobr2_1(DotsandUtterances), %% green
+	texttobr2_1(DotsandUtterances), %% yoga
+	texttobr2_1(DotsandUtterances), %% dao
 	Utterances1=[%%dailyregimen and noheadaches,
 
 	%%/**
@@ -313,12 +313,12 @@ sales_point_a_computational_english_short_course,dot_on_sales_point_a_computatio
 	%% 32 for 128k br
 	%% 2: 1 for Ayurveda, 1 for TCM
 	%%Length3 is is DL*250*3*250,
-	texttobr2(Length2),
+	texttobr2_1(Length2),
 	%%Length3 is (1+0+(32*16*5))*ML,%%+(2*2), %% Give the meditators the As with graciously give or blame, radio button for graciously give or blame
 	Length3 is ML,%%+(2*2), %% Give the meditators the As with graciously give or blame, radio button for graciously give or blame
 	%% x: and 2*250 br to turn off more than 80 medit breasonings per day with the rest as recordings for 1 subjects (black and white hen with speckles roosting)
 	%% 32*4 for medicine, meditation in ayur veda, qi gong, memory
-	texttobr2(Length3),
+	texttobr2_1(Length3),
 	!.%%,texttobr(Length2,u,File,u),!.
 	
 	/**, friendliness, medicine, 
@@ -330,15 +330,15 @@ pedagogy,breasonings,quantumbox,lucianicmeditation,lm,meditation,qigongmantra,qi
 	%% writeln([oldmeditators,Old]),!.
 initiate_utterances(_File,[]) :- !.
 initiate_utterances(File,[_Utterances|Utterances]) :-
-		texttobr2(File),texttobr(File),
+		texttobr2_1(File),texttobr(File),
 		initiate_utterances(File,Utterances).
 protect(_File,_Year,_Month,_Day,[],Old1,Old1) :- !.
 protect(File,Year1,_Month1,_Day1,[Meditator|Meditators],Old1,Old2) :-
 	Meditator=[_FirstName,_LastName,_DayDOB,_MonthDOB,_YearDOB,_DayLearned,_MonthLearned,YearLearned],
 	Year2 is YearLearned+101,
 	(Year2=Year1->append(Old1,[Meditator],Old3);Old3=Old1),
-	texttobr2(File),texttobr(File), %% Sender
-	texttobr2(File),texttobr(File), %% Recipient
+	texttobr2_1(File),texttobr(File), %% Sender
+	texttobr2_1(File),texttobr(File), %% Recipient
 	
 	protect(File,Year1,_Month,_Day,Meditators,Old3,Old2).
 currentDate(Today) :-
