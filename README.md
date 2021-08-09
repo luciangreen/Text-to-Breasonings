@@ -109,7 +109,7 @@ W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 
 * To run, type `./texttobr2.sh` in the `/username/` folder and T2B wil run (breasoning out only breasonings, not breathsonings, etc.), syncing with the VPS.
 
-# Repairing Corrupt Dictionary Files
+# Repairing Corrupted Dictionary Files
 
 * If you accidentally enter a mistake in Text to Breasonings, you can repair the dictionary files using the following method.
 
