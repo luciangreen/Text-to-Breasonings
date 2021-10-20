@@ -1,4 +1,4 @@
-<a href="https://github.com/luciangreen/Essay-Helper">Essay Helper</a> | <a href="https://github.com/luciangreen/Text-to-Breasonings">Text-to-Breasonings (Helps Earn High Distinctions)</a> | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
+<a href="https://github.com/luciangreen/Essay-Helper">Essay Helper</a> | Text-to-Breasonings (Helps Earn High Distinctions) | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
 
 # TextToBreasoning Documentation
 
