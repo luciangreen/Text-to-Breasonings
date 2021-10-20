@@ -1,3 +1,5 @@
+<a href="https://github.com/luciangreen/Essay-Helper">Essay Helper</a> | <a href="https://github.com/luciangreen/Text-to-Breasonings">Text-to-Breasonings (Helps Earn High Distinctions)</a> | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
+
 # TextToBreasoning Documentation
 
 * TextToBreasoning (T2B) is a set of algorithms that allow breasoning out (in this case, the computer thinks of the x, y and z dimensions of) objects to help earn high distinctions, support but not conceive healthy children, earn jobs, sell products, produce quantum energy, <a href="https://github.com/luciangreen/mindreader">read minds, display spiritual screens</a> or <a href="https://github.com/luciangreen/Time_Machine">time travel</a>.  T2B automates breasoning, where breasoning prevents possible health problems of other methods (see Disclaimer).
