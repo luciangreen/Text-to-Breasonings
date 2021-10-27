@@ -1,8 +1,10 @@
 <a href="https://github.com/luciangreen/Essay-Helper">Essay Helper</a> | Text-to-Breasonings (Helps Earn High Distinctions) | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
 
-# TextToBreasoning Documentation
+* Text-to-Breasonings is not compatible with the future simulation.
 
-* TextToBreasoning (T2B) is a set of algorithms that allow breasoning out (in this case, the computer thinks of the x, y and z dimensions of) objects to help earn high distinctions, support but not conceive healthy children, earn jobs, sell products, produce quantum energy, <a href="https://github.com/luciangreen/mindreader">read minds, display spiritual screens</a> or <a href="https://github.com/luciangreen/Time_Machine">time travel</a>.  T2B automates breasoning, where breasoning prevents possible health problems of other methods (see Disclaimer).
+# Text-to-Breasonings Documentation
+
+* Text-to-Breasonings (T2B) is a set of algorithms that allow breasoning out (in this case, the computer thinks of the x, y and z dimensions of) objects to help earn high distinctions, support but not conceive healthy children, earn jobs, sell products, produce quantum energy, <a href="https://github.com/luciangreen/mindreader">read minds, display spiritual screens</a> or <a href="https://github.com/luciangreen/Time_Machine">time travel</a>.  T2B automates breasoning, where breasoning prevents possible health problems of other methods (see Disclaimer).
 
 * TextToBreasonings can (1) breason out words over a local machine and a Virtual Private Server (a server that you can use as central which has environmental advantages) (VPS) host, (2) breason out characters over a local machine or (3) breason out words, breathsonings (judgement adjectives and adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action over a local machine.
 
