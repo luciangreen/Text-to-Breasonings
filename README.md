@@ -1,6 +1,4 @@
-<a href="https://github.com/luciangreen/Essay-Helper">Essay Helper</a> | Text-to-Breasonings (Helps Earn High Distinctions) | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
-
-* Text-to-Breasonings is not compatible with the future simulation.
+* Text-to-Breasonings is not compatible with the future simulation.  It is deprecated by <a href="https://github.com/luciangreen/Text-to-Object-Name">Text-to-Object-Name</a>.
 
 # Text-to-Breasonings Documentation
 
@@ -57,41 +55,41 @@ halt
 
 * In the SWI-Prolog environment, enter:
 `texttobr2(N,File,String,M).`
-* where N is the number of times to breason out the file, File is the file name, String is the string to breason out and M is the number of words in the file to breason out, e.g.:
-`texttobr2(u,"file.txt",u,u).`
-* Breasons out file.txt.
-`texttobr2(2,"file.txt",u,u).`
-* Breasons out file.txt twice.
-`texttobr2(u,u,"Hello world.",u).`
-* Breason out "Hello world.".
-`texttobr2(3,u,"a b c",2).`
-* Breasons out the first two words in "a b c" ("a" and "b") 3 times.
+where N is the number of times to breason out the file, File is the file name, String is the string to breason out and M is the number of words in the file to breason out, e.g.:
+* `texttobr2(u,"file.txt",u,u).`
+Breasons out file.txt.
+* `texttobr2(2,"file.txt",u,u).`
+Breasons out file.txt twice.
+* `texttobr2(u,u,"Hello world.",u).`
+Breason out "Hello world.".
+* `texttobr2(3,u,"a b c",2).`
+Breasons out the first two words in "a b c" ("a" and "b") 3 times.
 
 * (2) To breason out characters over a local machine, in the SWI-Prolog environment, enter:
 `[texttobr].`
 
 * In the SWI-Prolog environment, enter:
 `texttobr(N,File,String,M).`
-* where N is the number of times to breason out the file, File is the file name, String is the string to breason out and M is the number of words in the file to breason out, e.g.:
-`texttobr(u,"file.txt",u,u).`
-* Breasons out file.txt.
-`texttobr(2,"file.txt",u,u).`
-* Breasons out file.txt twice.
-`texttobr(u,u,"Hello world.",u).`
-* Breason out "Hello world.".
-`texttobr(3,u,"abc",2).`
-* Breasons out the first two characters in "abc" ("a" and "b") 3 times.
+where N is the number of times to breason out the file, File is the file name, String is the string to breason out and M is the number of words in the file to breason out, e.g.:
+* `texttobr(u,"file.txt",u,u).`
+Breasons out file.txt.
+* `texttobr(2,"file.txt",u,u).`
+Breasons out file.txt twice.
+* `texttobr(u,u,"Hello world.",u).`
+Breason out "Hello world.".
+* `texttobr(3,u,"abc",2).`
+Breasons out the first two characters in "abc" ("a" and "b") 3 times.
 
 * (3) To breason out words, breathsonings (judgement adjectives and judgement adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action over a local machine, in the SWI-Prolog environment, enter:
 `['text_to_breasonings.pl'].`
 
 * In the SWI-Prolog environment, enter:
 `texttobr2(u,u,u,u,false,false,false,false,false,false).`
-* where the first four arguments may be changed as in (1) above, and only words are breasoned out.
-`texttobr2(u,u,u,u,true,false,false,false,false,false).`
-* where the first four arguments may be changed as in (1) above, and only words and breathsonings are breasoned out.
-`texttobr2(u,u,u,u,true,true,true,true,true,true).`
-* where the first four arguments may be changed as in (1) above, and words, breathsonings (judgement adjectives and judgement adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action are breasoned out.
+where the first four arguments may be changed as in (1) above, and only words are breasoned out.
+* `texttobr2(u,u,u,u,true,false,false,false,false,false).`
+where the first four arguments may be changed as in (1) above, and only words and breathsonings are breasoned out.
+* `texttobr2(u,u,u,u,true,true,true,true,true,true).`
+where the first four arguments may be changed as in (1) above, and words, breathsonings (judgement adjectives and judgement adverbs), rooms, parts of rooms, directions in rooms, objects to prepare for an action and objects to finish an action are breasoned out.
 
 # Reading Algorithm
 
