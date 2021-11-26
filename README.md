@@ -1,4 +1,4 @@
-* Text-to-Breasonings is not compatible with the future simulation.  It is deprecated by <a href="https://github.com/luciangreen/Text-to-Object-Name">Text-to-Object-Name</a>.
+<a href="https://github.com/luciangreen/Essay-Helper">Essay Helper</a> | Text-to-Breasonings (Helps Earn High Distinctions) | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
 
 # Text-to-Breasonings Documentation
 
