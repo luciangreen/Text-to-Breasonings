@@ -25,7 +25,36 @@ meditation :-
 	texttobr2_1(DotsandUtterances), %% green
 	texttobr2_1(DotsandUtterances), %% yoga
 	texttobr2_1(DotsandUtterances), %% dao
-	Utterances1=[%%dailyregimen and noheadaches,
+
+	texttobr2_1(DotsandUtterances), %% arem time travel leave loc 1
+texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 1
+texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 2
+texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 2
+texttobr2_1(DotsandUtterances), %% arem time travel leave loc 2
+texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 2
+texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 3
+texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 3
+texttobr2_1(DotsandUtterances), %% arem time travel leave loc 3
+texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 3
+texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 1
+texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 1
+
+	Utterances1=[time_travel,mind_reading,medicine,meditation,
+	
+	tt_loc_one_to_two,tt_loc_two_to_three,tt_loc_three_to_one,
+a_for_love_head_of_state,b_for_love_head_of_state,b_to_b_for_love_head_of_state,
+a_for_immortality,b_for_immortality,b_to_b_for_immortality,
+a_for_body_replacement,b_for_body_replacement,b_to_b_for_body_replacement,
+a_for_immortality_medicine_for_thinking,b_for_immortality_medicine_for_thinking,b_to_b_for_immortality_medicine_for_thinking,
+a_for_immortality_medicine_for_stopping_dementia,b_for_immortality_medicine_for_stopping_dementia,b_to_b_for_immortality_medicine_for_stopping_dementia,
+a_for_immortality_medicine_for_seeing_clearly,b_for_immortality_medicine_for_seeing_clearly,b_to_b_for_immortality_medicine_for_seeing_clearly,
+a_for_immortality_medicine_for_muscle_relaxation,b_for_immortality_medicine_for_muscle_relaxation,b_to_b_for_immortality_medicine_for_muscle_relaxation,
+a_for_immortality_medicine_for_antidepressant,b_for_immortality_medicine_for_antidepressant,b_to_b_for_immortality_medicine_for_antidepressant,
+a_for_immortality_medicine_for_antipsychotic,b_for_immortality_medicine_for_antipsychotic,b_to_b_for_immortality_medicine_for_antipsychotic,
+a_for_other_medicines_for_the_body,b_for_other_medicines_for_the_body,b_to_b_for_other_medicines_for_the_body,
+a_for_the_other_as,b_for_the_other_as,b_to_b_for_the_other_as,
+a_for_thank_head_of_state,b_for_thank_head_of_state,b_to_b_for_thank_head_of_state,	
+	%%dailyregimen and noheadaches,
 
 	%%/**
 	connect_what_i_say_and_the_question,the_adverse,knock_out_cancer_frequency,i_am_serious,rod_off,good_circulation,no_smells,knock_out_annoying_frequency,knock_out_nagging_frequency,knock_out_complaining_frequency,stop_pain_inflammation_help_blood_flow_relaxation_and_wellbeing_and_deeptissue_massage
