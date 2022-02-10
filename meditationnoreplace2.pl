@@ -39,7 +39,7 @@ texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 3
 texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 1
 texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 1
 
-	Utterances1=[time_travel,mind_reading,medicine,meditation,
+	Utterances1=[time_travel,mind_reading,medicine,meditation,fish_oil,
 	
 	tt_loc_one_to_two,tt_loc_two_to_three,tt_loc_three_to_one,
 a_for_love_head_of_state,b_for_love_head_of_state,b_to_b_for_love_head_of_state,
