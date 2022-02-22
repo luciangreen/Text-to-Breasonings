@@ -1,12 +1,21 @@
 %% Name, DOB, Date learned, psych appointment month=0 or 1, psych appointment day, thoughts count
 
 sectest0 :-
+meditators(A),
+findall(_,(member(B,A),sectest(B)),_)
+/*
 sectest([first,last,dobd,dobm,doby,daylearned,monthlearned,yearlearned,0,1,16]),
-sectest([first,last,dobd,dobm,doby,daylearned,monthlearned,yearlearned,0,1,16]).
+sectest([first,last,dobd,dobm,doby,daylearned,monthlearned,yearlearned,0,1,16])
+*/.
 
 sectest1 :-
+meditators2(A),
+findall(_,(member(B,A),sectest(B)),_)
+/*
 sectest([first,last,dobd,dobm,doby,daylearned,monthlearned,yearlearned,1,0,16]),
-sectest([first,last,dobd,dobm,doby,daylearned,monthlearned,yearlearned,1,0,16]).
+sectest([first,last,dobd,dobm,doby,daylearned,monthlearned,yearlearned,1,0,16])
+*/
+.
 
 find_time(H,M,S) :-
 	trialy2_15("0",H11),
