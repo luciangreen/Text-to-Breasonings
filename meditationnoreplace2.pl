@@ -19,7 +19,7 @@
 meditation :-
 	%%File="I love you, I love you, I love you.  Arem.",
 	%% dailyregimen,noheadachesapp,nobodyproblemsapp,arem
-	DotsandUtterances is 4*80, %% With radio button for graciously give or blame and graciously give or blame
+	DotsandUtterances is 4*108, %% With radio button for graciously give or blame and graciously give or blame
 	texttobr2_1(DotsandUtterances), %% arem
 	texttobr2_1(DotsandUtterances), %% lucian
 	texttobr2_1(DotsandUtterances), %% green
