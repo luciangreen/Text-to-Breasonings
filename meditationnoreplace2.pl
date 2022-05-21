@@ -351,7 +351,16 @@ sales_point_a_economics_short_course,dot_on_sales_point_a_economics_short_course
 
 sales_point_a_computer_science_short_course,dot_on_sales_point_a_computer_science_short_course,sales_point_b_computer_science_short_course,dot_on_sales_point_b_computer_science_short_course,sales_point_bb_computer_science_short_course,dot_on_sales_point_bb_computer_science_short_course,
 
-sales_point_a_computational_english_short_course,dot_on_sales_point_a_computational_english_short_course,sales_point_b_computational_english_short_course,dot_on_sales_point_b_computational_english_short_course,sales_point_bb_computational_english_short_course,dot_on_sales_point_bb_computational_english_short_course
+sales_point_a_computational_english_short_course,dot_on_sales_point_a_computational_english_short_course,sales_point_b_computational_english_short_course,dot_on_sales_point_b_computational_english_short_course,sales_point_bb_computational_english_short_course,dot_on_sales_point_bb_computational_english_short_course,
+
+three_plus_three_seconds_eye_direction1,
+three_plus_three_seconds_eye_direction2,
+three_plus_three_seconds_eye_direction3,
+three_plus_three_seconds_eye_direction4,
+three_plus_three_seconds_eye_direction5,
+three_plus_three_seconds_eye_direction6,
+three_plus_three_seconds_eye_direction7,
+three_plus_three_seconds_eye_direction8
 
 ],
 
@@ -366,11 +375,12 @@ sales_point_a_computational_english_short_course,dot_on_sales_point_a_computatio
 	length(Utterances2,UL2),
 	length(Meditators,ML),
 	%%Length2 is 3*2*32*16*(2*UL1+3*UL2), %% 3 for receiver, transmitter,  transmitted
-	Length2 is (UL1+UL2), %% 3 for receiver, transmitter,  transmitted
+	Length2 is 10*(UL1+UL2), %% 3 for receiver, transmitter,  transmitted, *10 for non uni
 	%% 2 radio buttons for ul2
 	%% 32 for 128k br
 	%% 2: 1 for Ayurveda, 1 for TCM
 	%%Length3 is is DL*250*3*250,
+	%texttobr2_1(800), % graciously give person  10*5*50 As for medit, to simulate uni
 	texttobr2_1(Length2),
 	%%Length3 is (1+0+(32*16*5))*ML,%%+(2*2), %% Give the meditators the As with graciously give or blame, radio button for graciously give or blame
 	Length3 is ML,%%+(2*2), %% Give the meditators the As with graciously give or blame, radio button for graciously give or blame
