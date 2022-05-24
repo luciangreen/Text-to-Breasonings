@@ -8,7 +8,7 @@
 
 * Generally, 80 word breasonings are needed to earn a high distinction at undergraduate level and below, have healthy children or sell products.  This increases to 2 * 15 * 80=2400 breasonings per Honours level chapter, approximately 2 * 50 * 80=8000 breasonings per Masters level assignment and approximately 2 * 4 * 50 * 80=32,000 breasonings per PhD level assignment.
 
-* In addition to the 80 word breasonings, a certain number of short algorithms are necessary to earn a high distinction for an assignment.  If there are a small number of algorithms, the lecturer may do them.
+* In addition to the 80 philosophy sentence breasonings, a certain number of short algorithms are necessary to earn a high distinction for an assignment.  If there are a small number of algorithms, the lecturer may do them.
 
 | Level         | Algorithms required |
 | ------------- | ------------------: |
