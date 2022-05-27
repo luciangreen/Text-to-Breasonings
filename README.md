@@ -12,10 +12,10 @@
 
 | Level         | Algorithms required |
 | ------------- | ------------------: |
-| Undergraduate | 1                   |
-| Honours       | 15                  |
+| Undergraduate | 80                  |
+| Honours       | 80                  |
 | Master's      | 80                  |
-| PhD           | 320                 |
+| PhD           | 80                  |
 
 * 50 As (50 * 80=4000 breasonings) are required to earn a job.
 
