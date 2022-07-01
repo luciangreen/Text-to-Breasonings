@@ -360,7 +360,9 @@ three_plus_three_seconds_eye_direction4,
 three_plus_three_seconds_eye_direction5,
 three_plus_three_seconds_eye_direction6,
 three_plus_three_seconds_eye_direction7,
-three_plus_three_seconds_eye_direction8
+three_plus_three_seconds_eye_direction8,
+
+immortality_stasis_field
 
 ],
 
