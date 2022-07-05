@@ -364,7 +364,7 @@ three_plus_three_seconds_eye_direction8,
 
 immortality_stasis_field,
 
-big_idea_receiver,big_idea_receiver_to_canceller,big_idea_canceller
+big_idea_canceller
 
 
 ],
@@ -380,7 +380,9 @@ big_idea_receiver,big_idea_receiver_to_canceller,big_idea_canceller
 	length(Utterances2,UL2),
 	length(Meditators,ML),
 	%%Length2 is 3*2*32*16*(2*UL1+3*UL2), %% 3 for receiver, transmitter,  transmitted
-	Length2 is 10*(UL1+UL2), %% 3 for receiver, transmitter,  transmitted, *10 for non uni
+	Length2 is 3*10*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
+
+	%% 3 for receiver, transmitter,  transmitted
 	%% 2 radio buttons for ul2
 	%% 32 for 128k br
 	%% 2: 1 for Ayurveda, 1 for TCM
