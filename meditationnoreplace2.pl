@@ -364,7 +364,15 @@ three_plus_three_seconds_eye_direction8,
 
 immortality_stasis_field,
 
-big_idea_canceller
+big_idea_canceller,
+
+bot_appears_to_age_normally,
+
+bot_dies_at_80,
+
+no_effect_of_eating_food_food_transported_directly_stomach,
+
+no_other_effects_on_body
 
 
 ],
