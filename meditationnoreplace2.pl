@@ -372,7 +372,9 @@ bot_dies_at_80,
 
 no_effect_of_eating_food_food_transported_directly_stomach,
 
-no_other_effects_on_body
+no_other_effects_on_body,
+
+no_early_death_from_tt
 
 
 ],
