@@ -374,7 +374,21 @@ no_effect_of_eating_food_food_transported_directly_stomach,
 
 no_other_effects_on_body,
 
-no_early_death_from_tt
+no_early_death_from_tt,
+
+mother_will_be_alive_to_cook_and_care_for_me,
+
+friends_will_be_immortal,
+
+no_natural_disasters_in_simulation,
+
+partner_s_family_immortal,
+
+really_different_looking_bot_in_simulation,
+
+my_family_will_be_immortal
+
+
 
 
 ],
