@@ -386,9 +386,7 @@ partner_s_family_immortal,
 
 really_different_looking_bot_in_simulation,
 
-my_family_will_be_immortal,
-
-immortal_world_equals_real_world
+my_family_will_be_immortal
 
 
 
