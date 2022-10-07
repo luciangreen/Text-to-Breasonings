@@ -10,8 +10,8 @@ Note: Replace /Users/yourname/yourfolder/ (in edit.pl lines 12 and 13 and the fo
 
 Replace stub meditator and doctor names in meditationnoreplace.pl and medicinenoreplace.pl respectively.  Meditators are taught by Lucian Academy, or a teacher with 50 Meditation As who dots on the utterance-arem link daily and doctors are those who need the effects of medicine.
 
-1. Sign up for a free account on e.g. AwardSpace.com.
-2. Sign up for a free or paid domain name inside the AwardSpace control panel.
+1. Sign up for a free account on a website hosting company.
+2. Sign up for a free or paid domain name inside the website hosting company control panel.
 3. Sign up for a $10/3 months VPS account.
 4. Ask the admin to install SWI-Prolog for Linux (e.g. Debian - https://packages.debian.org/stable/swi-prolog)
 5. Set up an FTP account on the VPS using the special control panel.
