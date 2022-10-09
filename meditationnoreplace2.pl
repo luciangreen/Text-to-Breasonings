@@ -360,9 +360,9 @@ three_plus_three_seconds_eye_direction4,
 three_plus_three_seconds_eye_direction5,
 three_plus_three_seconds_eye_direction6,
 three_plus_three_seconds_eye_direction7,
-three_plus_three_seconds_eye_direction8,
+three_plus_three_seconds_eye_direction8
 
-immortality_stasis_field,
+/*immortality_stasis_field,
 
 big_idea_canceller,
 
@@ -389,7 +389,7 @@ really_different_looking_bot_in_simulation,
 my_family_will_be_immortal
 
 
-
+*/
 
 ],
 
