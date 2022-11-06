@@ -24,7 +24,8 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0).
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read) :-
-	retractall(complete_display(_)),
+(Stringx1=""->true;
+(	retractall(complete_display(_)),
 	assertz(complete_display(false)),
 
 	retractall(words_to_read(_)),
@@ -108,7 +109,8 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
  	Dividend_b is Dividend_a*3, % for graciously giving
  	texttobr2_a(Dividend_b,meditation),
  	texttobr2_a(Dividend_b,medicine),
- 	texttobr2_a(Dividend_b,pedagogy),
+ 	texttobr2_a(Dividend_b,pedagogy)
+ 	)),
  	
  	!.
 
@@ -192,6 +194,9 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	%%delete(BrDict021t,[Apostrophe,_,_,_,_],BrDict02t),
 %%writeln([brDict02,BrDict02]),
 	sort(BrDict01t,BrDict03t),
+	
+% br_freq		%B=BrDict03t,A=BrDict03,findall([DL,C,"\n"],(member([C,_,_,_],B),findall(_,member([_,C],A),D),length(D,DL)),E),sort(E,F),reverse(F,G),writeln([br_freq,G]),
+
 %%writeln([brDict03,BrDict03]),
 	length(BrDict03t,Length0t),write("Number of unique breasonings in dictionary: "), writeln(Length0t),
 	
