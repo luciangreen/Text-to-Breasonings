@@ -52,6 +52,8 @@ halt
 
 * The <a href="Prevent-Headaches.md">Prevent Headaches App</a> may be necessary.
 
+* See also <a href="https://github.com/luciangreen/Time_Machine">Time Machine</a>, which uses Text to Breasonings, to travel through time with meditation.
+
 # Running
 
 * In Shell:
