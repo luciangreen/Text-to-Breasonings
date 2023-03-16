@@ -491,7 +491,9 @@ bots_a_4,
 sales_a_1,
 sales_a_2,
 sales_a_3,
-sales_a_4
+sales_a_4,
+
+if_a_teacher_then_seen_as_leading_a_country
 
 
 
@@ -507,7 +509,8 @@ sales_a_4
 	length(Utterances2,UL2),
 	length(Meditators,ML),
 	%%Length2 is 3*2*32*16*(2*UL1+3*UL2), %% 3 for receiver, transmitter,  transmitted
-	Length2 is 3*10*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
+	Length2 is 4*3*10*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
+	% 4 - tt settings
 	
 	%% 3 for receiver, transmitter,  transmitted
 	%% 2 radio buttons for ul2
