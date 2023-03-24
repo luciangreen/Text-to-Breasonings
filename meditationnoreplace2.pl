@@ -493,7 +493,9 @@ sales_a_2,
 sales_a_3,
 sales_a_4,
 
-if_a_teacher_then_seen_as_leading_a_country
+if_a_teacher_then_seen_as_leading_a_country,
+
+control_not_to_die,control_not_to_have_s_contact,control_not_to_leave_simulation,control_whether_appear_to_people
 
 
 
