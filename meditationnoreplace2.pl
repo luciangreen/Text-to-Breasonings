@@ -495,7 +495,9 @@ sales_a_4,
 
 if_a_teacher_then_seen_as_leading_a_country,
 
-control_not_to_die,control_not_to_have_s_contact,control_not_to_leave_simulation,control_whether_appear_to_people
+control_not_to_die,control_not_to_have_s_contact,control_not_to_leave_simulation,control_whether_appear_to_people,
+
+can_t_be_involuntarily_time_travelled
 
 
 
