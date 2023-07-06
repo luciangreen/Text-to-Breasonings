@@ -179,6 +179,8 @@ truncate(List1,M,String0) :-
 	append(String0,_,List1))->true;
 	String0=List1),!.
 	
+	
+	
 prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03) :-
 	phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),
 	%%Chars="’",
@@ -218,8 +220,10 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	length(BrDict03t,Length0t),write("Number of unique breasonings in dictionary: "), writeln(Length0t),
 	
 	((Stringx1=u,
-	phrase_from_file_s(string(String00), Filex))->true;
-	String00=Stringx1),
+	phrase_from_file_s(string(String001), Filex))->true;
+	String001=Stringx1),
+	
+	process_t2b(String001,String00),
 	
 	split_string(String00,SepandPad,SepandPad,List1),
 	%%split_string_onnonletter(String00,List1),
@@ -598,3 +602,19 @@ brth(_,sweetinvincibleandprayedfor).
 read_string1(S,user_input, "\n", "\r", _End, ObjectToFinishString) :-
  (auto(on)->S=ObjectToFinishString;
  read_string(user_input, "\n", "\r", _End, ObjectToFinishString)),!.
+
+
+process_t2b(A,C) :-
+ replace_t2b(Replacements),
+ atom_string(A1,A),
+ replace1_t2b(Replacements,A1,D1),
+ atom_string(D1,C),!.
+ 
+replace1_t2b([],A,A) :- !.
+replace1_t2b(Replacements,A,D) :-
+ Replacements=[[B,C]|G],
+ atomic_list_concat(E,B,A),
+ atomic_list_concat(E,C,F),
+ replace1_t2b(G,F,D),!.
+
+	replace_t2b([['\\',''],['–',' '],['“','\''],['”','\''],['‘','\''],['’','\'']]).
