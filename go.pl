@@ -1,7 +1,8 @@
 :-include('../Text-to-Breasonings/text_to_breasonings.pl').
 
 go :-
-working_directory	
+working_directory(_,'../Philosophy/'),
+
 A=[person1,person2],
 
 time(findall(_,(member(P,A),
