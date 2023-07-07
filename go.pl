@@ -7,13 +7,13 @@ A=[person1,person2],
 time(findall(_,(member(P,A),
 
 time((
-foldr(string_concat,["swipl -f -q ./bag_args21.pl"],S3)%,
+foldr(string_concat,["swipl --stack-limit=80G -f -q ./bag_args21.pl"],S3)%,
 ,catch(bash_command(S3,_), _, (foldr(string_concat,["Warning."%%"Error: Can't clone ",User3,"/",Repository3," repository on GitHub."
 	],_Text4),%writeln1(Text4),
 	fail%abort
  	)),
 
-foldr(string_concat,["swipl -f -q ./bag_algs1.pl"],S31)%,
+foldr(string_concat,["swipl --stack-limit=80G -f -q ./bag_algs1.pl"],S31)%,
 ,catch(bash_command(S31,_), _, (foldr(string_concat,["Warning."%%"Error: Can't clone ",User3,"/",Repository3," repository on GitHub."
 	],_Text4),%writeln1(Text4),
 	fail%abort
