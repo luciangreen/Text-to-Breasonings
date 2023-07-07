@@ -402,7 +402,7 @@ concurrent(2,[(
 
 ,!.
 
-n2(N) :-n(N).
+%n2(N) :-n(N).
 brDict031(BrDict2) :- brDict03(BrDict2).
 brDict03t1(BrDict03t2) :- brDict03t(BrDict03t2).
 
