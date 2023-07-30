@@ -1,3 +1,5 @@
+% member(List,Item) (below) is part of deprecated lpi
+
 Setting up a VPS (Virtual Private Server) with TextToBr
 
 Use a VPS (necessary because of the time the computation takes) to achieve meditation without meditating.  Many daily benefits, such as health.
