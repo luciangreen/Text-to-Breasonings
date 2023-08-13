@@ -21,6 +21,8 @@
 
 * Replace 80 breasonings and 80 algorithms with 250 each for up to 100% above.
 
+* To earn H1, also breason out (and detail out in Honours and above) the lecture notes.
+
 # Getting Started
 
 Please read the following instructions on how to install the project on your computer for breasoning.
