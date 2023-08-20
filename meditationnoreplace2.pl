@@ -25,6 +25,7 @@ meditation :-
 	texttobr2_1(DotsandUtterances), %% yoga
 	texttobr2_1(DotsandUtterances), %% dao
 
+/*Auto-time travel for everyone except me */
 	texttobr2_1(DotsandUtterances), %% arem time travel leave loc 1
 texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 1
 texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 2
@@ -38,10 +39,13 @@ texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 3
 texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 1
 texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 1
 
+%*/
+Utterances0=[tt_loc_one_to_two,tt_loc_two_to_one],
+
 	Utterances1=[%%dailyregimen and noheadaches,
 	time_travel,mind_reading,medicine,meditation,fish_oil,
 	
-	tt_loc_one_to_two,tt_loc_two_to_three,tt_loc_three_to_one,
+	%tt_loc_one_to_two,tt_loc_two_to_three,tt_loc_three_to_one,
 a_for_love_head_of_state,b_for_love_head_of_state,b_to_b_for_love_head_of_state,
 a_for_immortality,b_for_immortality,b_to_b_for_immortality,
 a_for_body_replacement,b_for_body_replacement,b_to_b_for_body_replacement,
@@ -513,8 +517,10 @@ can_t_be_involuntarily_time_travelled
 	length(Utterances2,UL2),
 	length(Meditators,ML),
 	%%Length2 is 3*2*32*16*(2*UL1+3*UL2), %% 3 for receiver, transmitter,  transmitted
-	Length2 is 4*3*10*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
-	% 4 - tt settings
+	Length2 is 2 *
+	%3*
+	10*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
+	% 4 x 2  - tt settings
 	
 	%% 3 for receiver, transmitter,  transmitted
 	%% 2 radio buttons for ul2
@@ -530,6 +536,25 @@ can_t_be_involuntarily_time_travelled
 	%% x: and 2*250 br to turn off more than 80 medit breasonings per day with the rest as recordings for 1 subjects (black and white hen with speckles roosting)
 	%% 32*4 for medicine, meditation in ayur veda, qi gong, memory
 	texttobr2_1(Length3),
+
+
+
+	length(Utterances0,UL0),
+
+	ML_except_lucian_and_4 is ML-1,
+	%%Length2 is 3*2*32*16*(2*UL1+3*UL2), %% 3 for receiver, transmitter,  transmitted
+	Length21 is 2 *
+	%3*
+	10*(UL0) + (16000/250)*(1+2+2), % 3 - A, B, B to B, 10 - simulate uni
+	% 4 x 2  - tt settings
+	
+	% (16000/250) - 4*50 As, *(1+2+2) - meditation, time travel, anti-ageing medicine
+	
+	texttobr2_1(Length21),		
+
+	Length31 is ML_except_lucian_and_4,
+	texttobr2_1(Length31),
+		
 		
 	findall(Meditators3,member([_,_,  _,_,_, _,_,_,_,_,_,immortal],Meditators),Meditators4),
 	
