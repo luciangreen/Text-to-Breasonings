@@ -23,6 +23,8 @@
 
 * To earn H1, also breason out (and detail out in Honours and above) the lecture notes.
 
+* <a href="https://lucianspedagogy.blogspot.com/?m=1">Essay Writing and Pedagogy Tips</a>
+
 # Getting Started
 
 Please read the following instructions on how to install the project on your computer for breasoning.
