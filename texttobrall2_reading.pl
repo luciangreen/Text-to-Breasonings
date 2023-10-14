@@ -14,7 +14,7 @@
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('../Text-to-Breasonings/mergetexttobrdict.pl').
-:- include('../Philosophy/14 10 23.pl').
+%:- include('../Philosophy/14 10 23.pl').
 
 %:- include('../listprologinterpreter/la_strings').
 
@@ -225,10 +225,9 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	phrase_from_file_s(string(String001), Filex))->true;
 	String001=Stringx1),
 	
-	%process_t2b
-	split_on_non_alpha(String001,List1),
+	process_t2b(String001,String00),
 	
-	%split_string(String00,SepandPad,SepandPad,List1),
+	split_string(String00,SepandPad,SepandPad,List1),
 	%%split_string_onnonletter(String00,List1),
 
 	truncate(List1,M,List),
@@ -606,7 +605,7 @@ read_string1(S,user_input, "\n", "\r", _End, ObjectToFinishString) :-
  (auto(on)->S=ObjectToFinishString;
  read_string(user_input, "\n", "\r", _End, ObjectToFinishString)),!.
 
-/*
+%/*
 process_t2b(A,C) :-
  replace_t2b(Replacements),
  atom_string(A1,A),
@@ -621,4 +620,4 @@ replace1_t2b(Replacements,A,D) :-
  replace1_t2b(G,F,D),!.
 
 	replace_t2b([['\\',''],['–',' '],['“','\''],['”','\''],['‘','\''],['’','\'']]).
-*/
+%*/
