@@ -15,6 +15,7 @@
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('../Text-to-Breasonings/mergetexttobrdict.pl').
 %:- include('../listprologinterpreter/la_strings').
+:- include('../Philosophy/14 10 23.pl').
 
 %% Brth is true or false
 %texttobr2(N1,Filex1,Stringx1,M1) :-
@@ -226,9 +227,10 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	phrase_from_file_s(string(String001), Filex))->true;
 	String001=Stringx1),
 	
-	process_t2b(String001,String00),
+	%process_t2b
+	split_on_non_alpha(String001,List1),
 	
-	split_string(String00,SepandPad,SepandPad,List1),
+	%split_string(String00,SepandPad,SepandPad,List1),
 	%%split_string_onnonletter(String00,List1),
 
 	truncate(List1,M,List),
@@ -483,7 +485,7 @@ br([],B,B,C,C,_,D,D,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,Par
 	!.
 br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
 %trace,
- maplist(t(BrDict,BrDict4),Words),!.
+ concurrent_maplist(t(BrDict,BrDict4),Words),!.
  	%%).
 brth(_,sweetinvincibleandprayedfor).
 
@@ -492,7 +494,7 @@ read_string1(S,user_input, "\n", "\r", _End, ObjectToFinishString) :-
  (auto(on)->S=ObjectToFinishString;
  read_string(user_input, "\n", "\r", _End, ObjectToFinishString)),!.
 
-
+/*
 process_t2b(A,C) :-
  replace_t2b(Replacements),
  atom_string(A1,A),
@@ -507,3 +509,4 @@ replace1_t2b(Replacements,A,D) :-
  replace1_t2b(G,F,D),!.
 
 	replace_t2b([['\\',''],['–',' '],['“','\''],['”','\''],['‘','\''],['’','\'']]).
+*/
