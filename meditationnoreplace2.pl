@@ -358,7 +358,13 @@ three_plus_three_seconds_eye_direction4,
 three_plus_three_seconds_eye_direction5,
 three_plus_three_seconds_eye_direction6,
 three_plus_three_seconds_eye_direction7,
-three_plus_three_seconds_eye_direction8
+three_plus_three_seconds_eye_direction8,
+
+lactobacillus_salivarius_massaged_into_teeth_and_gums_and_swallowed,
+
+mucous_in_intestines_blocking_lactobacillus_salivarius_dissolved,
+
+no_fluoride
 
 
 
