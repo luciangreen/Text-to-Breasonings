@@ -1,3 +1,4 @@
+main:-texttobr2(u,"file.txt",u,u,[auto,on]).
 % ['../Text-to-Breasonings/text_to_breasonings.pl'].
 % W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W)
 % where W is the number of words to read
@@ -14,6 +15,9 @@
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('../Text-to-Breasonings/mergetexttobrdict.pl').
+:-include('../listprologinterpreter/la_files.pl').
+:-include('../listprologinterpreter/la_strings.pl').
+
 %:- include('../listprologinterpreter/la_strings').
 %:- include('../Philosophy/14 10 23.pl').
 
@@ -476,16 +480,38 @@ digits([X|Xs]) --> [X], {(char_type(X,digit)->true;(string_codes(Word2,[X]),Word
 %%digits([X]) --> [X], {(char_type(X,digit);(string_codes(Word2,[X]),Word2="."))}, !.
 digits([]) --> [].
 
-t(BrDict,BrDict4,Word) :-
+t(BrDict,BrDict4,Word,[Word1,X,Y,Z]) :-
  (member([Word,Word1],BrDict)->
- (member([Word1,_X,_Y,_Z],BrDict4)->true;true);true).
+ (member([Word1,X,Y,Z],BrDict4)->true;fail);fail).
 
 br([],B,B,C,C,_,D,D,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :-
 	!.
 br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
 %trace,
- maplist(t(BrDict,BrDict4),Words),!.
- 	%%).
+ findall([Word1,X,Y,Z],(member(W1,Words),t(BrDict,BrDict4,W1,[Word1,X,Y,Z])),Words1),
+ 
+ divide(1000,Words1,[],Words2),
+ findall(Words6,(member(U,Words2),
+ findall(["_=[",W,",",X,",",Y,",",Z,"]",","],(member([W,X,Y,Z],U)),U1),
+ flatten(U1,Words3),
+ append(Words4,[_],Words3),
+ flatten(["a:-",Words4,".\n"],Words5),
+ foldr(string_concat,Words5,Words6)),Words7),
+ foldr(string_concat,Words7,Words8),
+ string_concat("main:-findall(_,a,_).\n",Words8,Words9),
+ save_file_s("a.pl",Words9),
+ shell1_s("swipl --goal=main --stand_alone=true -o a -c a.pl"),
+ !.
+
+divide(_,[],Words2,Words2) :- !.
+divide(N,Words1,Words21,Words22) :-
+ length(L,N),
+ (append(L,L1,Words1)->L2=L;
+ (L2=Words1,L1=[])),
+ append(Words21,[L2],Words23),
+ divide(N,L1,Words23,Words22),!.
+
+  	%%).
 brth(_,sweetinvincibleandprayedfor).
 
 %% finds unknown words, asks for their br in form "n of m: word", verify, (can go back x) append and sort, save
