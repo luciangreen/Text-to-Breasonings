@@ -480,15 +480,17 @@ digits([X|Xs]) --> [X], {(char_type(X,digit)->true;(string_codes(Word2,[X]),Word
 %%digits([X]) --> [X], {(char_type(X,digit);(string_codes(Word2,[X]),Word2="."))}, !.
 digits([]) --> [].
 
-t(BrDict,BrDict4,Word,[Word1,X,Y,Z]) :-
+t(BrDict,BrDict4,Word,W2) :-
+ W1=[square,1,1,0],
  (member([Word,Word1],BrDict)->
- (member([Word1,X,Y,Z],BrDict4)->true;fail);fail).
+ (member([Word1,X,Y,Z],BrDict4)->W2=[Word1,X,Y,Z];W2=W1);W2=W1).
 
 br([],B,B,C,C,_,D,D,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :-
 	!.
 br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
 %trace,
  findall([Word1,X,Y,Z],(member(W1,Words),t(BrDict,BrDict4,W1,[Word1,X,Y,Z])),Words1),
+ length(Words1,Words1L),
  
  divide(1000,Words1,[],Words2),
  findall(Words6,(member(U,Words2),
@@ -498,7 +500,7 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
  flatten(["a:-",Words4,".\n"],Words5),
  foldr(string_concat,Words5,Words6)),Words7),
  foldr(string_concat,Words7,Words8),
- string_concat("main:-findall(_,a,_).\n",Words8,Words9),
+ foldr(string_concat,["%L=",Words1L,"\n","main:-findall(_,a,_).\n",Words8],Words9),
  save_file_s("a.pl",Words9),
  shell1_s("swipl --goal=main --stand_alone=true -o a -c a.pl"),
  !.
