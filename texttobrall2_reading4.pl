@@ -18,6 +18,8 @@ main:-texttobr2(u,"file.txt",u,u,[auto,on]).
 :-include('../listprologinterpreter/la_files.pl').
 :-include('../listprologinterpreter/la_strings.pl').
 
+:-dynamic sn/1.
+
 %:- include('../listprologinterpreter/la_strings').
 %:- include('../Philosophy/14 10 23.pl').
 
@@ -191,6 +193,7 @@ truncate(List1,M,String0) :-
 	
 prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03) :-
 	phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),
+	
 	%%Chars="’",
 	SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
@@ -232,6 +235,14 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	String001=Stringx1),
 	
 	process_t2b(String001,String00),
+	
+	%trace,
+	%string_codes(SNL0,String00),
+	split_string(String00,"\n\r.","\n\r.",SNL1),
+	delete(SNL1,"",SNL),
+	length(SNL,SN),
+	retractall(sn(_)),
+	assertz(sn(SN)),
 	
 	split_string(String00,SepandPad,SepandPad,List1),
 	%%split_string_onnonletter(String00,List1),
@@ -488,21 +499,57 @@ t(BrDict,BrDict4,Word,W2) :-
 br([],B,B,C,C,_,D,D,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :-
 	!.
 br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
+
 %trace,
  findall([Word1,X,Y,Z],(member(W1,Words),t(BrDict,BrDict4,W1,[Word1,X,Y,Z])),Words1),
  length(Words1,Words1L),
+ sn(SN),
  
  divide(1000,Words1,[],Words2),
- findall(Words6,(member(U,Words2),
- findall(["_=[",W,",",X,",",Y,",",Z,"]",","],(member([W,X,Y,Z],U)),U1),
+ length(Words2,Words2L),
+ numbers(Words2L,1,[],Words2Ns),
+ findall(Words6,(member(UN,Words2Ns),get_item_n(Words2,UN,U),
+ findall(["[",W,",",X,",",Y,",",Z,"]",","],(member([W,X,Y,Z],U)),U1),
  flatten(U1,Words3),
  append(Words4,[_],Words3),
- flatten(["a:-",Words4,".\n"],Words5),
+ flatten(["a",UN,"(",Words4,")"],Words5),
+ %trace,
  foldr(string_concat,Words5,Words6)),Words7),
- foldr(string_concat,Words7,Words8),
- foldr(string_concat,["%L=",Words1L,"\n","main:-findall(_,a,_).\n",Words8],Words9),
+ %foldr(string_concat,Words7,Words8),
+ 
+ findall([X1,",\n"],member(X1,Words7),X2),
+ flatten(["a:-",X2],X3),
+ append(X31,[_],X3),
+ foldr(string_concat,X31,Words8),
+
+ findall([X1,".\n"],member(X1,Words7),X21),
+ flatten(X21,X22),
+ foldr(string_concat,X22,Words81),
+ foldr(string_concat,["%SN=",SN,"\n","main:-a.\n",Words8,".\n",Words81],Words9),
  save_file_s("a.pl",Words9),
  shell1_s("swipl --goal=main --stand_alone=true -o a -c a.pl"),
+ 
+ %trace,
+ 
+ R is ceiling((3*4*16000)/SN), % medit, tt, medic, hq thoughts
+ 
+ %numbers(R,1,[],Rs),
+ length(Rs,R),
+ findall(["a",","],member(_R1,Rs),R2),
+ flatten(["b:-",R2],R3),
+ append(R31,[_],R3),
+  flatten(["%R=",R,"\n","main:-b.\n",R31,".\n",Words8,".\n",Words81],Words92),
+foldr(string_concat,Words92,RWords8),
+
+ %foldr(string_concat,Words91,RWords8),
+ save_file_s("b.pl",RWords8),
+ shell1_s("swipl --goal=main --stand_alone=true -o b -c b.pl"),
+
+ flatten([":-include('texttobr.pl').\n","main:-texttobr(",R,",\"../Lucian-Academy/algs/lgalgs_a.txt\",u,u).\n","texttobr(",R,",\"../Lucian-Academy/args/lgtext_a.txt\",u,u)."],Words93),
+foldr(string_concat,Words93,RWords81),
+ save_file_s("c.pl",RWords81),
+ shell1_s("swipl --goal=main --stand_alone=true -o c -c c.pl"),
+
  !.
 
 divide(_,[],Words2,Words2) :- !.
