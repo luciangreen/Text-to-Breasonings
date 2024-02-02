@@ -19,6 +19,7 @@ main:-texttobr2(u,"file.txt",u,u,[auto,on]).
 :-include('../listprologinterpreter/la_strings.pl').
 
 :-dynamic sn/1.
+:-dynamic f/1.
 
 %:- include('../listprologinterpreter/la_strings').
 %:- include('../Philosophy/14 10 23.pl').
@@ -235,6 +236,9 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	String001=Stringx1),
 	
 	process_t2b(String001,String00),
+
+	retractall(f(_)),
+	assertz(f(String00)),
 	
 	%trace,
 	%string_codes(SNL0,String00),
@@ -545,7 +549,8 @@ foldr(string_concat,Words92,RWords8),
  save_file_s("b.pl",RWords8),
  shell1_s("swipl --goal=main --stand_alone=true -o b -c b.pl"),
 
- flatten([":-include('texttobr.pl').\n","main:-texttobr(",R,",\"../Lucian-Academy/algs/lgalgs_a.txt\",u,u).\n","texttobr(",R,",\"../Lucian-Academy/args/lgtext_a.txt\",u,u)."],Words93),
+f(F),term_to_atom(F,F1),
+ flatten([":-include('texttobr.pl').\n","main:-texttobr(",R,",u,",F1,",u).\n"],Words93),
 foldr(string_concat,Words93,RWords81),
  save_file_s("c.pl",RWords81),
  shell1_s("swipl --goal=main --stand_alone=true -o c -c c.pl"),
