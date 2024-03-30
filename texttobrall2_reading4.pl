@@ -549,6 +549,26 @@ foldr(string_concat,Words92,RWords8),
  save_file_s("b.pl",RWords8),
  shell1_s("swipl --goal=main --stand_alone=true -o b -c b.pl"),
 
+
+% for attached people (to a single simulation person)
+
+ R0 is ceiling((4*16000)/SN), % medit, attached to sim, medic frozen age, hq thought
+
+ 
+ %numbers(R,1,[],Rs),
+ length(Rs0,R0),
+ findall(["a",","],member(_,Rs0),R20),
+ flatten(["b:-",R20],R30),
+ append(R310,[_],R30),
+  flatten(["%R=",R0,"\n","main:-b.\n",R310,".\n",Words8,".\n",Words81],Words920),
+foldr(string_concat,Words920,RWords80),
+
+ %foldr(string_concat,Words91,RWords8),
+ save_file_s("b0.pl",RWords80),
+ shell1_s("swipl --goal=main --stand_alone=true -o b0 -c b0.pl"),
+
+
+
 f(F),term_to_atom(F,F1),
  flatten([":-include('texttobr.pl').\n","main:-texttobr(",R,",u,",F1,",u).\n"],Words93),
 foldr(string_concat,Words93,RWords81),
@@ -569,9 +589,9 @@ divide(N,Words1,Words21,Words22) :-
 brth(_,sweetinvincibleandprayedfor).
 
 %% finds unknown words, asks for their br in form "n of m: word", verify, (can go back x) append and sort, save
-read_string1(S,user_input, "\n", "\r", _End, ObjectToFinishString) :-
+read_string1(S,user_input, "\n", "\r", _, ObjectToFinishString) :-
  (auto(on)->S=ObjectToFinishString;
- read_string(user_input, "\n", "\r", _End, ObjectToFinishString)),!.
+ read_string(user_input, "\n", "\r", _, ObjectToFinishString)),!.
 
 %/*
 process_t2b(A,C) :-
