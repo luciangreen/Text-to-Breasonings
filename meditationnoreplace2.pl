@@ -9,8 +9,8 @@
 :- include('texttobr2qb').
 %%:- include('texttobrqb').
 :- include('../listprologinterpreter/la_strings').
-:- include('mergetexttobrdict').
-:- include('edit.pl').
+%:- include('mergetexttobrdict').
+%:- include('edit.pl').
 %% Meditation.pl
 
 %% 14 5 19 - 250 for dot, point or utterance instance
