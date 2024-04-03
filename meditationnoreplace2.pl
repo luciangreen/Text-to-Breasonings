@@ -539,11 +539,11 @@ can_t_be_involuntarily_time_travelled
 		
 	findall(Meditators3,member([_,_,  _,_,_, _,_,_,_,_,_,immortal],Meditators),Meditators4),
 	
-	length(Immortality,I2),
-	Length4 is 3*10*I2,
+	length(Immortality,J2),
+	Length4 is 3*10*J2, % 3*10 see above
 	texttobr2_1(Length4),
 
-	Length5 is 3*10*192, % 192=4*50 As for medit, tt, age freezing medic
+	Length5 is 3*10*((4*4*50*80)/250), % medit, attached to sim, medic frozen age, hq thought
 	texttobr2_1(Length5),
 
 	length(Meditators4,ML4),
