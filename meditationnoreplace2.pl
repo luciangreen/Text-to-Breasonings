@@ -503,7 +503,9 @@ if_a_teacher_then_seen_as_leading_a_country,
 
 control_not_to_die,control_not_to_have_s_contact,control_not_to_leave_simulation,control_whether_appear_to_people,
 
-can_t_be_involuntarily_time_travelled
+can_t_be_involuntarily_time_travelled,
+
+ai_thoughts
 
 
 
@@ -543,7 +545,7 @@ can_t_be_involuntarily_time_travelled
 	Length4 is 3*10*J2, % 3*10 see above
 	texttobr2_1(Length4),
 
-	Length5 is 3*10*((4*4*50*80)/250), % medit, attached to sim, medic frozen age, hq thought
+	Length5 is 3*10*((4*4*50*80)/250), % medit, tt, medic frozen age, hq thought
 	texttobr2_1(Length5),
 
 	length(Meditators4,ML4),

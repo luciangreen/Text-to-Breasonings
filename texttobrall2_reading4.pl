@@ -552,7 +552,7 @@ foldr(string_concat,Words92,RWords8),
 
 % for attached people (to a single simulation person)
 
- R0 is ceiling((4*16000)/SN), % medit, attached to sim, medic frozen age, hq thought
+ R0 is ceiling((4*16000)/SN), % medit, tt, medic frozen age, hq thought
 
  
  %numbers(R,1,[],Rs),
