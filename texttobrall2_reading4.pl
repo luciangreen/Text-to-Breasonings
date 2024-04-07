@@ -1,4 +1,9 @@
-main:-texttobr2(u,"file.txt",u,u,[auto,on]).
+main:-catch(texttobr2(u,"file.txt",u,u,[auto,on]),Err,handle_error(Err)),halt.
+
+handle_error(_Err):-
+  halt(1).
+main :- halt(1).
+
 % ['../Text-to-Breasonings/text_to_breasonings.pl'].
 % W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W)
 % where W is the number of words to read
@@ -529,10 +534,11 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
  findall([X1,".\n"],member(X1,Words7),X21),
  flatten(X21,X22),
  foldr(string_concat,X22,Words81),
- foldr(string_concat,["%SN=",SN,"\n","main:-a.\n",Words8,".\n",Words81],Words9),
+ foldr(string_concat,["%SN=",SN,"\n","main:-catch(a,Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n",Words8,".\n",Words81],Words9),
  save_file_s("a.pl",Words9),
  shell1_s("swipl --goal=main --stand_alone=true -o a -c a.pl"),
  
+
  %trace,
  
  R is ceiling((3*4*16000)/SN), % medit, tt, medic, hq thoughts
@@ -542,7 +548,7 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
  findall(["a",","],member(_R1,Rs),R2),
  flatten(["b:-",R2],R3),
  append(R31,[_],R3),
-  flatten(["%R=",R,"\n","main:-b.\n",R31,".\n",Words8,".\n",Words81],Words92),
+  flatten(["%R=",R,"\n","main:-catch(b,Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n",R31,".\n",Words8,".\n",Words81],Words92),
 foldr(string_concat,Words92,RWords8),
 
  %foldr(string_concat,Words91,RWords8),
@@ -552,6 +558,7 @@ foldr(string_concat,Words92,RWords8),
 
 % for attached people (to a single simulation person)
 
+/*
  R0 is ceiling((4*16000)/SN), % medit, tt, medic frozen age, hq thought
 
  
@@ -566,14 +573,15 @@ foldr(string_concat,Words920,RWords80),
  %foldr(string_concat,Words91,RWords8),
  save_file_s("b0.pl",RWords80),
  shell1_s("swipl --goal=main --stand_alone=true -o b0 -c b0.pl"),
-
+*/
 
 
 f(F),term_to_atom(F,F1),
- flatten([":-include('texttobr.pl').\n","main:-texttobr(",R,",u,",F1,",u).\n"],Words93),
+ flatten([":-include('texttobr.pl').\n","main:-catch(texttobr(",R,",u,",F1,",u),Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n"],Words93),
 foldr(string_concat,Words93,RWords81),
  save_file_s("c.pl",RWords81),
  shell1_s("swipl --goal=main --stand_alone=true -o c -c c.pl"),
+
 
  !.
 
