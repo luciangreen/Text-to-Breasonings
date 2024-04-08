@@ -10,11 +10,11 @@ texttobr2_2(0):-!.
 texttobr2_2(N1):-
 	texttobr2,N2 is N1-1,texttobr2_2(N2),!.
 
-%texttobr2_a(A,_) :- A1 is 64*A, texttobr2_a2(A1).
+texttobr2_a(A,_) :- A1 is 64*A, texttobr2_a2(A1).
 
-%texttobr2_a(0,_):-!.
-%texttobr2_a(N1,A):-
-%	texttobr2(A,_),N2 is N1-1,texttobr2_a(N2,A),!.
+texttobr2_a2(0,_):-!.
+texttobr2_a2(N1,A):-
+	texttobr2(A,_),N2 is N1-1,texttobr2_a2(N2,A),!.
 
 texttobr2_1(A) :- A1 is 64*A, texttobr2_12(A1).
 
