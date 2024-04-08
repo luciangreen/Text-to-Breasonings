@@ -521,8 +521,9 @@ ai_and_ped_thoughts
 	length(Utterances2,UL2),
 	length(Meditators,ML),
 	%%Length2 is 3*2*32*16*(2*UL1+3*UL2), %% 3 for receiver, transmitter,  transmitted
-	Length2 is 4*3*10*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
+	Length2 is 4*3*10*64*(UL1+UL2), % 3 - A, B, B to B, 10 - simulate uni
 	% 4 - tt settings
+	% 64 to turn 250 into 16k
 	
 	%% 3 for receiver, transmitter,  transmitted
 	%% 2 radio buttons for ul2
