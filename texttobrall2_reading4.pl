@@ -241,10 +241,10 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	String001=Stringx1),
 	
 	process_t2b(String001,String00),
-
+	
 	retractall(f(_)),
 	assertz(f(String00)),
-	
+
 	%trace,
 	%string_codes(SNL0,String00),
 	split_string(String00,"\n\r.","\n\r.",SNL1),
@@ -257,6 +257,10 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	%%split_string_onnonletter(String00,List1),
 
 	truncate(List1,M,List),
+
+	%findall([X," "],member(X,List),Y),
+	%foldr(string_concat,Y,Y1),
+	
 
 	/**replace0(String0,[8221, 8220], 34, SepandPad, M, String1),
 	replace0(String1,[8216, 8217], 39, SepandPad, M, String2),
@@ -541,7 +545,7 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
 
  %trace,
  
- R is ceiling((3*4*16000)/SN), % medit, tt, medic, hq thoughts
+ R is ceiling((16000)/SN), % medit, tt, medic, hq thoughts
  
  %numbers(R,1,[],Rs),
  length(Rs,R),

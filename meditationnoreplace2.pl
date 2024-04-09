@@ -16,27 +16,11 @@
 %% 14 5 19 - 250 for dot, point or utterance instance
 
 meditation :-
-	%%File="I love you, I love you, I love you.  Arem.",
-	%% dailyregimen,noheadachesapp,nobodyproblemsapp,arem
-	DotsandUtterances is 4*108, %% With radio button for graciously give or blame and graciously give or blame
-	texttobr2_1(DotsandUtterances), %% arem
-	texttobr2_1(DotsandUtterances), %% lucian
-	texttobr2_1(DotsandUtterances), %% green
-	texttobr2_1(DotsandUtterances), %% yoga
-	texttobr2_1(DotsandUtterances), %% dao
 
-	texttobr2_1(DotsandUtterances), %% arem time travel leave loc 1
-texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 1
-texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 2
-texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 2
-texttobr2_1(DotsandUtterances), %% arem time travel leave loc 2
-texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 2
-texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 3
-texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 3
-texttobr2_1(DotsandUtterances), %% arem time travel leave loc 3
-texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 3
-texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 1
-texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 1
+meditation1(Utterances1,Utterances2,Immortality),
+meditation2(Utterances1,Utterances2,Immortality).
+
+meditation1(Utterances1,Utterances2,Immortality) :-
 
 	Utterances1=[%%dailyregimen and noheadaches,
 	time_travel,mind_reading,medicine,meditation,fish_oil,
@@ -509,7 +493,33 @@ ai_and_ped_thoughts
 
 
 
-],
+].
+
+meditation2(Utterances1,Utterances2,Immortality) :-
+
+	%%File="I love you, I love you, I love you.  Arem.",
+	%% dailyregimen,noheadachesapp,nobodyproblemsapp,arem
+	DotsandUtterances is 4*108, %% With radio button for graciously give or blame and graciously give or blame
+	texttobr2_1(DotsandUtterances), %% arem
+	texttobr2_1(DotsandUtterances), %% lucian
+	texttobr2_1(DotsandUtterances), %% green
+	texttobr2_1(DotsandUtterances), %% yoga
+	texttobr2_1(DotsandUtterances), %% dao
+
+	texttobr2_1(DotsandUtterances), %% arem time travel leave loc 1
+texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 1
+texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 2
+texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 2
+texttobr2_1(DotsandUtterances), %% arem time travel leave loc 2
+texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 2
+texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 3
+texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 3
+texttobr2_1(DotsandUtterances), %% arem time travel leave loc 3
+texttobr2_1(DotsandUtterances), %% friendliness time travel leave loc 3
+texttobr2_1(DotsandUtterances), %% arem time travel arrive loc 1
+texttobr2_1(DotsandUtterances), %% friendliness time travel arrive loc 1
+
+
 	%%noheadachesapp,nobodyproblemsapp,arem],
 	%% initiate_utterances(File,Utterances),
 	%% currentDate(Today),
@@ -540,7 +550,7 @@ ai_and_ped_thoughts
 	%% 32*4 for medicine, meditation in ayur veda, qi gong, memory
 	texttobr2_1(Length3),
 		
-	findall(Meditators3,member([_,_,  _,_,_, _,_,_,_,_,_,immortal],Meditators),Meditators4),
+	findall(_Meditators3,member([_,_,  _,_,_, _,_,_,_,_,_,immortal],Meditators),Meditators4),
 	
 	length(Immortality,J2),
 	Length4 is 3*10*J2, % 3*10 see above
@@ -553,31 +563,4 @@ ai_and_ped_thoughts
 	texttobr2_1(ML4),
 
 
-	!.%%,texttobr(Length2,u,File,u),!.
-	
-	/**, friendliness, medicine, 
-pedagogy,breasonings,quantumbox,lucianicmeditation,lm,meditation,qigongmantra,qigongsutra, yogamantra,yogasutrachildrenh1earningjobsprotectioninjobs,headsofstate,lucianmantrapureform,lucianmantrasunsafety,maharishisutra,meditationteachersutra,movingappearances,purusha,upasanasutra,yellowgod,greensutra,bluenature,appearances,pranayama,soma,hoursprayer,fiftybreasoningspersecond,meditationindicatorlowerriskofcancerandotherdiseasesinworkersandbroadcasters,meditationindicatordecreasedstress,meditationindicatorincreasedbloodflow,meditationincreasedbrainpotential,autobiography,computationalenglish,computerscience,economics,hermeneutics,
-**/
-/**,metaphysics,music,plays,popology,theology, **/
-
-	%% protect(File,Year,Month,Day,Meditators,[],Old),
-	%% writeln([oldmeditators,Old]),!.
-initiate_utterances(_File,[]) :- !.
-initiate_utterances(File,[_Utterances|Utterances]) :-
-		texttobr2_1(File),texttobr(File),
-		initiate_utterances(File,Utterances).
-protect(_File,_Year,_Month,_Day,[],Old1,Old1) :- !.
-protect(File,Year1,_Month1,_Day1,[Meditator|Meditators],Old1,Old2) :-
-	Meditator=[_FirstName,_LastName,_DayDOB,_MonthDOB,_YearDOB,_DayLearned,_MonthLearned,YearLearned],
-	Year2 is YearLearned+101,
-	(Year2=Year1->append(Old1,[Meditator],Old3);Old3=Old1),
-	texttobr2_1(File),texttobr(File), %% Sender
-	texttobr2_1(File),texttobr(File), %% Recipient
-	
-	protect(File,Year1,_Month,_Day,Meditators,Old3,Old2).
-currentDate(Today) :-
-    get_time(Stamp),
-    stamp_date_time(Stamp,DateTime,local),
-    date_time_value(date,DateTime,Today).
-
-%% Don't add medicine doctors 6 3 19 (medicinenoreplace.pl covers them)
+	!.
