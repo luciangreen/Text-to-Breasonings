@@ -545,7 +545,7 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
 
  %trace,
  
- R is ceiling((16000)/SN), % medit, tt, medic, hq thoughts
+ R is ceiling((4*16000)/SN), % medit, tt, medic, hq thoughts
  
  %numbers(R,1,[],Rs),
  length(Rs,R),
