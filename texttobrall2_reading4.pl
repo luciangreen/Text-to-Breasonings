@@ -1,4 +1,4 @@
-main:-catch(texttobr2(u,"file.txt",u,u,[auto,on]),Err,handle_error(Err)),halt.
+main_t2b4:-catch(texttobr2(u,"file.txt",u,u,[auto,on]),Err,handle_error(Err)),halt.
 
 handle_error(_Err):-
   halt(1).
