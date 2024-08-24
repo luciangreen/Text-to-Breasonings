@@ -137,6 +137,8 @@ brDict03t1(BrDict03t2),
  	*/
  	
  	length(List1,List1_length_a),
+ 	List1_length_a1 is List1_length_a*N,
+ 	t2b_br_adder(List1_length_a1),
  	Dividend_a is ceiling(List1_length_a/250),
  	Dividend_b is Dividend_a*3, % for graciously giving
  	texttobr2_a(Dividend_b,meditation),

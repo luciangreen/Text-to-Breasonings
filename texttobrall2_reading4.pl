@@ -138,6 +138,8 @@ findall(List3,(member(C,List1),downcase_atom(C,List2),atom_string(List2,List3)),
  	close(Stream8))))->true;true),
  	*/
  	length(List1,List1_length_a),
+ 	List1_length_a1 is List1_length_a*N,
+ 	t2b_br_adder(List1_length_a1),
  	Dividend_a is ceiling(List1_length_a/250),
  	Dividend_b is Dividend_a*3, % for graciously giving
  	texttobr2_a(Dividend_b,meditation),

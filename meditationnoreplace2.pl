@@ -489,7 +489,9 @@ control_not_to_die,control_not_to_have_s_contact,control_not_to_leave_simulation
 
 can_t_be_involuntarily_time_travelled,
 
-ai_and_ped_thoughts
+ai_and_ped_thoughts,
+
+death_preventer
 
 
 
