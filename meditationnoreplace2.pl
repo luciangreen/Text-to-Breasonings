@@ -491,7 +491,9 @@ can_t_be_involuntarily_time_travelled,
 
 ai_and_ped_thoughts,
 
-death_preventer
+death_preventer,
+
+announce_to_do_a_to_prevent_death_if_necessary
 
 
 
