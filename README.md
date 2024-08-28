@@ -91,7 +91,7 @@ Breason out the first two words in "a b c" ("a" and "b") 3 times.
 
 * In the SWI-Prolog environment, enter:
 `texttobr(N,File,String,M).`
-where N is the number of times to breason out the file, File is the file name, String is the string to breason out, and M is the number of words in the file to breason out, e.g.:
+where N is the number of times to breason out the file, File is the file name, String is the string to breason out, and M is the number of characters in the file to breason out, e.g.:
 * `texttobr(u,"file.txt",u,u).`
 Breasons out file.txt.
 * `texttobr(2,"file.txt",u,u).`
