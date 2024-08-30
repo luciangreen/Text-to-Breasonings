@@ -49,7 +49,8 @@ cd List-Prolog-Package-Manager
 swipl
 ['lppm'].
 lppm_install("luciangreen","Text-to-Breasonings").
-halt
+../
+halt.
 ```
 
 # Caution:
