@@ -1,2 +1,2 @@
-:- include('text_to_breasonings31.pl').
+:- include('text_to_breasonings3.pl').
 :- include('../listprologinterpreter/listprolog').
