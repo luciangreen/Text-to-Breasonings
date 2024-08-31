@@ -1,5 +1,5 @@
 :-include('../Text-to-Breasonings/texttobr.pl').
-:-include('../Text-to-Breasonings/texttobrall2_reading3.pl').
+:-include('../Text-to-Breasonings/texttobrall2_reading.pl').
 
 :- include('../Text-to-Breasonings/texttobr2qb').
 %%:- include('texttobrqb').

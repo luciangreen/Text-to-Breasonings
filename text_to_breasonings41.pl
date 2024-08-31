@@ -1,6 +1,5 @@
 :-include('../Text-to-Breasonings/texttobr.pl').
-:-include('../Text-to-Breasonings/texttobrall2_reading3.pl').
-
+:-include('../Text-to-Breasonings/texttobrall2_reading4.pl').
 :- include('../Text-to-Breasonings/texttobr2qb').
 %%:- include('texttobrqb').
 %:- include('../listprologinterpreter/la_strings').

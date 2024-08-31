@@ -18,10 +18,10 @@
 
 %% Brth is true or false
 texttobr2(N1,Filex1,Stringx1,M1) :-
-	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,off]).
+	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,off]),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,[auto,Auto]) :-
-	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,Auto]).
+	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,Auto]),!.
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish) :-
 	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
