@@ -493,7 +493,10 @@ ai_and_ped_thoughts,
 
 death_preventer,
 
-announce_to_do_a_to_prevent_death_if_necessary
+announce_to_do_a_to_prevent_death_if_necessary,
+
+fake_memory_identifier,
+fake_memory_canceller
 
 
 
