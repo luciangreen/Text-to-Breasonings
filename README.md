@@ -87,6 +87,8 @@ Breason out, "Hello world.".
 * `texttobr2(3,u,"a b c",2).`
 Breason out the first two words in "a b c" ("a" and "b") 3 times.
 
+* To breason out words automatically without needing to enter their objects and dimensions, enter `texttobr2(u,"file.txt",u,u,[auto,on]).` or with other settings.
+
 * (2) To breason out characters over a local machine in the SWI-Prolog environment, enter:
 `[texttobr].`
 
