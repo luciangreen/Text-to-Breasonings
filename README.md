@@ -67,11 +67,11 @@ halt.
 
 * In Shell:
 `cd Text-to-Breasonings`
-`swipl`
+`swipl --stack-limit=54G`
 
 * (1) To breason out words over a local machine and a VPS host in the SWI-Prolog environment, enter:
 `['../listprologinterpreter/listprolog'].`
-`[texttobr2].`
+`['text_to_breasonings.pl'].`
 
 * Please follow the instructions in <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Setting_up_a_VPS_with_TextToBr.txt">"Setting up a VPS with TextToBr.txt"</a> to set up a VPS with TextToBr up to and including "Upload them to the VPS's...".
 
@@ -90,9 +90,6 @@ Breason out the first two words in "a b c" ("a" and "b") 3 times.
 * To breason out words automatically without needing to enter their objects and dimensions, enter `texttobr2(u,"file.txt",u,u,[auto,on]).` or with other settings.
 
 * (2) To breason out characters over a local machine in the SWI-Prolog environment, enter:
-`[texttobr].`
-
-* In the SWI-Prolog environment, enter:
 `texttobr(N,File,String,M).`
 where N is the number of times to breason out the file, File is the file name, String is the string to breason out, and M is the number of characters in the file to breason out, e.g.:
 * `texttobr(u,"file.txt",u,u).`
