@@ -7,18 +7,18 @@ br1([[a,1,1.5,0],[about,1,1,0],[ache,1,0,0],[after,1,1,0],[all,1,1.5,0],[an,1,1.
 
 :-include('../Time_Machine/t2b_br_adder.pl').
 
-texttobr2(A) :- A1 is 250*A, t2b_br_adder(A1), texttobr2_2(A).
+texttobr2(A) :- A1 is 250*A, t2b_br_adder(A1), texttobr2_2(A),!.
 texttobr2_2(0):-!.
 texttobr2_2(N1):-
 	texttobr2,N2 is N1-1,texttobr2_2(N2),!.
 
-texttobr2_a(A,B) :- A1 is 250*A, t2b_br_adder(A1), texttobr2_a2(A,B).
+texttobr2_a(A,B) :- A1 is 250*A, t2b_br_adder(A1), texttobr2_a2(A,B),!.
 
 texttobr2_a2(0,_):-!.
 texttobr2_a2(N1,A):-
 	texttobr2(A,_),N2 is N1-1,texttobr2_a2(N2,A),!.
 
-texttobr2_1(A) :- A1 is 4*250*A, t2b_br_adder(A1), texttobr2_12(A).
+texttobr2_1(A) :- A1 is 4*250*A, t2b_br_adder(A1), texttobr2_12(A),!.
 
 texttobr2_12(0):-!.
 texttobr2_12(N1):-
