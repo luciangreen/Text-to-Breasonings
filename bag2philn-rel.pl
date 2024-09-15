@@ -115,9 +115,9 @@ relevant_sentence(Br,Br2,A,Keywords) :-
  delete(Br,A,Br2).
 
 get_keywords(L,KW,Connectives) :-
- Sep_and_pad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!0123456789",
+ %Sep_and_pad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!0123456789",
  downcase_atom(L,L1),
- split_string(L1,Sep_and_pad,Sep_and_pad,KW1),
+ split_string_on_non_alpha(L1,KW1),
  subtract(KW1,Connectives,KW).
  
 get_chain(0,Br,Br,_KW2,Ch,Ch,_Connectives) :- !.

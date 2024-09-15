@@ -249,7 +249,11 @@ concurrent(2,[(
 	
 	process_t2b(String001,String00),
 	
-	split_string(String00,SepandPad,SepandPad,List1),
+	split_string_on_non_alpha(String00,List1),	
+	
+	
+	
+	%split_string(String00,SepandPad,SepandPad,List1),
 	%%split_string_onnonletter(String00,List1),
 
 	test_p_woto(truncate(List1,M,List)),

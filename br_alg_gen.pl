@@ -32,8 +32,8 @@ br_gen2(File_string0,Raw,Chains).
 br_gen2(File_string0,Raw,Chains) :-
 
  downcase_atom(File_string0,File_string1),
- SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'\"0123456789",
- split_string(File_string1,SepandPad,SepandPad,File_string2),
+ %SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'\"0123456789",
+ split_string_on_non_alpha(File_string1,File_string2),
  
  % truncate file to N words
  Truncate_length=100,
@@ -102,8 +102,8 @@ br_alg_gen(Raw,Chains,Algorithms) :-
  phrase_from_file_s(string(File), "../Text-to-Breasonings/file.txt"),
  string_codes(File_string0,File),
  downcase_atom(File_string0,File_string1),
- SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'\"0123456789",
- split_string(File_string1,SepandPad,SepandPad,File_string2),
+ %SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'\"0123456789",
+ split_string_on_non_alpha(File_string1,File_string2),
  
  % truncate file to N words
  Truncate_length=100,
@@ -201,8 +201,8 @@ recursive_br_gen(Raw,Chains) :-
  phrase_from_file_s(string(File), "../Text-to-Breasonings/file.txt"),
  string_codes(File_string0,File),
  downcase_atom(File_string0,File_string1),
- SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'\"0123456789",
- split_string(File_string1,SepandPad,SepandPad,File_string2),
+ %SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'\"0123456789",
+ split_string_on_non_alpha(File_string1,File_string2),
  
  % truncate file to N words
  Truncate_length=100,

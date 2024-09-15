@@ -14,12 +14,12 @@
 truncate1(Type,File1,Words1,File2) :-
 		
 		
-SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
+%SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 
 	(Type=file->
 	(phrase_from_file_s(string(String2), File1));
 	(Type=string,File1=String2)),
-	split_string(String2,SepandPad,SepandPad,String3),
+	split_string_on_non_alpha(String2,String3),
 	%writeln(String3),
 	length(String3,Words2),
 	

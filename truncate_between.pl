@@ -15,12 +15,12 @@ truncate_between1(File1,Words_before,Words_during,File2) :-
 		
 		Words_total is Words_before+Words_during,
 		
-SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
+%SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 
 	(true->
 	(phrase_from_file_s(string(String2), File1));
 	_String1=String2),
-	split_string(String2,SepandPad,SepandPad,String3),
+	split_string_on_non_alpha(String2,String3),
 	%writeln(String3),
 	length(String3,Words2),
 	

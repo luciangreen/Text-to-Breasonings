@@ -159,7 +159,7 @@ replace00(Input1,Find,Replace,SepandPad,Input2,Input3) :-
 	string_codes(Input4,String1),
 	replace1(String1,Find,Replace,[],Input7),
 	string_codes(Output,Input7),
-	split_string(Output,SepandPad,SepandPad,Input8),
+	split_string_on_non_alpha(Output,Input8),
 	append(Input2,Input8,Input9),
 	replace00(Input5,Find,Replace,SepandPad,Input9,Input3), !.
 replace1([],_Find,_Replace,Input,Input) :- !.
@@ -203,7 +203,7 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),
 	
 	%%Chars="’",
-	SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
+	%SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
 %%writeln([brDict0,BrDict0]),
 %%writeln([brdict1]),
@@ -255,7 +255,7 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 	retractall(sn(_)),
 	assertz(sn(SN)),
 	
-	split_string(String00,SepandPad,SepandPad,List1),
+	split_string_on_non_alpha(String00,List1),
 	%%split_string_onnonletter(String00,List1),
 
 	truncate(List1,M,List),
