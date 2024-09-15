@@ -1,27 +1,36 @@
-% grammar_logic_to_alg2.pl instructions
+# *** before final submission
+# *** br with the first section before running, then run weekly 25 million
 
-% breason out file.txt using t2b
-% run gramm log
-% run gl2a
-% run t2b reading on gl2a output
+# DO NOT DO BR IF FOR THESIS YET
+
+# grammar_logic_to_alg2.pl instructions
+
+# breason out file.txt using t2b
+# run gramm log
+# run gl2a
+# run t2b reading on gl2a output
+
+
+# ** first section start
 
 cd GitHub/Text-to-Breasonings/
 
-%truncate -s 2000 file.txt
+# truncate -s 2000 file.txt
 
-swipl
+swipl --stack-limit=54G
 %['truncate.pl'].
-%truncate1("file.txt",14000,"file.txt").
-
-% ['truncate_words_conserving_formatting.pl'].
-%truncate_words_conserving_formatting(["file","file.txt"],14000,["file","file.txt"]).
+%truncate1("file.txt",u,"file.txt").
 
 ['text_to_breasonings.pl'].
-N=1,M=14000,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false).
+N=u,M=u,texttobr2(N,"file.txt",u,M,[auto,on]). % or off to enter breasonings (stop here before running rest).
+
+% N=1,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false,[auto,on]).
+
+%%** first section end
 
 % ******* STOP HERE, THEN DO BELOW
 
-N=1,M=14000,texttobr(N,"file.txt",u,M).
+N=u,M=u,texttobr(N,"file.txt",u,M).
 
 halt.
 
@@ -29,11 +38,11 @@ halt.
 
 cd ../Algorithm-Writer-with-Lists/
 
-swipl
+swipl --stack-limit=54G
 ['grammar_logic_to_alg.pl'].
 
-FileName2='./gl2a.txt',
-FileName3='gl2a.txt',
+FileName2="./gl2a.txt",
+FileName3="gl2a.txt",
 
 
 protocol(FileName2).
@@ -46,16 +55,17 @@ noprotocol.
 halt.
 
 
+
 cd ../Algorithm-Writer-with-Lists/
 
-swipl
+swipl --stack-limit=54G
 
 ['../Text-to-Breasonings/text_to_breasonings.pl'].
 
-FileName2='./gl2a.txt',
-FileName3='gl2a.txt',
+FileName2="./gl2a.txt",
+FileName3="gl2a.txt",
 
-time((W is 6*4,texttobr2(u,FileName3,u,u,false,false,false,false,false,false,W),texttobr(1,FileName3,u,u))).
+time((texttobr2(u,FileName3,u,16000,[auto,on]),texttobr(u,FileName3,u,u))).
 
 % atom_concat('echo "" | mutt -s "T Profs 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
 
@@ -67,34 +77,31 @@ halt.
 mv gl2a.txt ../Text-to-Breasonings/file.txt
 cd ../Algorithm-Writer-with-Lists/
 
-swipl
+swipl --stack-limit=54G
 ['grammar_logic_to_alg2.pl'].
 
-FileName2='./gl2a2.txt',
-FileName3='gl2a2.txt',
+FileName2="./gl2a2.txt",
+FileName3="gl2a2.txt",
 
 protocol(FileName2).
 notrace.
 
 grammar_logic_to_alg2(24).
 
-% ******* STOP HERE, THEN DO BELOW
 
 noprotocol.
 
+
 halt.
 
-%mv gl2a2.txt ../.
-%cd ../
-
-swipl
+swipl --stack-limit=54G
 
 ['../Text-to-Breasonings/text_to_breasonings.pl'].
 
-FileName2='./gl2a2.txt',
-FileName3='gl2a2.txt',
+FileName2="./gl2a2.txt",
+FileName3="gl2a2.txt",
 
-time((W is 6*4,texttobr2(u,FileName3,u,u,false,false,false,false,false,false,W),texttobr(1,FileName3,u,u))).
+time((texttobr2(u,FileName3,u,u,[auto,on]),texttobr(u,FileName3,u,u))).
 
 % atom_concat('echo "" | mutt -s "T Profs 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
 
