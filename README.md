@@ -162,6 +162,9 @@ W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 * Run Text to Breasonings with, i.e. "N=u,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false)." to check the dictionary file is not corrupt.
 <img width="1052" alt="Screen Shot 2019-12-13 at 10 53 25 pm" src="https://user-images.githubusercontent.com/15845542/70798790-f7d2b700-1dfb-11ea-9c37-8d4ab5976a9b.png">
 
+# Daily Regimen
+
+* Daily Regimen (<a href="README-Daily-Regimen.md">Read Me</a>) has merged with Text to Breasonings.
 
 # Versioning
 

@@ -1,0 +1,105 @@
+% grammar_logic_to_alg2.pl instructions
+
+% breason out file.txt using t2b
+% run gramm log
+% run gl2a
+% run t2b reading on gl2a output
+
+cd GitHub/Text-to-Breasonings/
+
+%truncate -s 2000 file.txt
+
+swipl
+%['truncate.pl'].
+%truncate1("file.txt",14000,"file.txt").
+
+% ['truncate_words_conserving_formatting.pl'].
+%truncate_words_conserving_formatting(["file","file.txt"],14000,["file","file.txt"]).
+
+['text_to_breasonings.pl'].
+N=1,M=14000,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false).
+
+% ******* STOP HERE, THEN DO BELOW
+
+N=1,M=14000,texttobr(N,"file.txt",u,M).
+
+halt.
+
+
+
+cd ../Algorithm-Writer-with-Lists/
+
+swipl
+['grammar_logic_to_alg.pl'].
+
+FileName2='./gl2a.txt',
+FileName3='gl2a.txt',
+
+
+protocol(FileName2).
+notrace.
+
+grammar_logic_to_alg1.
+
+noprotocol.
+
+halt.
+
+
+cd ../Algorithm-Writer-with-Lists/
+
+swipl
+
+['../Text-to-Breasonings/text_to_breasonings.pl'].
+
+FileName2='./gl2a.txt',
+FileName3='gl2a.txt',
+
+time((W is 6*4,texttobr2(u,FileName3,u,u,false,false,false,false,false,false,W),texttobr(1,FileName3,u,u))).
+
+% atom_concat('echo "" | mutt -s "T Profs 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
+
+% shell1(A1).
+
+halt.
+
+
+mv gl2a.txt ../Text-to-Breasonings/file.txt
+cd ../Algorithm-Writer-with-Lists/
+
+swipl
+['grammar_logic_to_alg2.pl'].
+
+FileName2='./gl2a2.txt',
+FileName3='gl2a2.txt',
+
+protocol(FileName2).
+notrace.
+
+grammar_logic_to_alg2(24).
+
+% ******* STOP HERE, THEN DO BELOW
+
+noprotocol.
+
+halt.
+
+%mv gl2a2.txt ../.
+%cd ../
+
+swipl
+
+['../Text-to-Breasonings/text_to_breasonings.pl'].
+
+FileName2='./gl2a2.txt',
+FileName3='gl2a2.txt',
+
+time((W is 6*4,texttobr2(u,FileName3,u,u,false,false,false,false,false,false,W),texttobr(1,FileName3,u,u))).
+
+% atom_concat('echo "" | mutt -s "T Profs 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
+
+%shell1(A1).
+
+halt.
+
+logout

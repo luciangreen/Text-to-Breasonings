@@ -1,0 +1,64 @@
+% LA com vps with det.txt - when do algorithms each day
+
+*** NOTE START AND END TIMES 2.51- before 3.58
+
+# ssh root@x.x.x.x -p x
+cd GitHub/Lucian-Academy
+
+swipl -G100g -T20g -L2g
+
+['la_com1.pl'].
+
+la_com1.
+
+
+halt.
+
+swipl -G100g -T20g -L2g
+
+['sectest_p.pl'].
+
+sectest_p.
+
+halt.
+
+
+cp politics_university.txt ../Text-to-Breasonings/file.txt
+cd ../Algorithm-Writer-with-Lists/
+
+swipl -G100g -T20g -L2g
+
+['../Algorithm-Writer-with-Lists/grammar_logic_to_alg.pl'].
+
+FileName2='./lacomfile1.txt',
+FileName3='lacomfile1.txt',
+
+
+protocol(FileName2).
+notrace.
+
+grammar_logic_to_alg1.
+
+noprotocol.
+
+halt.
+
+mv lacomfile1.txt ../Text-to-Breasonings/file.txt
+cd ../Text-to-Breasonings/
+
+swipl -G100g -T20g -L2g
+
+['../Text-to-Breasonings/text_to_breasonings.pl'].
+
+FileName2='./file.txt',
+FileName3='file.txt',
+
+time((W is 50*4,texttobr2(u,FileName3,u,u,false,false,false,false,false,false,W),texttobr(1,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "LA com 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+logout

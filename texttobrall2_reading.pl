@@ -14,6 +14,8 @@
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('../Text-to-Breasonings/mergetexttobrdict.pl').
+:-include('../Philosophy/debug_tools.pl').
+
 %:- include('../listprologinterpreter/la_strings').
 
 %% Brth is true or false
@@ -57,7 +59,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 	((number(M1),M=M1)->true;
 	M=all), %% If m1 is undefined or all then m=all
 
-	prep(List1,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03),
+	test_p_woto(prep(List1,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03)),
 	
 	retractall(n(_)),
 	assertz(n(N)),	
@@ -68,8 +70,9 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 	retractall(brDict03t(_)),
 	assertz(brDict03t(BrDict03t)),
 
-br2(List1,N),%,BrDict03,BrDict2,BrDict03t,BrDict03t2,N,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04),
+test_p_woto(br2(List1,N)),%,BrDict03,BrDict2,BrDict03t,BrDict03t2,N,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04),
 
+test_p_woto((
 brDict031(BrDict2),
 brDict03t1(BrDict03t2),
 	sort(BrDict2,BrDict3),
@@ -144,6 +147,7 @@ brDict03t1(BrDict03t2),
  	texttobr2_a(Dividend_b,meditation),
  	texttobr2_a(Dividend_b,medicine),
  	texttobr2_a(Dividend_b,pedagogy)
+ 	))
  	)),
  	
  	!.
@@ -207,7 +211,7 @@ concurrent(2,[(
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
 %%writeln([brDict0,BrDict0]),
 %%writeln([brdict1]),
-	splitfurther(BrDict0,BrDict01),
+	test_p_woto(splitfurther(BrDict0,BrDict01)),
 %%writeln([brDict01,BrDict01]),
 	%%char_code(Escape,27),
 	%%delete(BrDict01,[Escape,_,_,_,_],BrDict021),
@@ -225,7 +229,7 @@ concurrent(2,[(
 	%%Chars="’",
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
 %%writeln([brDict0,BrDict0]),
-	splitfurthert(BrDict0t,BrDict01t),
+	test_p_woto(splitfurthert(BrDict0t,BrDict01t)),
 %%writeln([brDict01,BrDict01]),
 	%%delete(BrDict01t,[Escape,_,_,_,_],BrDict021t),
 %%writeln([brDict021,BrDict021]),
@@ -248,7 +252,7 @@ concurrent(2,[(
 	split_string(String00,SepandPad,SepandPad,List1),
 	%%split_string_onnonletter(String00,List1),
 
-	truncate(List1,M,List),
+	test_p_woto(truncate(List1,M,List)),
 
 	/**replace0(String0,[8221, 8220], 34, SepandPad, M, String1),
 	replace0(String1,[8216, 8217], 39, SepandPad, M, String2),
@@ -412,11 +416,15 @@ br2(List1,N) :-
 %br2(_,A,A,B,B,0,_Brth,BrthDict03,BrthDict03,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :- !.
 %br2(List1,BrDict03,BrDict2,BrDict03t,BrDict03t2,N1,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
 	
-	length(NL,N),
-	findall(_,(member(_,NL),
-	(auto(on)->
-	concurrent_maplist(br,List1,_);
-	maplist(br,List1,_))),_),!.
+	test_p_woto(length(NL,N)),
+	test_p_woto(findall(_,(test_p_woto(member(_,NL)),
+	
+	findall(_,(member(A,
+ List1),test_p_woto(br(A,_))),_)),
+	%(test_p_woto(auto(on))->
+	%test_p_woto(maplist(br,List1,_));
+	%test_p_woto(maplist(br,List1,_))),
+	_)),!.
 	%***
 	
 %br(List1,BrDict03,BrDict21,BrDict03t,BrDict03t21,Brth,BrthDict03,BrthDict041,Room,RoomDict03,RoomDict041,PartOfRoom,PartOfRoomDict03,PartOfRoomDict041,Direction,DirectionDict03,DirectionDict041,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict041,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict041),
@@ -509,7 +517,7 @@ br(Word,_) :-
 %[],B,B,C,C,_,D,D,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :-
 	%!.
 %br([Word|Words],BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
-	downcase_atom(Word, Word2), atom_string(Word2,Word3),
+	test_p_woto((downcase_atom(Word, Word2), atom_string(Word2,Word3))),
 	
 	/*
 	words_to_read1(WR1),

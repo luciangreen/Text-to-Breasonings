@@ -1,0 +1,308 @@
+#% member(List,Item) (below) only works with deprecated lpi
+
+# ssh root@x.x.x.x -p x
+# cd ../var/www/lucianacademy.ml/
+
+cd GitHub/Text-to-Breasonings
+
+swipl -G100g -T20g -L2g
+
+%% LA.com hits
+
+['text_to_breasonings.pl'].
+texttobr2(4,"../Daily-Regimen/filekeeplacomhits.txt",u,u),texttobr(4,"../Daily-Regimen/filekeeplacomhits.txt",u,u).
+
+%% Give the thoughts to me (rb, gg or b, rb)
+
+['texttobr2qb'].
+texttobr2(3).
+
+halt.
+
+%% Meditation and Medicine
+
+swipl -G100g -T20g -L2g
+
+[meditationnoreplace].
+[meditatorsanddoctors].
+meditation.
+
+halt.
+swipl -G100g -T20g -L2g
+%%**[meditationnoreplace].
+
+%%**['cawplistprolog'].
+['../Daily-Regimen/rcawpspec.pl'].
+%%[medicinenoreplace].
+	
+%%medicine.
+
+%% Preparation for Mind Reading, (point at 100 algs per sentence x)
+
+leash(-all),visible(+all).
+protocol("./file.txt").
+rcawp1(1).
+
+noprotocol.
+
+
+%% ** Stop - close window x halt (last time I stopped 	)
+halt.
+swipl -G100g -T20g -L2g
+['text_to_breasonings.pl'].
+[meditatorsanddoctors].
+meditators(Meditators),doctors(Doctors),append(Meditators,Doctors,MeditatorsandDoctors),length(MeditatorsandDoctors,LengthMeditatorsandDoctors),
+
+time((N is 100*4, M is 4000,  F="../Daily-Regimen/file-meditations.txt",texttobr2(N,F,u,M,false,false,false,false,false,false),texttobr(N,F,u,M))).
+
+%% Give the meditators, etc. the As.
+
+[texttobr2qb].
+
+[meditatorsanddoctors].
+texttobr2(2). %% Head of state to enable mind reading
+meditators(Meditators),doctors(Doctors),append(Meditators,Doctors,MeditatorsandDoctors),length(MeditatorsandDoctors,LengthMeditatorsandDoctors1),
+
+LengthMeditatorsandDoctors2 is 3*LengthMeditatorsandDoctors1,
+texttobr2(LengthMeditatorsandDoctors2).
+
+halt.
+
+%% Security
+
+%% First half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./sfile1.txt',
+FileName3='sfile1.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestsec].
+
+sectest0.
+
+noprotocol.
+
+['text_to_breasonings.pl'].
+
+FileName2='./sfile1.txt',
+FileName3='sfile1.txt',
+
+time((texttobr2(u,FileName3,u,u,false,false,false,false,false,false),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Security 1" admin@domain.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+%% Second half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./sfile2.txt',
+FileName3='sfile2.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestsec].
+
+sectest1.
+
+noprotocol.
+
+['text_to_breasonings.pl'].
+
+FileName2='./sfile2.txt',
+FileName3='sfile2.txt',
+
+time((texttobr2(u,FileName3,u,u,false,false,false,false,false,false),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Security 2" admin@domain.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+%% Give the meditators, etc. the As.
+
+swipl -G100g -T20g -L2g
+
+[mindreadtestsec].
+
+[texttobr2qb].
+
+[meditatorsanddoctors].
+meditators(Meditators),doctors(Doctors),append(Meditators,Doctors,MeditatorsandDoctors),length(MeditatorsandDoctors,LengthMeditatorsandDoctors1),
+
+LengthMeditatorsandDoctors2 is 2*LengthMeditatorsandDoctors1,
+texttobr2(LengthMeditatorsandDoctors2).
+
+halt.
+
+%% *** Meditations
+
+
+%% first_person
+swipl -G100g -T20g -L2g
+['../listprologinterpreter/listprolog.pl'].
+[mindreadingcaw].
+caw00(off,[n,f],[[[n,append],2,1],[[n,delete],2,1],[[n,head],1,1],[[n,tail],1,1],[[n,member],1,1]],2,8,_InputVarList,_OutputVarList,[],_Program2,Ps1),Ps1=[[Query,Functions,_Result1]|_Rest],leash(-all),visible(+all),protocol("./first_person.txt"),trace,interpret(off,Query,Functions,_Result2),notrace,noprotocol.
+halt.
+swipl -G100g -T20g -L2g
+['text_to_breasonings.pl'].
+time((N is 3*2,%% 1 medit, 1 role, 1 degrees
+ M is 8000,  texttobr2(N,"first_person.txt",u,M,false,false,false,false,false,false),texttobr(N,"first_person.txt",u,M))).
+%% Give the meditator the As.
+[texttobr2qb].
+texttobr2(3). %% radio button for As, graciously give or blame, radio button for graciously give or blame
+atom_concat('echo "" | mutt -s "Meditations first_person" admin@domain.com -a first_person.txt','',A1),
+shell1(A1).
+halt.
+
+%% Psychiatrist
+
+%% First half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./pfile1.txt',
+FileName3='pfile1.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestpsychiatrist].
+[meditatorsanddoctors].
+
+sectest0.
+
+noprotocol.
+
+['text_to_breasonings.pl'].
+
+FileName2='./pfile1.txt',
+FileName3='pfile1.txt',
+
+time((texttobr2(u,FileName3,u,u,false,false,false,false,false,false),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Psychiatric Report 1" admin@domain.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+%% Second half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./pfile2.txt',
+FileName3='pfile2.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestpsychiatrist].
+[meditatorsanddoctors].
+
+sectest1.
+
+noprotocol.
+
+['../Text-to-Breasonings/text_to_breasonings.pl'].
+
+FileName2='./pfile2.txt',
+FileName3='pfile2.txt',
+
+time((texttobr2(u,FileName3,u,u),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Psychiatric Report 2" admin@domain.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+%% Give the meditators, etc. the As.
+
+swipl -G100g -T20g -L2g
+
+[mindreadtestsec].
+
+[texttobr2qb].
+
+[meditatorsanddoctors].
+meditators(Meditators),doctors(Doctors),append(Meditators,Doctors,MeditatorsandDoctors),length(MeditatorsandDoctors,LengthMeditatorsandDoctors1),
+
+LengthMeditatorsandDoctors2 is 2*LengthMeditatorsandDoctors1,
+texttobr2(LengthMeditatorsandDoctors2).
+
+halt.
+
+
+
+%% Thoughts
+
+%% First half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./tfile1.txt',
+FileName3='tfile1.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestsecthoughts].
+
+sectest0.
+
+noprotocol.
+
+['../Text-to-Breasonings/text_to_breasonings.pl'].
+
+FileName2='./tfile1.txt',
+FileName3='tfile1.txt',
+
+time((texttobr2(u,FileName3,u,u),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Thoughts 1" admin@domain.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+%% Second half
+
+swipl -G100g -T20g -L2g
+
+FileName2='./tfile2.txt',
+FileName3='tfile2.txt',
+
+protocol(FileName2).
+notrace.
+
+[mindreadtestsecthoughts].
+
+sectest1.
+
+noprotocol.
+
+['../Text-to-Breasonings/text_to_breasonings.pl'].
+
+FileName2='./tfile2.txt',
+FileName3='tfile2.txt',
+
+time((texttobr2(u,FileName3,u,u),texttobr(u,FileName3,u,u))),
+
+atom_concat('echo "" | mutt -s "Thoughts 2" admin@domain.com -a ',FileName3,A1),
+
+shell1(A1).
+
+halt.
+
+
+logout
