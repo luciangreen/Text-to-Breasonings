@@ -15,6 +15,10 @@
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :- include('../Text-to-Breasonings/mergetexttobrdict.pl').
 :-include('../Philosophy/debug_tools.pl').
+:-include('../Philosophy/decision_tree.pl').
+
+:-dynamic br_grid/1.
+:-dynamic br_grid_record/1.
 
 %:- include('../listprologinterpreter/la_strings').
 
@@ -59,8 +63,11 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 	((number(M1),M=M1)->true;
 	M=all), %% If m1 is undefined or all then m=all
 
+	retractall(br_grid_record(_)),
+	assertz(br_grid_record([])),
 	test_p_woto(prep(List1,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03)),
 	
+
 	retractall(n(_)),
 	assertz(n(N)),	
 	
@@ -419,16 +426,22 @@ brDict03t1(BrDict03t2) :- brDict03t(BrDict03t2).
 br2(List1,N) :-
 %br2(_,A,A,B,B,0,_Brth,BrthDict03,BrthDict03,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :- !.
 %br2(List1,BrDict03,BrDict2,BrDict03t,BrDict03t2,N1,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
-	
 	test_p_woto(length(NL,N)),
-	test_p_woto(findall(_,(test_p_woto(member(_,NL)),
 	
-	findall(_,(member(A,
- List1),test_p_woto(br(A,_))),_)),
+	frequency_list(List1,List2),
+	
+	findall(_,(member([F,A],
+ List2),test_p_woto(br(A,F,_))),_),
+	
+	br_grid_record(BGR),
+	
+	retractall(br_grid(_)),
+	assertz(br_grid(BGR)),
+	findall(_,(member(_,NL),br_grid(BGR)),_),!.
+
 	%(test_p_woto(auto(on))->
 	%test_p_woto(maplist(br,List1,_));
 	%test_p_woto(maplist(br,List1,_))),
-	_)),!.
 	%***
 	
 %br(List1,BrDict03,BrDict21,BrDict03t,BrDict03t21,Brth,BrthDict03,BrthDict041,Room,RoomDict03,RoomDict041,PartOfRoom,PartOfRoomDict03,PartOfRoomDict041,Direction,DirectionDict03,DirectionDict041,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict041,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict041),
@@ -517,7 +530,7 @@ digits([X|Xs]) --> [X], {(char_type(X,digit)->true;(string_codes(Word2,[X]),Word
 %%digits([X]) --> [X], {(char_type(X,digit);(string_codes(Word2,[X]),Word2="."))}, !.
 digits([]) --> [].
 
-br(Word,_) :-
+br(Word,Freq,_) :-
 %[],B,B,C,C,_,D,D,_Room,RoomDict03,RoomDict03,_PartOfRoom,PartOfRoomDict03,PartOfRoomDict03,_Direction,DirectionDict03,DirectionDict03,_ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict03,_ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict03) :-
 	%!.
 %br([Word|Words],BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict03,RoomDict04,PartOfRoom,PartOfRoomDict03,PartOfRoomDict04,Direction,DirectionDict03,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict03,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict03,ObjectToFinishDict04) :-
@@ -561,11 +574,20 @@ br(Word,_) :-
 
 brDict03t1(BrDict4),
 
-	(member([String53,_X,_Y,_Z],BrDict4)->
+	(member([String53,X,Y,Z],BrDict4)->
 	BrDict3t1=BrDict4;
 	((repeat,
 	write("Enter x, y and z in cm for "), writeln(String53),read_string1("1,1,1",user_input, "\n", "\r", _End, String),split_string(String, ",", " ", Values),Values=[X1,Y1,Z1],number_string(X,X1),number_string(Y,Y1),number_string(Z,Z1)),
 	append(BrDict4,[[String53,X,Y,Z]],BrDict3t1))),
+	
+	numbers(Freq,1,[],Freqs),
+	retractall(br_grid(_)),
+	assertz(br_grid([X,Y,Z])),
+	br_grid_record(BGR),
+	append(BGR,[[X,Y,Z]],BGR1),
+	retractall(br_grid_record(_)),
+	assertz(br_grid_record(BGR1)),
+	findall(_,(member(_,Freqs),br_grid([X,Y,Z])),_),
 	%%*brth(String53,_Brth2),
 	%%write("br(\'"),write(Word3),writeln("\',)."),
 %%	writeln([Word3,X,Y,Z]),
