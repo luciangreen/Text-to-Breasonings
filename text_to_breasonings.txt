@@ -15,18 +15,10 @@
 
 cd GitHub/Text-to-Breasonings/
 
-# truncate -s 2000 file.txt
-
 swipl --stack-limit=54G
-%['truncate.pl'].
-%truncate1("file.txt",u,"file.txt").
 
 ['text_to_breasonings.pl'].
 N=u,M=u,texttobr2(N,"file.txt",u,M,[auto,on]). % or off to enter breasonings (stop here before running rest).
-
-% N=1,M=u,texttobr2(N,"file.txt",u,M,false,false,false,false,false,false,[auto,on]).
-
-%%** first section end
 
 % ******* STOP HERE, THEN DO BELOW
 
@@ -40,73 +32,14 @@ cd ../Algorithm-Writer-with-Lists/
 
 swipl --stack-limit=54G
 ['grammar_logic_to_alg.pl'].
-
+['../Text-to-Breasonings/text_to_breasonings.pl'],
 FileName2="./gl2a.txt",
 FileName3="gl2a.txt",
-
-
 protocol(FileName2).
 notrace.
-
-grammar_logic_to_alg1.
-
-noprotocol.
-
+% Set Br to the desired limit of breasonings to breason out in the end/80.
+As is 4*50,Br is As*1,open_string_file_s("../Text-to-Breasonings/file.txt",Essay_0),grammar_logic_to_alg1(Essay_0,Br,GL_out1),term_to_atom(GL_out1,GL_out2),string_atom(GL_out,GL_out2),working_directory1(_,"../Text-to-Breasonings"),texttobr2(u,u,GL_out,u,[auto,on]),texttobr(u,u,GL_out,u).
+noprotocol,
 halt.
-
-
-
-cd ../Algorithm-Writer-with-Lists/
-
-swipl --stack-limit=54G
-
-['../Text-to-Breasonings/text_to_breasonings.pl'].
-
-FileName2="./gl2a.txt",
-FileName3="gl2a.txt",
-
-time((texttobr2(u,FileName3,u,16000,[auto,on]),texttobr(u,FileName3,u,u))).
-
-% atom_concat('echo "" | mutt -s "T Profs 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
-
-% shell1(A1).
-
-halt.
-
-
 mv gl2a.txt ../Text-to-Breasonings/file.txt
-cd ../Algorithm-Writer-with-Lists/
-
-swipl --stack-limit=54G
-['grammar_logic_to_alg2.pl'].
-
-FileName2="./gl2a2.txt",
-FileName3="gl2a2.txt",
-
-protocol(FileName2).
-notrace.
-
-grammar_logic_to_alg2(24).
-
-
-noprotocol.
-
-
-halt.
-
-swipl --stack-limit=54G
-
-['../Text-to-Breasonings/text_to_breasonings.pl'].
-
-FileName2="./gl2a2.txt",
-FileName3="gl2a2.txt",
-
-time((texttobr2(u,FileName3,u,u,[auto,on]),texttobr(u,FileName3,u,u))).
-
-% atom_concat('echo "" | mutt -s "T Profs 1" luciangreen@lucianacademy.com -a ',FileName3,A1),
-
-%shell1(A1).
-
-halt.
-
 logout
