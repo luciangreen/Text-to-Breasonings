@@ -14,12 +14,12 @@ findall(X,(member(X,List),not(string_concat("#",_,X)),not(X="")),Y),
 %try each command again 3 times if fails
 %report on progress
 findall(_,(member(Z,Y),bash_command1(Z)),_),
-writeln("Finished."),!.
+writeln_info("Finished."),!.
 
 bash_command1(Z) :- bash_command2(3,Z).
-bash_command2(1,Z) :- write("Failed: "),writeln_on_lines(Z),abort.
+bash_command2(1,Z) :- writeln_info("Failed: "),writeln_on_lines(Z),abort.
 bash_command2(N,Z) :-
- write("Trying: "),writeln_on_lines(Z),
+ writeln_info("Trying: "),writeln_on_lines(Z),
  catch(bash_command(Z,_),_,(N1 is N-1,bash_command2(N1,Z))),!.
  
-writeln_on_lines(C) :- atomic_list_concat(A,"\\n",C),atomic_list_concat(A,"\n",B),writeln(B),!.
+writeln_on_lines(C) :- atomic_list_concat(A,"\\n",C),atomic_list_concat(A,"\n",B),writeln_info(B),!.
