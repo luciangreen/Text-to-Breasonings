@@ -51,23 +51,23 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,O
 
 
 texttobr2_contents(N1,Filex1,Stringx1,M1) :-
-	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,off]),!.
+	texttobr2_contents(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,off]),!.
 
 texttobr2_contents(N1,Filex1,Stringx1,M1,[auto,Auto]) :-
-	texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,Auto]),!.
+	texttobr2_contents(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,Auto]),!.
 texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish) :-
-	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
+	texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0,[auto,off]),!.
 	
 texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,[auto,Auto]) :-
-	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
+	texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0,[auto,Auto]),!.
 
 texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,W) :-
-	texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,
+	texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0,[auto,off]),!.
 		
 texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read,[auto,Auto]) :-
