@@ -13,7 +13,7 @@ rename
 %% [edit].
 %% mergetexttobrdict.
 
-%%:- include('edit.pl').
+%%:-include('edit.pl').
 
 use_module(library(pio)).
 use_module(library(dcg/basics)).

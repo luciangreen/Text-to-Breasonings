@@ -903,8 +903,8 @@ three_dimensions_to_two_dimensions(AX,AY,AZ,CXX,CYY,CZZ,TX,TY,TZ,EX,EY,EZ,BX,BY)
 %% make predicates into dcgs with bottom case, to give input at any line x doesn't need to go back to any matching line, needs a single line x dcg would allow traversing tree structure x give a return to number as goes        %% if fails, back-tracks along track list x goes to return line in nested if thens%% returns to choice points when finishes predicates%% -3 if successfully finishes predicate x%% find_state_machine_body2(Body1,Body2,Return_line_true,Return_line_false,Pred_numbers) :-get_lang_word("n",Dbw_n1),Dbw_n1=Dbw_n,get_lang_word("not",Dbw_not1),Dbw_not1=Dbw_not,get_lang_word("exit_function",Dbw_exit_function1),Dbw_exit_function1=Dbw_exit_function,get_lang_word("fail_function",Dbw_fail_function1),Dbw_fail_function1=Dbw_fail_function,%%trace,        Body1=[[Number1,[Dbw_n,Dbw_not],Statement]|Statements2        ],      %trace,        find_first_line_number(Statement,Statement_number),(Statements2=[]->Statements2_number=Return_line_true;        find_first_line_number(Statements2,Statements2_number)),        %%%% swap args 3,4 ?        find_state_machine_body2([Statement],Body3,[Dbw_exit_function,Number1],[Dbw_fail_function,Number1],Pred_numbers),                %writeln1(Body3),        find_state_machine_body2([Statements2],Body4,Return_line_true,Return_line_false,Pred_numbers),        %%Number2 is Number1+1,        %writeln1(Body4),                %%if_empty_list_then_return(Statements2,Number2,Number3),  maplist(append,[[Body3,Body4]],[Body34]),get_lang_word("on_true",Dbw_on_true1),Dbw_on_true1=Dbw_on_true,get_lang_word("go_after",Dbw_go_after1),Dbw_go_after1=Dbw_go_after,get_lang_word("on_false",Dbw_on_false1),Dbw_on_false1=Dbw_on_false,get_lang_word("go_to_predicates",Dbw_go_to_predicates1),Dbw_go_to_predicates1=Dbw_go_to_predicates,  Body2a=[Number1,[Dbw_on_true,Statement_number],[Dbw_go_after,Return_line_false],  [Dbw_on_false,Statements2_number],[Dbw_go_to_predicates,-],  [Dbw_n,Dbw_not]],  append([Body2a],Body34,Body2),  %append([Body5],Body4      %  ,Body2),!.%% s1 and s2 may need separate line numbers for nondet for or%% find first line number in each of s1, s2%% account for brackets %% vars have separate list for nondet, splices existing listsfind_state_machine_body2(Body1,Body2,Return_line_true,Return_line_false,Pred_numbers) :-get_lang_word("n",Dbw_n1),Dbw_n1=Dbw_n,get_lang_word("or",Dbw_or1),Dbw_or1=Dbw_or,get_lang_word("exit_function",Dbw_exit_function1),Dbw_exit_function1=Dbw_exit_function,        Body1=[[Number,[Dbw_n,Dbw_or],[Statements1,Statements2]]|Statements3],  find_first_line_number(Statements1,Statements1_number),  find_first_line_number(Statements2,Statements2_number),(Statements3=[]->Statements3_number=Return_line_true;        find_first_line_number(Statements3,Statements3_number)),  find_state_machine_body2([Statements1],Body3,[Dbw_exit_function,Number],Statements2_number,Pred_numbers),        find_state_machine_body2([Statements2],Body4,[Dbw_exit_function,Number],Return_line_false,Pred_numbers),        find_state_machine_body2([Statements3],Body5,Return_line_true,Return_line_false,Pred_numbers),        %%Number2 is Number1+1,        %%if_empty_list_then_return(Statements3,Number2,Number3),        get_lang_word("on_true",Dbw_on_true1),Dbw_on_true1=Dbw_on_true,get_lang_word("go_after",Dbw_go_after1),Dbw_go_after1=Dbw_go_after,get_lang_word("on_false",Dbw_on_false1),Dbw_on_false1=Dbw_on_false,get_lang_word("go_to_predicates",Dbw_go_to_predicates1),Dbw_go_to_predicates1=Dbw_go_to_predicates,get_lang_word("n",Dbw_n1),Dbw_n1=Dbw_n,get_lang_word("or",Dbw_or1),Dbw_or1=Dbw_or,        maplist(append,[[Body3,Body4,Body5]],[Body345]),        Body6=[Number,[Dbw_on_true,Statements1_number],[Dbw_go_after,Statements3_number],[Dbw_on_false,Return_line_false],[Dbw_go_to_predicates,-],[Dbw_n,Dbw_or]],%Body34        %],        append([Body6],Body345,Body2),        !.
 %%%%%%%%%% Use base number unless a member of I1,D1already_member1(X1,X2,Insertions1,Deletions1,X) :-get_base_token_number(X1,%X%X11),get_base_token_number(X2,%X%X21),X11=X21,((member(X1,Insertions1)->true;member(X1,Deletions1))->X=X1;(X=X11)),!.
 %%%%%%%%%%%%%%findbest(R,R) :-!.findbest2(R,Item):-sort(R,RA),reverse(RA,RB),RB=[[_,Item]|_Rest].%%trialy2A([],R) :-%%R=[[_,'A']].%%trialy2A(List,R) :-%%random_member(A,List),%%R=[[_,A]].
-%%:- include('caw5 copy 12.pl').
-%%:- include('caw5 copy 12.pl').%%:- include('cawpverify.pl').
+%%:-include('caw5 copy 12.pl').
+%%:-include('caw5 copy 12.pl').%%:-include('cawpverify.pl').
 %%[[[n,add],[[v,a],[v,c],[v,d]],":-",[[[n,[]],[[v,a]]],[[n,=],[[v,c],[v,d]]]]]]%% Add cover all vars before returning%%**//** Doesn't work%% before now, io=21cawptest2(7,add0,[],2,3,5,% 3 x 5[1,2],[0,1],[[[[[[v,a],1],[[v,b],2]],[],true],[[[[v,a],2],[[v,b],1]],[],true]],%%[[[[[v,a],1],[[v,b],2]],[],true],[[[[v,a],2],[[v,b],1]],[],true]],[[[[[v,a],1]],[[[v,b],2]],true]],[[[[[v,a],2]],[[[v,b],1]],true]]],[ %% Algorithm dictionary        [[[n,a2],1,1],[[v,a],[v,b]],":-",        [       [[n,+],[[v,a],1,[v,c]]],                [[n,=],[[v,c],[v,b]]]]],        [[[n,a3],1,1],[[v,a],[v,b]],":-",        [       [[n,-],[[v,a],1,[v,c]]],                [[n,=],[[v,c],[v,b]]]]]],[ %% Result        [[n,a2],[[v,a],[v,b]],":-",        [       [[n,+],[[v,a],1,[v,c]]],                [[n,=],[[v,c],[v,b]]]]],        [[n,a3],[[v,a],[v,b]],":-",        [       [[n,-],[[v,a],1,[v,c]]],                [[n,=],[[v,c],[v,b]]]]],        [[n,add0],[[v,a],[v,b]],":-",        [       [[n,1],[[v,a],[v,b]]]]],                [[n,1],[[v,a],[v,b]],":-",        [       [[n,a2],[[v,a],[v,c]]],                [[n,=],[[v,c],[v,b]]]]],        [[n,1],[[v,a],[v,b]],":-",        [       [[n,a3],[[v,a],[v,c]]],                [[n,=],[[v,c],[v,b]]]]]]).
 %%strip2(A,B) :- strip(A,C),strip(C,B).
 %%writeln([eg1]),test(1,[[n,function],[1,1,[v,c]]],[        [[n,function],[[v,a],[v,b],[v,c]],":-",        [                [[n,+],[[v,a],[v,b],[v,c]]]        ]        ]],[[[[v,c], 2]]]).%%writeln([eg2]),test(2,[[n,function],[1,1,[v,c]]],[        [[n,function],[[v,a],[v,b],[v,c]],":-",        [                [[n,+],[[v,a],[v,b],[v,d]]],                [[n,+],[[v,d],1,[v,c]]]        ]        ]],[[[[v,c], 3]]]).
@@ -952,8 +952,8 @@ three_dimensions_to_two_dimensions(AX,AY,AZ,CXX,CYY,CZZ,TX,TY,TZ,EX,EY,EZ,BX,BY)
 /**critique(String00,String01,Reasons_per_paragraph,Numbers,Critique).
 :- http_handler('/landing2', landing_pad2, []).      landing_pad2(Request) :-              member(method(post), Request), !,              http_read_data(Request, Data, []),              format('Content-type: text/html~n~n', []),      format('<p>', []),%%writeln1(Data)%%lp(Data):-Data=[name=Name1,email=Email1,submit=_],string_atom(Name2,Name1),string_atom(Email2,Email1),phrase_from_file_s(string(String00a), "student_numbers1.txt"),string_codes(String02b,String00a),atom_to_term(String02b,String02a,[]),(member([Name3,Email2,Student_number3],String02a)->(concat_list(["The email address \"",Email2,"\" for \"",Name3,"\" has the student number \"",Student_number3,"\"."],String_a),writeln(String_a));(length(String02a,Length),Student_number3 is Length+1,append(String02a,[[Name2,Email2,Student_number3]],String02a_a),term_to_atom(String02a_a,String02a_b),string_atom(String02a_c,String02a_b),(open_s("student_numbers1.txt",write,Stream1),%%string_codes(BrDict3),write(Stream1,String02a_c),close(Stream1)),!,concat_list(["The email address \"",Email2,"\" for \"",Name2,"\" has the student number \"",Student_number3,"\"."],String_a),writeln(String_a))).
 :- http_handler('/move', move, []).move(Request) :-              member(method(post), Request), !,              http_read_data(Request, Data, []),format('Content-type: text/html~n~n', []),      format('<p>', []),        %%portray_clause(Data),                %%term_to_atom(Term,Data),%format(Data,[])        %/*%writeln1(Data)%/*Data=[%%debug='off',%%Debug1,text1=From,text2=To,text01=Path,submit=_],%term_to_atom(From,Text1),%term_to_atom(To,Text2),%term_to_atom(Path,Text01),%Mv="rsync -avz --remove-source-files ",Mv="mv ",concat_list([Mv,From," ",To],Command),shell1_s(Command),file_browser(Path).:- http_handler('/copy', copy, []).
-:- include('../listprologinterpreter/listprolog.pl').
-:- include('GitHub/Philosophy/philosophy/word_count.pl').
+:-include('../listprologinterpreter/listprolog.pl').
+:-include('GitHub/Philosophy/philosophy/word_count.pl').
 :-include('../listprologinterpreter/la_strings.pl').
 [debug]  ?- trace,                                                              delete_cp([[1,2,a],[2,3,b],[3,4,c]],[2,3,b],A,                                  [[curr_cp_index,4],[min_cp,1],[max_cp,4],[curr_cp,3]],V).
 [trace]  ?- trace,                                                              delete_cp([[1,2,a],[2,3,b],[3,4,c]],[3,4,c],A,                                  [[curr_cp_index,4],[min_cp,1],[max_cp,4],[curr_cp,3]],V).
@@ -1392,8 +1392,8 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 % Example usage:% ?- evaluate([[1,"+",1,"+",["1",+,"1"],+"1"],+,"1"], Result).% Result = 6.
 % Find %sub_term_wa([var,T3,R3,C3,IN3,V3,VN,TP3,RP3,CP3,INP3], A21, Instances1),/*findall([Address, [var,T3,R3,C3,IN3,V3,VN,TP3,RP3,CP3,INP3]],(member([Address, [var,T3,R3,C3,IN3,V3,VN,TP3,RP3,CP3,INP3]],Instances1)%,number(VN)),Instances1a),!. % variables and values*/% Poss values refers to TOTAL1 (a+b), TOTAL2 (total1+c), etc. after the poss variables a, b, c, etc.
 % Follows a path with directions along the pathstest_types_cases(59,[[n,tour_heartland],[[1,2]]],        [[[n,tour_heartland],[{[t,number]}]],[[n,tour_heartland1],[{{[t,number]}},{[t,number]}]],[[n,heartland],[{{[t,number]}}]]],                [[[n,tour_heartland],[input]],        [[n,tour_heartland1],[input,input]],        [[n,heartland],[output]]],[        [[n,tour_heartland],[[v,path]],":-",        [         [[n,heartland],[[v,heartland]]],         [[n,tour_heartland1],[[v,heartland],[v,path]]]        ]],        [[n,tour_heartland1],[[v,heartland],[]]],        [[n,tour_heartland1],[[v,heartland],[[v,single_step]]]],        [[n,tour_heartland1],[[v,heartland],[v,path]],":-",        [         [[n,equals4],[[v,path],[[v,curr_step],[v,next_step],"|",[v,rest]]]],         [[n,member],[[v,step],[v,heartland]]],         [[n,equals4],[[v,step],[[v,curr_step],"|",[v,links_to]]]],         [[n,member],[[v,next_step],[v,links_to]]],         [[n,equals4],[[v,next],[[v,next_step],"|",[v,rest]]]],         [[n,tour_heartland1],[[v,heartland],[v,next]]]        ]],        [[n,heartland],[[[1, % node number        2,3 % links to        ],[2,3],[3]]]]        ],[[]]).
-% GitHub:- include('grammar_logic_to_alg.pl').
-% GitHub/Algorithm-Writer-with-Lists/:- include('GitHub/SSI/ssi.pl').
+% GitHub:-include('grammar_logic_to_alg.pl').
+% GitHub/Algorithm-Writer-with-Lists/:-include('GitHub/SSI/ssi.pl').
 % Gives what is left to do:% extra_curricular([headache-medicine,music-number-one],B).
 % Graphs, returns true if point is inside a triangle/*edge(3, 3, 1, 1, 1, 3, 3, 2, 2, 2).
 % Helper predicate to collect consecutive elements with the same body and consecutive headscollect_consecutive(X, [], [X], []).
@@ -1646,7 +1646,7 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 % ontology_connection(a,b,all,[[all,[e,f]],[f,[a]],[e,[]],[all,[b]]],C).
 % open_not_between(1,6,5).
 % out of order items% also need geode (no repeating lists) detector% after writing these two predicates, can delete previous two gen_alg predicates% x don't need these two predicates, just run gen alg false for needed predicates, in accordance with above/*same_items([[t,list],[[_,_,_,2],[[t,list],[[_,_,_,1]]]]],[[t,list],[[[t,list],[[_,_,_,1]]],[_,_,_,2]]]).                                            true.
-% output:% [" For example  for an input using similar yet different enough phrases"" for the algorithm"," Also, she writer can find the complete set of non-synonymous words that take turns with a word"]%:- include('../listprologinterpreter/listprolog').
+% output:% [" For example  for an input using similar yet different enough phrases"" for the algorithm"," Also, she writer can find the complete set of non-synonymous words that take turns with a word"]%:-include('../listprologinterpreter/listprolog').
 % overtake([3,4,5,7,6],6,4,Result).
 % p("* **  ** ",PS).                                                  % PS = [1, 3, 7].p(String,PS) :- string_codes(String,String2), split_on_substring117(String2,` `,[],List1), p2(List1,1,[],PS).
 % paraphraser("the company contained the person",B).
@@ -1778,7 +1778,7 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 %% Brth is true or falset2ab(N1,Filex1,Stringx1,M1) :-t2ab(N1,Filex1,Stringx1,M1,0,off).t2ab(N1,Filex1,Stringx1,M1,Auto) :-t2ab(N1,Filex1,Stringx1,M1,0,Auto).
 %% Brth is true or falsetexttoalg(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish) :-((number(N1),N=N1)->true;(N1=u,N=1)),((Filex1=u,Filex="file.txt")->true;Filex=Filex1),((number(M1),M=M1)->true;M=all), %% If m1 is undefined or all then m=allprep(List1,BrDict03,BrDict03t,Filex,Stringx1,M),term_to_atom(List1,List1A),atom_string(List1A,List1B),string_concat(List1B,"\n\n",List1C),br2(List1,BrDict03,BrDict2,BrDict03t,BrDict03t2,1,List1C,Shell2,N,M,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish),sort(BrDict2,BrDict3),(BrDict03=BrDict3->true;(open_s("algdict1.txt",write,Stream),%%string_codes(BrDict3),term_to_atom(BrDict3,BrDict31),write(Stream,BrDict31),close(Stream))),sort(BrDict03t2,BrDict03t3),(BrDict03t=BrDict03t3->true;(open_s("algdict2.txt",write,Stream2),%%string_codes(BrDict3),term_to_atom(BrDict03t3,BrDict03t31),write(Stream2,BrDict03t31), close(Stream2))),  get_time(TS),stamp_date_time(TS,date(Year,Month,Day,Hour1,Minute1,Seconda,_A,_TZ,_False),local),concat_list("file",[Year,Month,Day,Hour1,Minute1,Seconda],File1),concat_list(File1,[".txt"],File2),(open_s(File2,write,Stream1),%%string_codes(BrDict3),write(Stream1,Shell2),close(Stream1)), !.
 %% Brth is true or falsetexttobr2(N1,Filex1,Stringx1,M1) :-texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,off]),!.texttobr2(N1,Filex1,Stringx1,M1,[auto,Auto]) :-texttobr2(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0,[auto,Auto]),!.
-%% Finds combinations of lines of philosophy%% *** Deprecated by Repository Lucian-Academy/combophil_alg_log.pl:-include('../listprologinterpreter/la_strings').
+%% Finds combinations of lines of philosophy%% *** Deprecated by Repository Lucian-Academy/combophil_alg_log.pl:-include('../listprologinterpreter/la_strings.pl').
 %% Finds the gradient m and y-intercept c of (X1,Y1) and (X2,Y2)equation2(_DY,0,999999999,_Y1,X1,X1) :-        !.
 %% Finds the gradient m and y-intercept c of _3d(X1,Y1) and _3d(X2,Y2)equation2_3d(_DY,0,999999999,_Y1,X1,X1) :-        !.
 %% Finds the graph of the line connecting the two points.  It does this by finding the graph flipped in the y=x line if the gradient m is greater than 1 or less than -1, so that the graph is not disjointedgridline2(X1,_Y1,X2,_Y2,M,C,C2,Grid,N3) :-M =< 1, M >= -1,%%x(X),%%X1 is X+1,gridline3(X1,X2,M,C,C2,Grid,N3,_X).
@@ -1817,7 +1817,7 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 %% Test individual cases, Debug=trace=on or off, N=case number, Passed=output=resulttest_types1(Debug,N,Passed) :-test_types_cases(N,Query,Types,Modes,Functions,Result),((international_interpret([lang,"en"],Debug,Query,Types,Modes,Functions,Result1),%writeln(Result1),Result=Result1)->(Passed=passed,writeln0([test_types,N,passed]));(Passed=failed,writeln0([test_types,N,failed]))),!.
 %% Truncates the list if m is not undefined and m is greater than or equal to the length of string0truncate(List1,M,String0) :-((number(M),length(String0,M),append(String0,_,List1))->true;String0=List1),!.
 %% Truncates the list if m is not undefined and m is greater than or equal to the length of string0truncate(List1,M,String0) :-((number(M),length(String0,M),append(String0,_,List1))->true;String0=List1),!.prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03) :-concurrent(2,[(phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),%%Chars="’",SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),%%writeln([brDict0,BrDict0]),%%writeln([brdict1]),splitfurther(BrDict0,BrDict01),%%writeln([brDict01,BrDict01]),%%char_code(Escape,27),%%delete(BrDict01,[Escape,_,_,_,_],BrDict021),%%writeln([brDict021,BrDict021]),%%char_code(Apostrophe,8217),%%delete(BrDict021,[Apostrophe,_,_,_,_],BrDict02),%%writeln([brDict02,BrDict02]),sort(BrDict01,BrDict03),%%writeln([brDict03,BrDict03]),length(BrDict03,Length0),write("Number of words in dictionary: "), writeln(Length0)),(%%writeln(''),%%writeln([brdict2]),phrase_from_file_s(string(BrDict0t), "../Text-to-Breasonings/brdict2.txt"),%%Chars="’",%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),%%writeln([brDict0,BrDict0]),splitfurthert(BrDict0t,BrDict01t),%%writeln([brDict01,BrDict01]),%%delete(BrDict01t,[Escape,_,_,_,_],BrDict021t),%%writeln([brDict021,BrDict021]),%%delete(BrDict021t,[Apostrophe,_,_,_,_],BrDict02t),%%writeln([brDict02,BrDict02]),sort(BrDict01t,BrDict03t),% br_freq%B=BrDict03t,A=BrDict03,findall([DL,C,"\n"],(member([C,_,_,_],B),findall(_,member([_,C],A),D),length(D,DL)),E),sort(E,F),reverse(F,G),writeln([br_freq,G]),%%writeln([brDict03,BrDict03]),length(BrDict03t,Length0t),write("Number of unique breasonings in dictionary: "), writeln(Length0t))],[]),((Stringx1=u,phrase_from_file_s(string(String001), Filex))->true;String001=Stringx1),process_t2b(String001,String00),split_string(String00,SepandPad,SepandPad,List1),%%split_string_onnonletter(String00,List1),truncate(List1,M,List),/**replace0(String0,[8221, 8220], 34, SepandPad, M, String1),replace0(String1,[8216, 8217], 39, SepandPad, M, String2),replace0(String2,[8259, 8211, 8212], 45, SepandPad, M, String3),replace0(String3,[160], 32, SepandPad, M, List),**/%%atom_codes(Atom999,String),writeln([atom999,Atom999]),%%writeln([list,List]),%%delete(List,Escape,List11),%%writeln([list11,List11]),%%delete(List11,Apostrophe,List1),%%writeln([list1,List1]),length(List,Length1),write("Number of words to breason out in file: "), writeln(Length1),sort(List,List2),%%writeln([list2,List2]),length(List2,Length2),write("Number of unique words in file: "), writeln(Length2),((Brth=true,phrase_from_file_s(string(BrthDict0), "../Text-to-Breasonings/brthdict.txt"),splitfurther(BrthDict0,BrthDict01),sort(BrthDict01,BrthDict03),length(BrthDict03,BrthLength0),write("Number of unique breathsonings in dictionary: "), writeln(BrthLength0))->true;true),((Room=true,phrase_from_file_s(string(RoomDict0), "../Text-to-Breasonings/roomdict.txt"),splitfurther(RoomDict0,RoomDict01),sort(RoomDict01,RoomDict03),length(RoomDict03,RoomLength0),write("Number of unique rooms in dictionary: "), writeln(RoomLength0))->true;true),((PartOfRoom=true,phrase_from_file_s(string(PartOfRoomDict0), "../Text-to-Breasonings/partofroomdict.txt"),splitfurther(PartOfRoomDict0,PartOfRoomDict01),sort(PartOfRoomDict01,PartOfRoomDict03),length(PartOfRoomDict03,PartOfRoomLength0),write("Number of unique parts of rooms in dictionary: "), writeln(PartOfRoomLength0))->true;true),((Direction=true,phrase_from_file_s(string(DirectionDict0), "../Text-to-Breasonings/directiondict.txt"),splitfurther(DirectionDict0,DirectionDict01),sort(DirectionDict01,DirectionDict03),length(DirectionDict03,DirectionLength0),write("Number of unique directions in dictionary: "), writeln(DirectionLength0))->true;true),((ObjectToPrepare=true,phrase_from_file_s(string(ObjectToPrepareDict0), "../Text-to-Breasonings/objecttopreparedict.txt"),splitfurther(ObjectToPrepareDict0,ObjectToPrepareDict01),sort(ObjectToPrepareDict01,ObjectToPrepareDict03),length(ObjectToPrepareDict03,ObjectToPrepareLength0),write("Number of unique objects to prepare in dictionary: "), writeln(ObjectToPrepareLength0))->true;true),((ObjectToFinish=true,phrase_from_file_s(string(ObjectToFinishDict0), "../Text-to-Breasonings/objecttofinishdict.txt"),splitfurther(ObjectToFinishDict0,ObjectToFinishDict01),sort(ObjectToFinishDict01,ObjectToFinishDict03),length(ObjectToFinishDict03,ObjectToFinishLength0),write("Number of unique objects to finish in dictionary: "), writeln(ObjectToFinishLength0))->true;true),(complete_display(true)->((Stringx1=u, %% Use file, not string as input.
-%% [[[a,*,*]],[[b,*,*],[c,d]],[[ef,*,*],[g],:-,[[[[h,*,*],[i]],->,true,or,true],!]]]use_module(library(pio)).use_module(library(dcg/basics)).:- include('la_strings.pl').
+%% [[[a,*,*]],[[b,*,*],[c,d]],[[ef,*,*],[g],:-,[[[[h,*,*],[i]],->,true,or,true],!]]]use_module(library(pio)).use_module(library(dcg/basics)).:-include('la_strings.pl').
 %% audience sizetest(37,[[n,length],[[1],0,[v,l]]],[        [[n,length],[[],[v,l],[v,l]]],        [[n,length],[[v,l],[v,m1],[v,n]],":-",        [       [[n,not],[[[n,=],[[v,l],[]]]]],                [[n,tail],[[v,l],[v,t]]],                [[n,+],[[v,m1],1,[v,m2]]],                [[n,length],[[v,t],[v,m2],[v,n]]]        ]        ]],[[[[v,l], 1]]]).%% Are their differences equal?test(38,[[n,optimise1],[[[5,4],[3,2],[1,0]],[v,d]]],[        [[n,optimise1],[[v,a],[v,b]],":-",        [       [[n,head],[[v,a],[v,h]]],                [[n,tail],[[v,a],[v,t]]],                [[n,equals1],[[v,h],[[v,h1],[v,h2]]]],                [[n,-],[[v,h1],[v,h2],[v,b]]],                [[n,"->"],[[[n,not],[[[n,=],[[v,t],[]]]]],                [[n,optimise1],[[v,t],[v,b]]],                [[n,true]]]]        ]]        ],[[[[v,d], 1]]]).test(39,[[n,member1a],[1,[1,2]]],[[[n,member1a],[[v,i1],[v,l]], ":-",[[[n,intersection2],[[v,i1],[v,l],[],[v,m]]]]],[[n,intersection2],[[v,a], [], [v,l], [v,l]]],[[n,intersection2],[[v,i1], [v,l1], [v,l2], [v,l3]], ":-",[[[n,head],[[v,l1],[v,i1]]],[[n,tail],[[v,l1],[v,l4]]],[[n,wrap],[[v,i1],[v,i11]]],[[n,append],[[v,l2],[v,i11],[v,l3]]]]],%%[[n,intersection2],[[v,i1], [v,l4], [v,l5], [v,l3]]]]],[[n,intersection2],[[v,i1], [v,l1], [v,l2], [v,l3]], ":-",[[[n,head],[[v,l1],[v,i2]]],[[n,tail],[[v,l1],[v,l4]]],[[n,not],[[[n,=],[[v,i1],[v,i2]]]]],[[n,intersection2],[[v,i1], [v,l4], [v,l2], [v,l3]]]]]],[[]]).
 %% c2lpconverter(S1),pp0(S1,S2),writeln(S2).
 %% c=f((g(2)), 1, 1)test(53,[[n,function],[[[n,function2],[2]],1,1,[v,c]]],%%test(53,[[n,getitemn],[1,[1,2,3],[v,bb]]],[        [[n,function],[[v,f1],[v,a],[v,b],[v,c]],":-",        [                [[n,equals1],[[v,f1],[[v,f11],[v,f12]]]],                [[n,getitemn],[1,[v,f12],[v,bb]]],                [[v,f11],[[v,bb],[v,d],[v,f]]],                [[n,+],[[v,a],[v,b],[v,e]]],                [[n,+],[[v,e],[v,f],[v,g]]],                [[n,+],[[v,g],[v,d],[v,c]]]        ]        ],        [[n,function2],[[v,bb],[v,a],[v,f]],":-",        [                [[n,is],[[v,a],[v,bb]]],                [[n,is],[[v,f],1]]        ]        ],        [[n,getitemn],[1,[v,b],[v,c]],":-",        [       [[n,head],[[v,b],[v,c]]]        ]],        [[n,getitemn],[[v,a],[v,b],[v,c]],":-",        [       [[n,not],[[[n,=],[[v,a],1]]]],                [[n,tail],[[v,b],[v,t]]],                [[n,-],[[v,a],1,[v,d]]],                [[n,getitemn],[[v,d],[v,t],[v,c]]]        ]]],[[[[v,c], 5]]]).
@@ -1902,12 +1902,12 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 %%%%/* interpretstatement1(ssi,_F0,_Functions,[[Dbw_n,Dbw_equals4_on]|_],Vars,Vars,true,nocut,[]) :- %writeln(here),interpretstatement1(non-ssi,_F0,_Functions,[[Dbw_n,Dbw_equals4_on]|_],Vars,Vars,true,nocut).
 %%%%count21(C) :- count2(C).
 %%%%*****cawptest2(6,function3,[],2,1,4,[2],[1],[[[[[[v,a],1],[[v,b],1]],[[[v,c],2]],true],[[[[v,a],1],[[v,b],2]],[[[v,c],3]],true],[[[[v,a],1],[[v,b],1]],[[[v,c],1]],fail],[[[[v,a],1],[[v,b],1]],[[[v,c],3]],fail]]],[ %% Algorithm dictionary[[[n,function1],2,1],[[v,a],[v,b],[v,c]],":-", [[[n,+],[[v,a],[v,b],[v,c]]]]]],[ %% Result[[n,function1],[[v,a],[v,b],[v,c]],":-",[[[n,+],[[v,a],[v,b],[v,c]]]]],[[n,function3],[[v,a],[v,b],[v,c]],":-",[[[n,function1],[[v,a],[v,b],[v,d]]],[[n,=],[[v,d],[v,c]]]]]]).
-%%**** load:`['../Text-to-Breasonings/text_to_breasonings.pl'].`%% this file:- include('../listprologinterpreter/la_strings').string(String) --> list(String).
+%%**** load:`['../Text-to-Breasonings/text_to_breasonings.pl'].`%% this file:-include('../listprologinterpreter/la_strings.pl').string(String) --> list(String).
 %%*del:Functions2,%% *** don't worry about sublevels, just level numbers x%ssi0% newer than comments in next section:% go to types, pred or lines pred % - whether this pred determines which to go to, or it is already decided x%  - * sm connects types at start - no call/exit preds, just goes to next item in sm,%    - types sm creator - checks types (do non types sm first)%  - * sm of preds (to clauses from calls, allowing backtracking)% - whether need call and exit preds, or do anyway x/**ssi1([Level,Sublevel,"predicate",Query,Predicate_numbers_finished,All_predicate_numbers],Functions1,Result1,Result2,Choice_point_trail1,Choice_point_trail2) :- append(Predicate_numbers_finished,Curr_predicate_queue,All_predicate_numbers), (Curr_predicate_queue=[]->  (% No other clauses of this predicate to try  % add to cps append(Choice_point_trail1,[[Level,Sublevel,"predicate",Query,Predicate_numbers_finished,All_predicate_numbers]],Choice_point_trail3),   %call first line%*   % when reach last line: %predicate finished, no more results from it  % if level 1 end x, call prev cp %- if not level 1 call prev lev - find var state of last line of prev lev - update vars %  ) ;( % Some clauses of this predicate left to try  % add to cps % call first line of pred,  % when reach last line, call next clause (dup vars *(one list for old results, one for curr results x label var results with cp, *sublevel at least x, also need ()x-predicate and line numbers*), add to new var list, delete cps back to pred call)  % * var results/cps saved from where began when try each clause, deleted back until and to when trying and failing respectively  )),  % * return from call-header to call first line x check types without being called by pred header (do separately) % * check types separately (and call, exit separately) from pred, line (after pred) % when call a pred from a line, use lpi_list_rec find_result etc % * predicates and lines have separate call and exit/fail preds% * second sm for types, pred, lines % when retries, deletes vars, cps up to and not including that call (*cps have sublevel to delete back until)call_first_line1() :-query_to_vars(), Sublevel2 is Sublevel1+1, ssi1([Level,Sublevel2,"line",1, % line number Query*,Predicate_numbers_finished,All_predicate_numbers],Functions1,Result1,Result2,Choice_point_trail1,Choice_point_trail2), query_to_vars(Query,) :-  %****  find_called_lines(Query,Functions1,Predicate_numbers), ssi_call(Query,Functions1,Predicate_numbers,Result1), true.
-%%:- include('distances.pl').
-%%:- include('distances.pl').:- use_module(library(date)).
-%%:- include('edit.pl').
-%%:- include(library(edit)).
+%%:-include('distances.pl').
+%%:-include('distances.pl').:- use_module(library(date)).
+%%:-include('edit.pl').
+%%:-include(library(edit)).
 %%:- use_module(library(time)).
 %%:- use_module(library(time)).%% Test cases, Debug=trace=on or off, NTotal=output=total cases, Score=output=resultp2lp_test(NTotal,Score) :- p2lp_test(0,NTotal,0,Score),!.
 %%:- use_module(library(time)).%% Test cases, Debug=trace=on or off, NTotal=output=total cases, Score=output=resulttest(Debug,NTotal,Score) :- test(Debug,0,NTotal,0,Score),!.
@@ -1987,11 +1987,11 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 %/*replace1(E3,Pred_ids2,E31,CP_Vars1,CP_Vars1) :-findall(M,(member(N,E3),((N=[A,B,C,D,E,L,"predicate",F,H,_J],(L= -1->true;L=["returns to", _, "pred_id", _]),member(C,Pred_ids2))->M=[A,B,C,D,E,L,"predicate",F,H,[]];M=N)),E31),!.
 %/*test(208,[[n,reverse1],[[1,2,3],[],[v,c],[v,b],[v,g]]],%[[[1,11,111],[2,22,222],[3,33,333]],[v,b]]],[[[n,reverse1],[[],[v,a],[v,c],[v,b],[v,a]]],[[n,reverse1],[[v,a],[v,b],[v,c],[v,f],[v,g]],":-",[[[n,head],[[v,a],[v,b1]]],[[n,tail],[[v,a],[v,c1]]],[[n,wrap],[[v,b1],[v,d]]],[[n,append],[[v,d],[v,b],[v,f]]],[[n,reverse1],[[v,c1],[v,f],[v,h],[v,j],[v,g]]]]]],[[[[v,b],[1]],[[v,g],[3,2,1]]]]).%*/test(209,[[n,a],[["a","b"],"",[v,a]]],[ % string concat[[n,a],[[],[v,a],[v,a]]],[[n,a],[[[v,e],"|",[v,d]],[v,b],[v,c]],":-",[%[[n,equals4],[]],[[n,stringconcat],[[v,b],[v,e],[v,f]]],[[n,a],[[v,d],[v,f],[v,c]]]]]],[[[[v,a],"ab"]]]).
 %14-8=6 left% complexity_from_findall([],C).
-%:- include('../listprologinterpreter/la_strings').
-%:- include('files/listprolog.pl').
-%:- include('files/listprolog.pl').run_lp_server(Port) :-        http_server(http_dispatch, [port(Port)]).
-%:- include('la_strings.pl').
-%:- include('musiclibrary').
+%:-include('../listprologinterpreter/la_strings.pl').
+%:-include('files/listprolog.pl').
+%:-include('files/listprolog.pl').run_lp_server(Port) :-        http_server(http_dispatch, [port(Port)]).
+%:-include('la_strings.pl').
+%:-include('musiclibrary').
 %:- initialization(catch(main, Err, handle_error(Err))).
 %:- set_prolog_flag(verbose, silent).
 %:- use_module(library(date)).
@@ -2156,7 +2156,7 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 */%:-include('../listprologinterpreter/listprolog.pl').
 *//* get_lang_word("n",Dbw_n1),Dbw_n1=Dbw_n,  get_lang_word("v",Dbw_v1),Dbw_v1=Dbw_v,get_lang_word("on_true",Dbw_on_true1),Dbw_on_true1=Dbw_on_true,get_lang_word("on_false",Dbw_on_false1),Dbw_on_false1=Dbw_on_false,get_lang_word("go_after",Dbw_go_after1),Dbw_go_after1=Dbw_go_after,get_lang_word("go_to_predicates",Dbw_go_to_predicates1),Dbw_go_to_predicates1=Dbw_go_to_predicates,*/% if exit or fail fn is in go after, find deepest extent of curr fn, through true, false, the same rule as above% otherwise, use furthest last end line% this works for all fnsget_last_line(Number,D,CL,A,E,Number2,F2,C,Arguments2) :-get_last_line2(Number,D,CL),CL=[Number2,[_Dbw_on_true,_],[_Dbw_go_after,_],[_Dbw_on_false,_],[_Dbw_go_to_predicates,_],[_Dbw_n_or_v1,F2]|Arguments2],append(A,C,D),C=[CL|E].
 *//*alg2types(Debug,Algs,Types) :-((not(lang(_Lang1))%var(Lang1))->(retractall(lang(_)), assertz(lang("en")));true),load_lang_db, findall([Alg,Types1],(member(Alg,Algs), (( Alg=[[n,Name],Arguments1%[[v,a],[v,b],[v,c]] ],  checkarguments(Arguments1,Arguments2,[],Vars1,[],FirstArgs), updatevars(FirstArgs,Vars2,[],Result),unique1(Result,[],Types1))->true; (               Alg=[[n,Name],Arguments1%[[v,a],[v,b],[v,c]] ,":-",        Body], %findall([A,A],member(A,Arguments1),FirstArgs), checkarguments(Arguments1,Arguments2,[],Vars1,[],FirstArgs), interpretbody([]%Functions0 ,[]%Functions ,[],Vars2,Body,_Result1), updatevars(FirstArgs,Vars2,[],Result),unique1(Result,[],Types1)))),Types2).
-*/:- include('../listprologinterpreter/listprolog').
+*/:-include('../listprologinterpreter/listprolog').
 */:-include('../../listprologinterpreter/listprolog.pl').
 */:-include('../Prolog-to-List-Prolog/p2lpconverter.pl').:-include('../SSI/ssi.pl').:-include('../List-Prolog-to-Prolog-Converter/lp2pconverter1.pl').
 */:-include('../Prolog-to-List-Prolog/p2lpconverter.pl').:-include('../listprologinterpreter/listprolog.pl').
@@ -2302,7 +2302,7 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 /**[debug]  ?- split_on_number("en 2",A,B).
 /**a ****b  *****c     ********/:-include('../../listprologinterpreter/la_strings.pl').:-include('../../listprologinterpreter/la_maths.pl').time_chart(Data,Chart) :-% find maximum label lengthfindall(Length,(member([_N1,_N2,Label1],Data),string_length(Label1,Length)),Lengths1),sort(Lengths1,Lengths2),reverse(Lengths2,[Maximum1|_Lengths3]),Maximum2 is Maximum1+1,% find time chartfindall([Label2,Chart1],(member([N1,N2,Label1],Data),label(Label1,Maximum2,Label2),chart(N1,N2,Chart1)),Chart3),maplist(append,[Chart3],[Chart4]),concat_list(Chart4,Chart),writeln(Chart).
 /**caw00(off,function3,[],5,7,[[[[a,1],[b,1]],[[c,2]],true],[[[a,1],[b,1]],[[c,2]],true],[[[a,1],[b,1]],[[c,1]],fail],[[[a,1],[b,1]],[[c,1]],fail]],[],Program),writeln(Program).
-/**caw00(off,function3,[],5,7,[[[[a,1],[b,1]],[[c,2]],true],[[[a,1],[b,1]],[[c,2]],true],[[[a,1],[b,1]],[[c,1]],fail],[[[a,1],[b,1]],[[c,1]],fail]],[],Program),writeln(Program).VarLists is in format list of [InputVarList,OutputVarList,Positivity], where these are specification lines that are either Positivity=true or failNotes:- true specification line in first position of varlists, otherwise will try all except the specification line- manually write a,a in algdict in a,b :- a,a,b because cawp would take too long finding all combinations including a,a- give argument values in order 3 2 1 not 1 2 3 when adding, or will try 1+1+1 instead of 3 at first**/%%:- include('algdict.pl').%%:- include('remove_duplicate_predicates.pl').
+/**caw00(off,function3,[],5,7,[[[[a,1],[b,1]],[[c,2]],true],[[[a,1],[b,1]],[[c,2]],true],[[[a,1],[b,1]],[[c,1]],fail],[[[a,1],[b,1]],[[c,1]],fail]],[],Program),writeln(Program).VarLists is in format list of [InputVarList,OutputVarList,Positivity], where these are specification lines that are either Positivity=true or failNotes:- true specification line in first position of varlists, otherwise will try all except the specification line- manually write a,a in algdict in a,b :- a,a,b because cawp would take too long finding all combinations including a,a- give argument values in order 3 2 1 not 1 2 3 when adding, or will try 1+1+1 instead of 3 at first**/%%:-include('algdict.pl').%%:-include('remove_duplicate_predicates.pl').
 /**combo of algswhat the alg is - phil desc - verb(object)how it will workdata?- find_new_algorithms.
 /**graph(1, 0, _).         *        *        *        *        *        *        *        *        *        *         graph(-1, 10, _).
 /**need to run test1(off,1,R). to load db before following.get_lang_word3(member1,"en","en2",A).
@@ -2382,28 +2382,28 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 12341234123412341234123412341234*/pretty_print_nd(Data):-findall(_,(member(Item,Data),((is_list(Item),Item=[Item1|_],is_list(Item1),Item1=[Item2|_],not(is_list(Item2)))->(pretty_print_table(Item),nl);pretty_print_nd(Item))),_).
 :- http_handler('/new_folder', new_folder1, []).
 :- http_handler('/return', return, []).
-:- include('../Text-to-Breasonings/texttobr2qb').
-:- include('../Text-to-Breasonings/texttobr2qb').%%:- include('texttobrqb').
-:- include('../listprologinterpreter/la_strings').
-:- include('../listprologinterpreter/la_strings.pl').
-:- include('../listprologinterpreter/la_strings.pl'). %% Move la_strings and the contents of the repository into the root folder:- include('la_com_marks.pl').
-:- include('../listprologinterpreter/listprolog').
-:- include('../listprologinterpreter/listprolog.pl').
-:- include('distances.pl').
-:- include('distances.pl').:- use_module(library(date)).
-:- include('files/Combination-Algorithm-Writer-Stable/listprologinterpreter1listrecursion4copy52.pl').
-:- include('files/la_strings.pl').
-:- include('files/listprolog.pl').
-:- include('grammar.pl').
-:- include('la_com1.pl').
-:- include('la_strings.pl').
-:- include('la_strings.pl').%:- include('la_strings.pl'). %% Move la_strings and the contents of the repository into the root folderlppm_start_server(Port) :-        http_server(http_dispatch, [port(Port)]).
-:- include('meditationnoreplace.pl').
-:- include('mindreadtestmusiccomposer-unusual-ui-rhythm.pl').%mindreadtestmusiccomposer-unusual-mr-tree.pl').
-:- include('musiclibrary').
-:- include('word_frequency_count.pl').
+:-include('../Text-to-Breasonings/texttobr2qb').
+:-include('../Text-to-Breasonings/texttobr2qb').%%:-include('texttobrqb').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('../listprologinterpreter/la_strings.pl'). %% Move la_strings and the contents of the repository into the root folder:-include('la_com_marks.pl').
+:-include('../listprologinterpreter/listprolog').
+:-include('../listprologinterpreter/listprolog.pl').
+:-include('distances.pl').
+:-include('distances.pl').:- use_module(library(date)).
+:-include('files/Combination-Algorithm-Writer-Stable/listprologinterpreter1listrecursion4copy52.pl').
+:-include('files/la_strings.pl').
+:-include('files/listprolog.pl').
+:-include('grammar.pl').
+:-include('la_com1.pl').
+:-include('la_strings.pl').
+:-include('la_strings.pl').%:-include('la_strings.pl'). %% Move la_strings and the contents of the repository into the root folderlppm_start_server(Port) :-        http_server(http_dispatch, [port(Port)]).
+:-include('meditationnoreplace.pl').
+:-include('mindreadtestmusiccomposer-unusual-ui-rhythm.pl').%mindreadtestmusiccomposer-unusual-mr-tree.pl').
+:-include('musiclibrary').
+:-include('word_frequency_count.pl').
 :- use_module(library(date)).
-:- use_module(library(date)).:- include('mindreadtestshared').
+:- use_module(library(date)).:-include('mindreadtestshared').
 :- use_module(library(http/thread_httpd)).
 :-include("../../listprologinterpreter/la_strings.pl").
 :-include('../../listprologinterpreter/la_maths.pl').
@@ -2483,7 +2483,7 @@ write_heading(String01,Heading) :-concat_list([String01,"\n","\n"],Heading).
 ?- trace,                                                              time_proportion(0,0,0,1,0,0,1,30,0,P).
 ?- trytranslations1([['I love you.-1','I love you3.']],'en','fr',false,Flag,[],O,_,O2).
 A = 2,B = 7,C = 6,D = 9,E = 5,F = 1,G = 4,H = 3,I = 8 ;*/magic_square([A,B,C, D,E,F, G,H,I]) :-permutation([1,2,3,4,5,6,7,8,9],[A,B,C, D,E,F, G,H,I]),J is A+B+C,J is D+E+F,J is G+H+I,J is A+D+G,J is B+E+H,J is C+F+I,J is A+E+I,J is G+E+C.
-Algorithm2= [[[n,f1],[[v,a],[v,b],[v,c],[v,d],[v,e]],":-",[[[n,+],[[v,a],[v,b],[v,f]]],[[n,+],[[v,c],[v,f],[v,g]]],[[n,+],[[v,d],[v,g],[v,h]]],[[n,=],[[v,h],[v,e]]]]]]**/:- include('la_strings.pl').
+Algorithm2= [[[n,f1],[[v,a],[v,b],[v,c],[v,d],[v,e]],":-",[[[n,+],[[v,a],[v,b],[v,f]]],[[n,+],[[v,c],[v,f],[v,g]]],[[n,+],[[v,d],[v,g],[v,h]]],[[n,=],[[v,h],[v,e]]]]]]**/:-include('la_strings.pl').
 B=[[0,[n,downpipe],[[v,a],[v,a],[v,b]]],[1,[n,downpipe],[[v,a],[v,b],[v,c]],":-",[[0,["on true",1],["go after",-],["on false",-3],["go to predicates",-],[n,member2],[[v,c],[v,c1]]],[1,["on true",2],["go after",-],["on false",-3],["go to predicates",-],[n,equals1],[[v,c1]]],[2,["on true",3],["go after",-],["on false",-3],["go to predicates",-],[n,equals1],[[v,c12]]],[3,["on true",4],["go after",-2],["on false",-3],[n,"->"]],[4,["on true",5],["go after",-],["on false",6],["go to predicates",-],[n,>],[[v,a],[v,c121]]],[5,["on true",[end_function,3]],["go after",-],["on false",-3],["go to predicates",[0,1]],[n,downpipe],[[v,c121],[v,b],[v,c]]],[6,["on true",7],["go after",[end_function,3]],["on false",-3],[n,"->"]],[7,["on true",8],["go after",-],["on false",9],["go to predicates",-],[n,>],[[v,a],[v,c122]]],[8,["on true",[end_function,6]],["go after",-],["on false",-3],["go to predicates",[0,1]],[n,downpipe],[[v,c122],[v,b],[v,c]]],[9,["on true",[end_function,6]],["go after",-],["on false",-3],["go to predicates",-],[n,fail]]]]]***A=[        [[n,reverse],[[],[v,l],[v,l]]],        [[n,reverse],[[v,l],[v,m],[v,n]],":-",        [       [[n,head],[[v,l],[v,h]]],                [[n,tail],[[v,l],[v,t]]],                [[n,wrap],[[v,h],[v,h1]]],                [[n,append],[[v,h1],[v,m],[v,o]]],                [[n,reverse],[[v,t],[v,o],[v,n]]]        ]        ]],add_line_numbers_to_algorithm1(A,A2),writeln1(A2).
 B=[[0,[n,reverse],[[],[v,l],[v,l]]],[1,[n,reverse],[[v,l],[v,m],[v,n]],":-",[[0,["on true",1],["go after",-],["on false",-3],["go to predicates",-],[n,head],[[v,l],[v,h]]],[1,["on true",2],["go after",-],["on false",-3],["go to predicates",-],[n,tail],[[v,l],[v,t]]],[2,["on true",3],["go after",-],["on false",-3],["go to predicates",-],[n,wrap],[[v,h],[v,h1]]],[3,["on true",4],["go after",-],["on false",-3],["go to predicates",-],[n,append],[[v,h1],[v,m],[v,o]]],[4,["on true",-2],["go after",-],["on false",-3],["go to predicates",-],[n,reverse],[[v,t],[v,o],[v,n]]]]]][debug]  ?- test(77,_,C,_),add_line_numbers_to_algorithm1(C,D),writeln1(C),writeln1(D).
 Dear Quentin Guache,Could you please send the parcel code 001 to me by the end April?Yours Sincerely,Harry Jones*/letter1(Letter):-letter(to,To),letter(address,Address),letter(suburb,Suburb),letter(postcode,Postcode),letter(date,Date),letter(message,Message),letter(dear,Dear),letter(yours_sincerely,Yours_sincerely),letter(from,From),letter(from_address,From_address),letter(from_suburb,From_suburb),letter(from_postcode,From_postcode),foldr(string_concat,[From,"\n",From_address,",\n",From_suburb,",\n",From_postcode,".\n\n",Date,".\n\n",To,"\n",Address,",\n",Suburb,",\n",Postcode,".\n\n",Dear," ",To,",\n\n",Message,"\n\n",Yours_sincerely,",\n\n",From],Letter).
@@ -2493,7 +2493,7 @@ L = [[a, "b"], c, "d", "e", [[]], f] ;compile_list([a,"b"],N1,S1),compile_list([
 L = [] compile_list([a,"b"],N1,S1),compile_list(["a",b],N2,S2),append_iio(N1,S1,N2,S2,N3,S3),uncompile_list(N3,S3,L).
 Load files with load(File_name,Term), where File_name is the file name in folder folder_name and Term is the contents loaded from the file.
 NOT:turn_save_debug(on),numbers(13,13,[],N),findall(N1,(member(N1,N),test(N1,Q,F,R1),do_saved_debug([]),interpret(on,Q,F,R2),saved_debug(S1),writeln1([s,S1]),writeln(""),do_saved_debug([]),catch(call_with_time_limit(3,lucianpl(on,Q,F,R3)),_,false),saved_debug(S2),writeln([s,S2]),S1=S2,do_saved_debug([]),writeln(N1),writeln("")),N2),sort(N2,N3),writeln(N3),length(N3,L),subtract(N,N3,U),writeln(U).
-VarLists is in format list of [InputVarList,OutputVarList,Positivity], where these are specification lines that are either Positivity=true or failNotes:- true specification line in first position of varlists, otherwise will try all except the specification line- manually write a,a in algdict in a,b :- a,a,b because cawp would take too long finding all combinations including a,a- give argument values in order 3 2 1 not 1 2 3 when adding, or will try 1+1+1 instead of 3 at first**/%%:- include('algdict.pl').%%:- include('remove_duplicate_predicates.pl').
+VarLists is in format list of [InputVarList,OutputVarList,Positivity], where these are specification lines that are either Positivity=true or failNotes:- true specification line in first position of varlists, otherwise will try all except the specification line- manually write a,a in algdict in a,b :- a,a,b because cawp would take too long finding all combinations including a,a- give argument values in order 3 2 1 not 1 2 3 when adding, or will try 1+1+1 instead of 3 at first**/%%:-include('algdict.pl').%%:-include('remove_duplicate_predicates.pl').
 X:[debug]  ?- a([q,e,r,a,t,y,u,c,b,x,v,n],[1,1,[c,a,t,y,u]],[1,2,[b,x,u]]).
 X:[debug]  ?- a([q,e,r,a,t,y,u,c,b,x,v,n],[1,1,[c,a,t,y,u]],[1,2,[b,x,u]]).[[1,1,[c,a,t,y,u]],[r,a,t,y,u]][[1,2,[b,x,u]],[c,b,x]]true.
 X:[debug]  ?- a([q,e,r,a,t,y,u,c,b,x,v,n],[1,1,[c,a,t,y,u]],[1,2,[b,x,u]]).[[1,1,[c,a,t,y,u]],[r,a,t,y,u]][[1,2,[b,x,u]],[c,b,x]]true.[debug]  ?- a([q,e,r,a,t,y,u,c,c,c,b,x,v,n],[1,1,[c,a,t,y,u]],[1,2,[b,x,v]]).                   [[1,1,[c,a,t,y,u]],[r,a,t,y,u]][[1,2,[b,x,v]],[c,c,c]]true.
@@ -4994,7 +4994,7 @@ year_of_birth(albert, 1926).
  % *2(F):-F=[2]  % *([1],[1])=*(A,B):-*1(A),*2(B). *1,2([1]). x % *([1,2],C)=*(A,C):-*1(A,[],A1),A1=C. where C=[2,1]. % *1([],A,A). *1(A,B,C):-A=[D1,D2|E],D1=1,D2=2,append(B,[D2,D1],F),*1(E,F,C).
  % append(A,B,[1,2]). x[[n,stringconcat123],[[string,string],[string]]], % string("1","2",A).
  % delete non loop clauses %foldr(put_sub_term_wa_ae,D,C,B).
- % leave off:-include('../culturaltranslationtool/ctt2.pl'). % turn back on:-include('data.pl').:-include('lang_db_generator-nonabort.pl'). %:- include('translate4.pl').
+ % leave off:-include('../culturaltranslationtool/ctt2.pl'). % turn back on:-include('data.pl').:-include('lang_db_generator-nonabort.pl'). %:-include('translate4.pl').
  % put into stwa with types, mergesub_term_wa2(Ns1,Ns2,N,A,Find,B,C,First) :- stwa(%[ C0%,Find] ), (((C0=find,First=true,not(Ns1=[_]))->(A=Find->append(B,[[Ns1,A]],C);fail); ((C0=types,First=true%,not(Ns1=[_]) )->(is_t(Find,A,First,true)->append(B,[[Ns1,A]],C)) ))->true; (not(find_first(is_list(A))), sub_term_wa3(Ns1,Ns2,N,A,Find,B,C,First))),!.
  %(A=C->C=B; %remove_first_outer_bracket_chars(C,B)),!.
  %*/process_put_in_order(B1,B,Num):- string_strings(B1,D3), append(["a"],D5,D3), append(Num1,D7,D5 ), append(["_"],D2,D7), foldr(string_concat,Num1,Num2), number_string(Num,Num2), foldr(atom_concat,D2,B),!.
@@ -5048,7 +5048,7 @@ year_of_birth(albert, 1926).
 #!/usr/bin/swipl -f -q:-include('text_to_breasonings.pl').
 #!/usr/bin/swipl -f -q:-set_prolog_stack(global, limit(80 000 000 000)).
 #!/usr/bin/swipl -g main -q:-include('../c/c.pl').
-#!SWI-Prolog -f -q:- include('meditation.pl').
+#!SWI-Prolog -f -q:-include('meditation.pl').
 #=(A,B) :- not(var(A)),not(var(B)),A is B,!.
 #=(A,B) :- not(var(A)),var(B),B is A,!.
 *%*************find_lists(Sets0,Sets1,Sets2) :-%Sets=[Sets0],%trace, findall(B,(member(S,Sets0),S=B%[[[t, brackets],B]] ),Sets), find_lists1(Sets,Sets1,Sets2).
@@ -5370,8 +5370,8 @@ year_of_birth(albert, 1926).
 /*t_or_empty([t,_]).
 /*test(215,[[n,function1],[[v,a]]],[        [[n,function1],[[[v,a]]],":-",        [        [[n,true]]]]],[]).
 /*uncompress_vars1(V1,VG,V32) :-V1=[[V3,[[&, tail],Val]]|V4],append(V2,[[V3,[[&, tail],Val]]],V31),uncompress_vars1(V4,VG,V32),!.
-/* A=[["p1", ":", a, "p2"], ["p2", ":", "p3", b], ["p3", ":", c]]*/%:- include('find_lists.pl').
-/* A=[["p1", ":", a, "p2"], ["p2", ":", "p3", b], ["p3", ":", c]]*/:- include('find_lists.pl').:- dynamic p_name/1.
+/* A=[["p1", ":", a, "p2"], ["p2", ":", "p3", b], ["p3", ":", c]]*/%:-include('find_lists.pl').
+/* A=[["p1", ":", a, "p2"], ["p2", ":", "p3", b], ["p3", ":", c]]*/:-include('find_lists.pl').:- dynamic p_name/1.
 /* change namesrepeat until 2nd time has the same resultdcgs*/:-include('replace_vars.pl').
 /**concat_list(A1,B):-A1=[A|List],concat_list(A,List,B),!.
 /**(memberlp2c12(Functions2,Algorithm1,Algorithm2))).
@@ -5413,7 +5413,7 @@ year_of_birth(albert, 1926).
 /**unique1([Item|Items1],Items2,Items3) :-delete(Items1,Item,Items4),append(Items2,[Item],Items5),unique1(Items4,Items5,Items3).
 /**varnames([L1|Ls]) --> varname1(L1),",", %%{writeln(L)}, %%***varnames(Ls), !. varnames([L1]) --> varname1(L1),!.
 /****optimise(Program1,InputVars1,InputVars2,PenultimateVars,Program2) :-findrulesflowingtopv1(Program1,InputVars1,InputVars2,PenultimateVars,[],Rules,true),%%findrulesflowingtopv1a(Program1,_Program32,InputVars1,InputVars2,PenultimateVars,[],_Rules1),intersection(Program1,Rules,Program3),unique1(Program3,[],Program2).
-/**:- include('listprologinterpreter3preds5.pl').
+/**:-include('listprologinterpreter3preds5.pl').
 /**add_furthest_rule2(New_rule_number,Number,_Rules,Program1) :-New_rule_number>Number,retractall(furthest_rule(_)),   assertz(furthest_rule([New_rule_number,[Program1]])),!.
 /**add_furthest_rule2(New_rule_number,Number,_Rules,_Program1) :-New_rule_number<Number,!.
 /**cawptest2(3,add,[[[n,[]],1,0],[[n,"_"],1,0]],4,1,4,[1,2,3],[0,1],[[[[[[v,a],[]],[[v,b],3],[[v,c],[4,5,6]]],[[[v,d],[4,5,6]]],true]]],[ %% Algorithm dictionary],%% Result[[[n,add],[[v,a],[v,b],[v,c],[v,d]],":-",[[[n,[]],[[v,a]]],[[n,"_"],[[v,a]]],[[n,"_"],[[v,b]]],[[n,=],[[v,c],[v,d]]]]]]).
@@ -5443,159 +5443,159 @@ year_of_birth(albert, 1926).
 :- http_handler('/', eh_form, []).% http://localhost:8000/a:-include('../Lucian-Academy/short_essay_helper3_agps.pl').
 :- http_handler('/', ssi_web_form, []).
 :- http_handler('/', web_form, []).
-:- http_handler('/', web_form, []).%:- include('files/listprolog.pl').
+:- http_handler('/', web_form, []).%:-include('files/listprolog.pl').
 :- http_handler('/a', run_lp_form, []).
 :- http_handler('/gitl', gitl_web_form, []).
 :- http_handler('/luciancicd', luciancicd_web_form, []).
 :- http_handler('/paraphraser', paraphraser_web_form, []).
 :- http_handler('/webeditor', get_pw, []).
-:- include('../../../../../Essay-Helper/short_essay_helper3.1_chicago.pl').
-:- include('../../GitHub/listprologinterpreter/la_files.pl').
-:- include('../../Text-to-Breasonings/texttobr2qb').
-:- include('../../mindreader/mindreadtestshared').
-:- include('../../mindreader/mindreadtestshared').:-include('../../listprologinterpreter/la_strings.pl'). %**** change path on server:-include('../../listprologinterpreter/la_strings_string.pl'). %**** change path on server:-include('../../listprologinterpreter/la_maths.pl'). %**** change path on serversectest_h(Person):-find_time1(H,M,S),bs_before_meditation(0,Threats1),% no_death(0,Threats2), % medits for lifewriteln([Person,H,M,S,Threats1,bs_before_meditation]).
-:- include('../../mindreader/texttobr2qb').
-:- include('../Algorithm-Writer-with-Lists/grammar_logic_to_alg_random').
-:- include('../Languages/make_docs.pl').
-:- include('../Languages/make_docs.pl').:- include('../SSI/find_pred_sm.pl').:- include('../listprologinterpreter/e4_fa_get_vals.pl').
-:- include('../Music-Composer/mindreadtestmusiccomposer-unusual-mr-tree.pl').
-:- include('../Philosophy/sub_term_with_address.pl').
-:- include('../Prolog-to-List-Prolog/pretty_print.pl').% translates list prolog code between ``% in the following, translates v, doesn't translate x% v< x > v < x > % v & x &%translate(A,_,_,_) :-%writeln([here,A]),abort.
-:- include('../SSI/find_pred_sm.pl').
-:- include('../Text-to-Breasonings/mergetexttobrdict.pl').
-:- include('../Text-to-Breasonings/mergetexttobrdict.pl').%:- include('../listprologinterpreter/la_strings').%:- include('../Philosophy/14 10 23.pl').
-:- include('../Text-to-Breasonings/text_to_breasonings.pl').
-:- include('../Text-to-Breasonings/text_to_breasonings.pl').%:-include('21 10 23.pl').
-:- include('../Text-to-Breasonings/texttobr.pl').t2alg3(N1,Filex1,Stringx1,M1) :-t2alg3(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0).
-:- include('../Text-to-Breasonings/texttobr2qb').
-:- include('../Text-to-Breasonings/texttobr2qb.pl').
-:- include('../Text-to-Breasonings/texttobr2qb.pl').%%sectest0 :-%%repeat,sectest,sectest0.
-:- include('../Text-to-Breasonings/texttobrall2_reading.pl').
-:- include('../Text-to-Object-Name/t2on_repeating_text.pl').
-:- include('../listprologinterpreter/collect_arguments.pl').
-:- include('../listprologinterpreter/e4_fa_get_vals.pl').
-:- include('../listprologinterpreter/expand_types.pl').
-:- include('../listprologinterpreter/expression_not_var.pl').
-:- include('../listprologinterpreter/grammar.pl').
-:- include('../listprologinterpreter/la_files.pl').
-:- include('../listprologinterpreter/la_maths').
-:- include('../listprologinterpreter/la_maths').:- include('../mindreader/make_mind_reading_tree4 working1.pl').
-:- include('../listprologinterpreter/la_maths.pl').
-:- include('../listprologinterpreter/la_string_codes.pl').
-:- include('../listprologinterpreter/la_strings').
-:- include('../listprologinterpreter/la_strings.pl').
-:- include('../listprologinterpreter/la_strings.pl').:- include('../listprologinterpreter/la_string_codes.pl').
-:- include('../listprologinterpreter/la_strings_string').
-:- include('../listprologinterpreter/listprolog').
-:- include('../listprologinterpreter/listprolog.pl').
-:- include('../listprologinterpreter/listprologinterpreter1listrecursion4.pl').
-:- include('../listprologinterpreter/listprologinterpreter3preds5.pl').
-:- include('../listprologinterpreter/lpiverify4.pl').
-:- include('../listprologinterpreter/lpiverify4_open.pl').
-:- include('../listprologinterpreter/lpiverify4_open_types.pl').
-:- include('../listprologinterpreter/lpiverify4_test_bt_lang_all.pl').
-:- include('../listprologinterpreter/lpiverify4_test_lang_all.pl').
-:- include('../listprologinterpreter/lpiverify4_types.pl').
-:- include('../listprologinterpreter/match_get_put_vals.pl').
-:- include('../listprologinterpreter/operators.pl').
-:- include('../listprologinterpreter/preds_converters_and_matrices.pl').
-:- include('../listprologinterpreter/preds_converters_and_matrices.pl').%:- include('numbers_of_items_correspond.pl').
-:- include('../listprologinterpreter/replace_in_term.pl').
-:- include('../listprologinterpreter/reserved_words2.pl').
-:- include('../mindreader/make_mind_reading_tree4 working1.pl').
-:- include('../mindreader/mindreadtestshared').
-:- include('../mindreader/mindreadtestshared').:-include('../listprologinterpreter/la_strings_string.pl'). %**** change path on server:-include('../listprologinterpreter/la_maths.pl'). %**** change path on serversectest_p:-phrase_from_file_s(string([N,_]), "a_tally.txt"),%string_codes(String02b,String00a),%atom_to_term(String00a,[N,_],[]),numbers(N,1,[],Ns),findall(_,(member(N1,Ns),find_time1(H,M,S),politeness(0,Threats1),politeness(0,Threats2),politeness(0,Threats3),politeness(0,Threats4),% no_death(0,Threats2), % medits for lifewriteln([N1,H,M,S,Threats1,politeness]),writeln([N1,H,M,S,Threats2,humour]),writeln([N1,H,M,S,Threats3,connections]),writeln([N1,H,M,S,Threats4,appearances])),_).%,Threats2,no_death]).
-:- include('../mindreader/mr_tree.pl').
-:- include('../private/la_com_ssi1.pl').
-:- include('../private/la_com_ssi1_run_in_prolog.pl').
-:- include('1451').
-:- include('1451').:- include('1564').
-:- include('1451-4').
-:- include('1451-4').:- include('1564-4').
-:- include('1564').
-:- include('1564-4').
-:- include('1645').
-:- include('1645').:- include('popclassical').
-:- include('1645-4').
-:- include('1645-4').:- include('popclassical-4').
-:- include('br_alg_gen.pl').
-:- include('caw5 copy 11.pl').
-:- include('caw5 copy 12.pl').
-:- include('cawpverify.pl').
-:- include('cawpverifya.pl').
-:- include('classical').
-:- include('classical').:- include('la_strings').
-:- include('classical-4').
-:- include('collect_arguments.pl').
-:- include('collect_simplify_types.pl').
-:- include('data_to_alg3.pl').
-:- include('data_to_alg5.pl').
-:- include('e4_fa_get_vals.pl').
-:- include('edit.pl').meditation :-File="I love you, I love you, I love you.  Arem.",Utterances=[lucianicmeditationapps,dailyregimen,nobodyproblemsapp,lucian, green, friendliness, medicine, childrenh1earningjobsprotectioninjobs,headsofstate,lucianmantrapureform,lucianmantrasunsafety,maharishisutra,meditationteachersutra,movingappearances,purusha,upasanasutra,yellowgod,greensutra,bluenature,appearances,pranayama,soma,hoursprayer,fiftybreasoningspersecond,meditationindicatorlowerriskofcancerandotherdiseasesinworkersandbroadcasters,meditationindicatordecreasedstress,meditationindicatorincreasedbloodflow,meditationincreasedbrainpotential,autobiography,computationalenglish,computerscience,economics,hermeneutics,pedagogy,breasonings,quantumbox,lucianicmeditation,lm,meditation,metaphysics,music,plays,popology,theology, qigongmantra,qigongsutra, yogamantra,yogasutra],%% initiate_utterances(File,Utterances),%% currentDate(Today),%% Today=date(Year,Month,Day),meditators(Meditators),length(Utterances,UL),length(Meditators,ML),Length2 is UL+ML,texttobr2(Length2,u,File,u),texttobr(Length2,u,File,u),!.
-:- include('expression_not_var.pl').
-:- include('files/Combination-Algorithm-Writer-Stable/caw5copy11.pl').
-:- include('files/Combination-Algorithm-Writer-Stable/listprologinterpreter3preds5copy52.pl').
-:- include('files/Combination-Algorithm-Writer-Stable/lpi_caw_commands.pl').
-:- include('flatten_var_term.pl').:- include('replace_in_term3.pl').
-:- include('folders.pl').
-:- include('gen_alg.pl').
-:- include('grammar.pl').
-:- include('instruments_mr-tree.pl').
-:- include('la_files.pl').
-:- include('la_maths.pl').
-:- include('la_string_codes.pl').
-:- include('la_strings').
-:- include('la_strings.pl').
-:- include('la_strings_string.pl').
-:- include('listprologinterpreter1listrecursion4.pl').
-:- include('listprologinterpreter3preds5.pl').
-:- include('lpi_caw_commands.pl').
-:- include('lpiverify4.pl').
-:- include('lpiverify4_open.pl').
-:- include('lpiverify4_open_types.pl').
-:- include('lpiverify4_open_types.pl').%%:- include('caw5 copy 12.pl').
-:- include('lpiverify4_test_bt_lang_all.pl').
-:- include('lpiverify4_test_bt_lang_all.pl').:- include('../Languages/make_docs.pl').
-:- include('lpiverify4_test_lang_all.pl').
-:- include('lpiverify4_types.pl').
-:- include('lpiverify_pl.pl').
-:- include('match_get_put_vals.pl').
-:- include('meditatorsanddoctors.pl').
-:- include('mergetexttobrdict').
-:- include('mind_read_la_strings.pl').
-:- include('mind_read_mr_tree.pl').
-:- include('mindreadtestmusiccomposer-unusual').
-:- include('mindreadtestmusiccomposer-unusual-mr').
-:- include('mindreadtestmusiccomposer-unusual-mr-tree').
-:- include('mindreadtestmusiccomposer-unusual-ui').
-:- include('mindreadtestmusiccomposer-unusual-ui-rhythm').
-:- include('mindreadtestshared').
-:- include('mindreadtestshared').:- include('listprologinterpreter1listrecursion4.pl').
-:- include('operators.pl').
-:- include('paraphraser1.pl').
-:- include('pft_expand_types.pl').
-:- include('popclassical').
-:- include('popclassical-4').
-:- include('preds_converters_and_matrices.pl').
-:- include('program_finder.pl').
-:- include('remove_duplicate_predicates.pl').
-:- include('remove_duplicate_predicates.pl').:- include('cawpverifya.pl').
-:- include('replace1.pl').
-:- include('replace_in_term.pl').
-:- include('replace_nothing_with_v.pl').
-:- include('replace_v_with_nothing.pl').
-:- include('reserved_words2.pl').:- include('expand_types.pl').
-:- include('sheet_feeder.pl').
-:- include('simplify_types_with_n.pl').:- include('../Prolog-to-List-Prolog/p2lpconverter.pl').:- include('collect_ga_parts.pl').
-:- include('text_to_breasonings1.pl').
-:- include('text_to_breasonings3.pl').
-:- include('text_to_breasonings4.pl').
-:- include('texttobr').
-:- include('texttobr2qb').
-:- include('texttobr2qb.pl').
-:- include('translate4.pl').
-:- include('web-editor-pw.pl').web_editor_server(Port) :-        http_server(http_dispatch, [port(Port)]).
-:- include(library(edit)).
+:-include('../../../../../Essay-Helper/short_essay_helper3.1_chicago.pl').
+:-include('../../GitHub/listprologinterpreter/la_files.pl').
+:-include('../../Text-to-Breasonings/texttobr2qb').
+:-include('../../mindreader/mindreadtestshared').
+:-include('../../mindreader/mindreadtestshared').:-include('../../listprologinterpreter/la_strings.pl'). %**** change path on server:-include('../../listprologinterpreter/la_strings_string.pl'). %**** change path on server:-include('../../listprologinterpreter/la_maths.pl'). %**** change path on serversectest_h(Person):-find_time1(H,M,S),bs_before_meditation(0,Threats1),% no_death(0,Threats2), % medits for lifewriteln([Person,H,M,S,Threats1,bs_before_meditation]).
+:-include('../../mindreader/texttobr2qb').
+:-include('../Algorithm-Writer-with-Lists/grammar_logic_to_alg_random').
+:-include('../Languages/make_docs.pl').
+:-include('../Languages/make_docs.pl').:-include('../SSI/find_pred_sm.pl').:-include('../listprologinterpreter/e4_fa_get_vals.pl').
+:-include('../Music-Composer/mindreadtestmusiccomposer-unusual-mr-tree.pl').
+:-include('../Philosophy/sub_term_with_address.pl').
+:-include('../Prolog-to-List-Prolog/pretty_print.pl').% translates list prolog code between ``% in the following, translates v, doesn't translate x% v< x > v < x > % v & x &%translate(A,_,_,_) :-%writeln([here,A]),abort.
+:-include('../SSI/find_pred_sm.pl').
+:-include('../Text-to-Breasonings/mergetexttobrdict.pl').
+:-include('../Text-to-Breasonings/mergetexttobrdict.pl').%:-include('../listprologinterpreter/la_strings.pl').%:-include('../Philosophy/14 10 23.pl').
+:-include('../Text-to-Breasonings/text_to_breasonings.pl').
+:-include('../Text-to-Breasonings/text_to_breasonings.pl').%:-include('21 10 23.pl').
+:-include('../Text-to-Breasonings/texttobr.pl').t2alg3(N1,Filex1,Stringx1,M1) :-t2alg3(N1,Filex1,Stringx1,M1,false,false,false,false,false,false,0).
+:-include('../Text-to-Breasonings/texttobr2qb').
+:-include('../Text-to-Breasonings/texttobr2qb.pl').
+:-include('../Text-to-Breasonings/texttobr2qb.pl').%%sectest0 :-%%repeat,sectest,sectest0.
+:-include('../Text-to-Breasonings/texttobrall2_reading.pl').
+:-include('../Text-to-Object-Name/t2on_repeating_text.pl').
+:-include('../listprologinterpreter/collect_arguments.pl').
+:-include('../listprologinterpreter/e4_fa_get_vals.pl').
+:-include('../listprologinterpreter/expand_types.pl').
+:-include('../listprologinterpreter/expression_not_var.pl').
+:-include('../listprologinterpreter/grammar.pl').
+:-include('../listprologinterpreter/la_files.pl').
+:-include('../listprologinterpreter/la_maths').
+:-include('../listprologinterpreter/la_maths').:-include('../mindreader/make_mind_reading_tree4 working1.pl').
+:-include('../listprologinterpreter/la_maths.pl').
+:-include('../listprologinterpreter/la_string_codes.pl').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('../listprologinterpreter/la_strings.pl').:-include('../listprologinterpreter/la_string_codes.pl').
+:-include('../listprologinterpreter/la_strings_string').
+:-include('../listprologinterpreter/listprolog').
+:-include('../listprologinterpreter/listprolog.pl').
+:-include('../listprologinterpreter/listprologinterpreter1listrecursion4.pl').
+:-include('../listprologinterpreter/listprologinterpreter3preds5.pl').
+:-include('../listprologinterpreter/lpiverify4.pl').
+:-include('../listprologinterpreter/lpiverify4_open.pl').
+:-include('../listprologinterpreter/lpiverify4_open_types.pl').
+:-include('../listprologinterpreter/lpiverify4_test_bt_lang_all.pl').
+:-include('../listprologinterpreter/lpiverify4_test_lang_all.pl').
+:-include('../listprologinterpreter/lpiverify4_types.pl').
+:-include('../listprologinterpreter/match_get_put_vals.pl').
+:-include('../listprologinterpreter/operators.pl').
+:-include('../listprologinterpreter/preds_converters_and_matrices.pl').
+:-include('../listprologinterpreter/preds_converters_and_matrices.pl').%:-include('numbers_of_items_correspond.pl').
+:-include('../listprologinterpreter/replace_in_term.pl').
+:-include('../listprologinterpreter/reserved_words2.pl').
+:-include('../mindreader/make_mind_reading_tree4 working1.pl').
+:-include('../mindreader/mindreadtestshared').
+:-include('../mindreader/mindreadtestshared').:-include('../listprologinterpreter/la_strings_string.pl'). %**** change path on server:-include('../listprologinterpreter/la_maths.pl'). %**** change path on serversectest_p:-phrase_from_file_s(string([N,_]), "a_tally.txt"),%string_codes(String02b,String00a),%atom_to_term(String00a,[N,_],[]),numbers(N,1,[],Ns),findall(_,(member(N1,Ns),find_time1(H,M,S),politeness(0,Threats1),politeness(0,Threats2),politeness(0,Threats3),politeness(0,Threats4),% no_death(0,Threats2), % medits for lifewriteln([N1,H,M,S,Threats1,politeness]),writeln([N1,H,M,S,Threats2,humour]),writeln([N1,H,M,S,Threats3,connections]),writeln([N1,H,M,S,Threats4,appearances])),_).%,Threats2,no_death]).
+:-include('../mindreader/mr_tree.pl').
+:-include('../private/la_com_ssi1.pl').
+:-include('../private/la_com_ssi1_run_in_prolog.pl').
+:-include('1451').
+:-include('1451').:-include('1564').
+:-include('1451-4').
+:-include('1451-4').:-include('1564-4').
+:-include('1564').
+:-include('1564-4').
+:-include('1645').
+:-include('1645').:-include('popclassical').
+:-include('1645-4').
+:-include('1645-4').:-include('popclassical-4').
+:-include('br_alg_gen.pl').
+:-include('caw5 copy 11.pl').
+:-include('caw5 copy 12.pl').
+:-include('cawpverify.pl').
+:-include('cawpverifya.pl').
+:-include('classical').
+:-include('classical').:-include('la_strings').
+:-include('classical-4').
+:-include('collect_arguments.pl').
+:-include('collect_simplify_types.pl').
+:-include('data_to_alg3.pl').
+:-include('data_to_alg5.pl').
+:-include('e4_fa_get_vals.pl').
+:-include('edit.pl').meditation :-File="I love you, I love you, I love you.  Arem.",Utterances=[lucianicmeditationapps,dailyregimen,nobodyproblemsapp,lucian, green, friendliness, medicine, childrenh1earningjobsprotectioninjobs,headsofstate,lucianmantrapureform,lucianmantrasunsafety,maharishisutra,meditationteachersutra,movingappearances,purusha,upasanasutra,yellowgod,greensutra,bluenature,appearances,pranayama,soma,hoursprayer,fiftybreasoningspersecond,meditationindicatorlowerriskofcancerandotherdiseasesinworkersandbroadcasters,meditationindicatordecreasedstress,meditationindicatorincreasedbloodflow,meditationincreasedbrainpotential,autobiography,computationalenglish,computerscience,economics,hermeneutics,pedagogy,breasonings,quantumbox,lucianicmeditation,lm,meditation,metaphysics,music,plays,popology,theology, qigongmantra,qigongsutra, yogamantra,yogasutra],%% initiate_utterances(File,Utterances),%% currentDate(Today),%% Today=date(Year,Month,Day),meditators(Meditators),length(Utterances,UL),length(Meditators,ML),Length2 is UL+ML,texttobr2(Length2,u,File,u),texttobr(Length2,u,File,u),!.
+:-include('expression_not_var.pl').
+:-include('files/Combination-Algorithm-Writer-Stable/caw5copy11.pl').
+:-include('files/Combination-Algorithm-Writer-Stable/listprologinterpreter3preds5copy52.pl').
+:-include('files/Combination-Algorithm-Writer-Stable/lpi_caw_commands.pl').
+:-include('flatten_var_term.pl').:-include('replace_in_term3.pl').
+:-include('folders.pl').
+:-include('gen_alg.pl').
+:-include('grammar.pl').
+:-include('instruments_mr-tree.pl').
+:-include('la_files.pl').
+:-include('la_maths.pl').
+:-include('la_string_codes.pl').
+:-include('la_strings').
+:-include('la_strings.pl').
+:-include('la_strings_string.pl').
+:-include('listprologinterpreter1listrecursion4.pl').
+:-include('listprologinterpreter3preds5.pl').
+:-include('lpi_caw_commands.pl').
+:-include('lpiverify4.pl').
+:-include('lpiverify4_open.pl').
+:-include('lpiverify4_open_types.pl').
+:-include('lpiverify4_open_types.pl').%%:-include('caw5 copy 12.pl').
+:-include('lpiverify4_test_bt_lang_all.pl').
+:-include('lpiverify4_test_bt_lang_all.pl').:-include('../Languages/make_docs.pl').
+:-include('lpiverify4_test_lang_all.pl').
+:-include('lpiverify4_types.pl').
+:-include('lpiverify_pl.pl').
+:-include('match_get_put_vals.pl').
+:-include('meditatorsanddoctors.pl').
+:-include('mergetexttobrdict').
+:-include('mind_read_la_strings.pl').
+:-include('mind_read_mr_tree.pl').
+:-include('mindreadtestmusiccomposer-unusual').
+:-include('mindreadtestmusiccomposer-unusual-mr').
+:-include('mindreadtestmusiccomposer-unusual-mr-tree').
+:-include('mindreadtestmusiccomposer-unusual-ui').
+:-include('mindreadtestmusiccomposer-unusual-ui-rhythm').
+:-include('mindreadtestshared').
+:-include('mindreadtestshared').:-include('listprologinterpreter1listrecursion4.pl').
+:-include('operators.pl').
+:-include('paraphraser1.pl').
+:-include('pft_expand_types.pl').
+:-include('popclassical').
+:-include('popclassical-4').
+:-include('preds_converters_and_matrices.pl').
+:-include('program_finder.pl').
+:-include('remove_duplicate_predicates.pl').
+:-include('remove_duplicate_predicates.pl').:-include('cawpverifya.pl').
+:-include('replace1.pl').
+:-include('replace_in_term.pl').
+:-include('replace_nothing_with_v.pl').
+:-include('replace_v_with_nothing.pl').
+:-include('reserved_words2.pl').:-include('expand_types.pl').
+:-include('sheet_feeder.pl').
+:-include('simplify_types_with_n.pl').:-include('../Prolog-to-List-Prolog/p2lpconverter.pl').:-include('collect_ga_parts.pl').
+:-include('text_to_breasonings1.pl').
+:-include('text_to_breasonings3.pl').
+:-include('text_to_breasonings4.pl').
+:-include('texttobr').
+:-include('texttobr2qb').
+:-include('texttobr2qb.pl').
+:-include('translate4.pl').
+:-include('web-editor-pw.pl').web_editor_server(Port) :-        http_server(http_dispatch, [port(Port)]).
+:-include(library(edit)).
 :- initialization(catch(main, Err, handle_error(Err))).
 :- use_module(library(date)).
 :- use_module(library(date)).:-include('luciancicd.pl').
@@ -5666,7 +5666,7 @@ year_of_birth(albert, 1926).
 :-include('../listprologinterpreter/la_files.pl').
 :-include('../listprologinterpreter/la_maths.pl').
 :-include('../listprologinterpreter/la_maths.pl').grammar_logic_to_alg2(First_n_words) :-% get filephrase_from_file_s(string(String1),"../Text-to-Breasonings/file.txt"),% split into lines and sentences%SepandPad2="\n\r",SepandPad1="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",string_codes(String1b,String1),downcase_atom(String1b,String1c),string_codes(String1c,String1a),split_string(String1a,SepandPad1,SepandPad1,String21),length(String21,L),(L<First_n_words->First_n_words1=L;First_n_words1=First_n_words),length(String2,First_n_words1),append(String2,_,String21),%phrase_from_file_s(string(BrDict0), "../../Text-to-Breasonings/brdict1.txt"),phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),splitfurther(BrDict0,Term),%trace,phrase_from_file_s(string(BrDict3), "../Algorithm-Writer-with-Lists/brdict3.txt"),string_codes(String02ba,BrDict3),atom_to_term(String02ba,Term1,[]),/**phrase_from_file_s(string(BrDict4), "first-words.txt"),string_codes(String02b,BrDict4),atom_to_term(String02b,String02a,[]),**/%trace,% Finds additions to brdict3.txt (box,values)process_file(String2,Term,Term1,%String02a,%[],Additions_to_brdict3,[],Pseudo_algorithms%,%[],%First_words),%***append(Term1,Additions_to_brdict3,Additions_to_brdict3_2),term_to_atom(Additions_to_brdict3,String02a_b),string_atom(String02a_c,String02a_b),(open_s("../Algorithm-Writer-with-Lists/brdict3.txt",write,Stream1),write(Stream1,String02a_c),close(Stream1)),!,%***append(String02a,First_words,First_words_2),/**term_to_atom(First_words,First_words_2_b),string_atom(First_words_2_c,First_words_2_b),(open_s("first-words.txt",write,Stream2),write(Stream2,First_words_2_c),close(Stream2)),!,**/writeln1(Pseudo_algorithms),!,random_member(Summary_algorithm,Pseudo_algorithms),writeln1("Summary algorithm:"),writeln1(Summary_algorithm).
-:-include('../listprologinterpreter/la_strings').
+:-include('../listprologinterpreter/la_strings.pl').
 :-include('../listprologinterpreter/la_strings.pl').
 :-include('../listprologinterpreter/la_strings_string.pl').
 :-include('../listprologinterpreter/la_strings_string.pl'). %**** change path on server:-include('../listprologinterpreter/la_maths.pl'). %**** change path on server:-include('../Text-to-Breasonings/text_to_breasonings.pl').:-include('../Algorithm-Writer-with-Lists/grammar_logic_to_alg.pl').
@@ -5869,7 +5869,7 @@ P = [[append, [a, b, c]], [delete, [c, b, d]], [member, [c, d]]] ;[debug]  ?- op
 P = [[append, [a, b, c]], [delete, [c, b, d]]] ;Wantedly fail:optimise([[append,[a,e,c]]],[a],[a,e,c],[c],P).optimise([[append,[a,b,c]],[append,[c,d,e]]],[a,d],[a,b,c,d],[e],P).
 P = [[append, [a, b, c]], [delete, [c, b, d]]] ;[debug]  ?- optimise([[append,[a,b,c]],[delete,[c,b,d]],[member,[c,x]]],[a,b],[a,b,c,d],[d],P).
 P = [[append, [a, b, c]]] ;[debug]  ?- optimise([[append,[a,b,c]],[delete,[c,b,d]],[member,[c,d]]],[a,b],[a,b,c,d],[d],P).
-Please choose the correction to "testee", <return> for no correction or type a replacement word:1 - (6) - testees2 - (4) - testtube3 - (4) - testtrace4 - (4) - tests5 - (4) - testopen6 - (4) - testnumber7 - (3) - tee8 - (3) - settee9 - (3) - selectee10 - (3) - mentee11 - (3) - guarantee12 - (3) - delegatee13 - (3) - committee14 - (2) - tree15 - (2) - trainee16 - (2) - toffee17 - (2) - three18 - (2) - tenrectangle19 - (2) - tenor20 - (2) - tennis**/%:- include('../listprologinterpreter/listprolog').:- include('../listprologinterpreter/la_strings').
+Please choose the correction to "testee", <return> for no correction or type a replacement word:1 - (6) - testees2 - (4) - testtube3 - (4) - testtrace4 - (4) - tests5 - (4) - testopen6 - (4) - testnumber7 - (3) - tee8 - (3) - settee9 - (3) - selectee10 - (3) - mentee11 - (3) - guarantee12 - (3) - delegatee13 - (3) - committee14 - (2) - tree15 - (2) - trainee16 - (2) - toffee17 - (2) - three18 - (2) - tenrectangle19 - (2) - tenor20 - (2) - tennis**/%:-include('../listprologinterpreter/listprolog').:-include('../listprologinterpreter/la_strings.pl').
 Program = [f,[1,b]],[[f,[a,b],:-,[[=,[b,a]]]]],[[b,1]]caw00(off,f,[[append,2,1],[delete,2,1],[head,1,1],[tail,1,1],[member,1,1]],50,7,[[a,[1,2]]],[[b,[1,2]]],[],Program).
 Program = [f,[[1,2],b]],[[f,[a,b],:-,[[=,[b,a]]]]],[[b,[1,2]]]caw00(off,f,[[append,2,1],[delete,2,1],[head,1,1],[tail,1,1],[member,1,1]],50,7,[[a,1],[b,2]],[[c,[1,2]]],[],Program).
 Program = interpret(off,[f,[1,2,c]],[[f,[a,b,c],:-,[[append,[a,b,g]],[=,[c,g]]]]],[[c,[1,2]]])caw00(off,f,[[append,2,1],[delete,2,1],[head,1,1],[tail,1,1],[member,1,1]],50,8,[[a,1],[b,2],[c,3]],[[d,[1,2,3]]],[],Program).

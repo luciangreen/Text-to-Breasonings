@@ -558,7 +558,7 @@ member predicates returning no output
 
 %% ML max 25
 
-:- include('algdict.pl').
+:-include('algdict.pl').
 
 caw00(Debug,PredicateName,Rules,MaxLength,TotalVars,InputVarList,OutputVarList,Program1,_Program2,Ps1) :-
 	findall([TestNumber,Queries,Functions],

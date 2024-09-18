@@ -10,8 +10,8 @@
 % output:
 % [" For example  for an input using similar yet different enough phrases"" for the algorithm"," Also, she writer can find the complete set of non-synonymous words that take turns with a word"]
 
-%:- include('../listprologinterpreter/listprolog').
-:- include('br_alg_gen.pl').
+%:-include('../listprologinterpreter/listprolog').
+:-include('br_alg_gen.pl').
 :-include('../listprologinterpreter/la_maths.pl').
 
 br_alg_gen2(Br) :-

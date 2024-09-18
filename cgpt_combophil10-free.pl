@@ -9,9 +9,9 @@
 
 %% Finds combinations of lines of philosophy
 
-%:- include('../listprologinterpreter/listprolog.pl').
-:- include('chatgpt_qa.pl').
-:- include('../Text-to-Breasonings/text_to_breasonings.pl').
+%:-include('../listprologinterpreter/listprolog.pl').
+:-include('chatgpt_qa.pl').
+:-include('../Text-to-Breasonings/text_to_breasonings.pl').
 
 :- use_module(library(date)).
 

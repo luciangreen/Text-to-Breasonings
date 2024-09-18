@@ -1,9 +1,9 @@
 :- dynamic debug/1.
-:- include('texttobr2qb').
-:- include('mindreadtestshared').
-:- include('listprologinterpreter1listrecursion4.pl').
-:- include('listprologinterpreter3preds5.pl').
-:- include('grammar.pl').
+:-include('texttobr2qb').
+:-include('mindreadtestshared').
+:-include('listprologinterpreter1listrecursion4.pl').
+:-include('listprologinterpreter3preds5.pl').
+:-include('grammar.pl').
 
 %% Silly to mind read caw inputs, because they are mostly unused.  Use mind reading for definitely used multi choice answer
 

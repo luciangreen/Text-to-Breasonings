@@ -13,8 +13,8 @@
 %%use_module(library(pio)).
 
 :- use_module(library(date)).
-:- include('../Text-to-Breasonings/text_to_breasonings.pl').
-:- include('../mindreader/mindreadtestshared').
+:-include('../Text-to-Breasonings/text_to_breasonings.pl').
+:-include('../mindreader/mindreadtestshared').
 :-include('../listprologinterpreter/la_strings_string.pl'). %**** change path on server
 :-include('../listprologinterpreter/la_maths.pl'). %**** change path on server
 :-include('../Text-to-Breasonings/text_to_breasonings.pl').

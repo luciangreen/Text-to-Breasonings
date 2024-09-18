@@ -3,14 +3,14 @@
 %% lucian, green, friendliness, medicine, sutras, courses, qi gong and yoga mantras and sutras - arem 10 br links
 %% Stops linking in meditators 100 years after date of learning LM
 
-%%:- include('qb2.pl').
-:- include('../listprologinterpreter/listprolog').
-:- include('texttobr').
-%%:- include('texttobr2qb').
-%%:- include('texttobrqb').
-:- include('../listprologinterpreter/la_strings').
-:- include('mergetexttobrdict').
-:- include('edit.pl').
+%%:-include('qb2.pl').
+:-include('../listprologinterpreter/listprolog').
+:-include('texttobr').
+%%:-include('texttobr2qb').
+%%:-include('texttobrqb').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('mergetexttobrdict').
+:-include('edit.pl').
 
 meditation :-
 	File="I love you, I love you, I love you.  Arem.",

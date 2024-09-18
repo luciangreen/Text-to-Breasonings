@@ -1,4 +1,4 @@
-:- include(library(edit)).
+:-include(library(edit)).
 :- multifile
 	edit:edit_command/2.
 :- multifile prolog_edit:load/0.

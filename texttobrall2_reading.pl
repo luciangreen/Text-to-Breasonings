@@ -13,22 +13,22 @@
 %% brdict1.txt contains word and object name, brdict2.txt contains object name and x, y and z
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
-:- initialization(load_files(['../listprologinterpreter/listprolog.pl'],[if(changed),if(not_loaded)])).
-:- include('../Text-to-Breasonings/mergetexttobrdict.pl').
+:-include('../listprologinterpreter/listprolog.pl').
+:-include('../Text-to-Breasonings/mergetexttobrdict.pl').
 :-include('../Philosophy/debug_tools.pl').
 :-include('../Philosophy/decision_tree.pl').
 
 :-dynamic br_grid/1.
 :-dynamic br_grid_record/1.
 
-%:- include('../listprologinterpreter/la_strings').
+%:-include('../listprologinterpreter/la_strings.pl').
 
 %% Brth is true or false
 texttobr2(N1,Filex1,Stringx1,M1) :-
 	container(texttobr2_contents(N1,Filex1,Stringx1,M1)),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,[auto,Auto]) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1,[auto,Auto])),!
+	container(texttobr2_contents(N1,Filex1,Stringx1,M1,[auto,Auto])),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish) :-
@@ -37,7 +37,7 @@ texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,[auto,Auto]) :-
 	container(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
-		ObjectToPrepare,ObjectToFinish,[auto,Auto]),!.
+		ObjectToPrepare,ObjectToFinish,[auto,Auto])),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,W) :-

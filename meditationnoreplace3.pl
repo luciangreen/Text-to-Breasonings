@@ -2,8 +2,8 @@
 
 :- initialization main.
 
-:- include('meditationnoreplace.pl').
-:- include('meditatorsanddoctors.pl').
+:-include('meditationnoreplace.pl').
+:-include('meditatorsanddoctors.pl').
 
 main :-
 	meditation,halt.

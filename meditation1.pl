@@ -1,6 +1,6 @@
 #!SWI-Prolog -f -q
 
-:- include('meditation.pl').
+:-include('meditation.pl').
 
 :- initialization prolog_edit:main.
 

@@ -19,15 +19,15 @@ main :- halt(1).
 %% brdict1.txt contains word and object name, brdict2.txt contains object name and x, y and z
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
-:- include('../Text-to-Breasonings/mergetexttobrdict.pl').
+:-include('../Text-to-Breasonings/mergetexttobrdict.pl').
 :-include('../listprologinterpreter/la_files.pl').
 :-include('../listprologinterpreter/la_strings.pl').
 
 :-dynamic sn/1.
 :-dynamic f/1.
 
-%:- include('../listprologinterpreter/la_strings').
-%:- include('../Philosophy/14 10 23.pl').
+%:-include('../listprologinterpreter/la_strings.pl').
+%:-include('../Philosophy/14 10 23.pl').
 
 %% Brth is true or false
 %texttobr2(N1,Filex1,Stringx1,M1) :-

@@ -11,8 +11,8 @@
 %%use_module(library(pio)).
 
 :- use_module(library(date)).
-:- include('texttobr2qb').
-:- include('mindreadtestshared').
+:-include('texttobr2qb').
+:-include('mindreadtestshared').
 
 sectest(Person):-
 	find_time(H,M,S),
