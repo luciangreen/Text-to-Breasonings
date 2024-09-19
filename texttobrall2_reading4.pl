@@ -20,8 +20,8 @@ main :- halt(1).
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
 :-include('../Text-to-Breasonings/mergetexttobrdict.pl').
-:-include('../listprologinterpreter/la_files.pl').
-:-include('../listprologinterpreter/la_strings.pl').
+%:-include('../listprologinterpreter/la_files.pl').
+%:-include('../listprologinterpreter/la_strings.pl').
 
 :-dynamic sn/1.
 :-dynamic f/1.

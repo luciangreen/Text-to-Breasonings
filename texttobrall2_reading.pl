@@ -13,7 +13,7 @@
 %% brdict1.txt contains word and object name, brdict2.txt contains object name and x, y and z
 
 %% texttobr2(Runs,File,StringtoBreason,BreasoningLimit).
-:-include('../listprologinterpreter/listprolog.pl').
+%:-include('../listprologinterpreter/listprolog.pl').
 :-include('../Text-to-Breasonings/mergetexttobrdict.pl').
 :-include('../Philosophy/debug_tools.pl').
 :-include('../Philosophy/decision_tree.pl').
