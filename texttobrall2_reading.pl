@@ -25,27 +25,27 @@
 
 %% Brth is true or false
 texttobr2(N1,Filex1,Stringx1,M1) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1)),!.
+	container1(texttobr2_contents(N1,Filex1,Stringx1,M1)),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,[auto,Auto]) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1,[auto,Auto])),!.
+	container1(texttobr2_contents(N1,Filex1,Stringx1,M1,[auto,Auto])),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish)),!.
+	container1(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish)),!.
 	
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,[auto,Auto]) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
+	container1(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,[auto,Auto])),!.
 
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,W) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
+	container1(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 		ObjectToPrepare,ObjectToFinish,W)),!.
 		
 texttobr2(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read,[auto,Auto]) :-
-	container(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read,[auto,Auto])),!.
+	container1(texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,Words_to_read,[auto,Auto])),!.
 
 
 
