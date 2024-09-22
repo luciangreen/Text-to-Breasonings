@@ -1,8 +1,7 @@
 # Comment the start of a line with '#' or temporarily delete it to run specific lines or to continue from a point if the algorithm has crashed.
-./cgpt_combophil3_160.sh
 ./texttobr2_square.sh
 ./d.sh
-./day2.sh
+./bc12.sh
 # ./a15_meditators.sh prepares an apartment in each dimension for meditators by helping 15 of those around them
 ./a15_meditators.sh
 ./daily_medit.sh
@@ -19,10 +18,9 @@ echo "Going to present, press \"y\":"
 echo "Please think of 108 arems and 108 friendlinesses, then enter \"y\":"
 ./please_enter_y.sh
 ./group_meditation.sh
-./cgpt_combophil3_160.sh
 ./texttobr2_square.sh 
 ./d.sh
-./day2.sh
+./bc12.sh
 ./a15_meditators.sh 
 ./daily_medit.sh
 ./attention_needed_bell.sh
@@ -38,10 +36,9 @@ echo "Please think of 108 arems and 108 friendlinesses, then enter \"y\":"
 echo "Please think of 108 arems and 108 friendlinesses, then enter \"y\":"
 ./please_enter_y.sh
 ./group_meditation.sh
-./cgpt_combophil3_160.sh
 ./texttobr2_square.sh 
 ./d.sh
-./day2.sh
+./bc12.sh
 ./a15_meditators.sh 
 ./daily_medit.sh
 ./attention_needed_bell.sh
