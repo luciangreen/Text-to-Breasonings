@@ -590,7 +590,7 @@ br(Word,Freq,_) :-
 	(member([Word3,String4],BrDict)-> 
 	BrDict3=BrDict;
 	((repeat,
-	write("Enter object name (without spaces), if different for "), writeln(Word3),read_string1("box",user_input, "\n", "\r", _End2, String2),split_string(String2, "", " ", String3),String3=[String4]),
+	write("Enter object name (without spaces), if different for "), writeln(Word3),read_string1("autobox",user_input, "\n", "\r", _End2, String2),split_string(String2, "", " ", String3),String3=[String4]),
 	append(BrDict,[[Word3,String4]],BrDict3),
 	texttobr(1,u,String4,1))),
 	%%*brth(Word3,_Brth),
