@@ -40,7 +40,7 @@ br_gen2(File_string0,Raw,Chains) :-
  length(File_string2,L3), length(File_string2b,Truncate_length), (L3=<Truncate_length->File_string2=File_string2a; (append(File_string2b,_,File_string2),File_string2b=File_string2a)),
  
  % delete connectives such as and, the
-open_file_s("connectives.txt",Connectives),
+open_file_s("../Text-to-Breasonings/connectives.txt",Connectives),
 
 subtract(File_string2a,Connectives,Words1),
 
@@ -110,7 +110,7 @@ br_alg_gen(Raw,Chains,Algorithms) :-
  length(File_string2,L3), length(File_string2b,Truncate_length), (L3=<Truncate_length->File_string2=File_string2a; (append(File_string2b,_,File_string2),File_string2b=File_string2a)),
  
  % delete connectives such as and, the
-open_file_s("connectives.txt",Connectives),
+open_file_s("../Text-to-Breasonings/connectives.txt",Connectives),
 
 subtract(File_string2a,Connectives,Words1),
 
@@ -209,7 +209,7 @@ recursive_br_gen(Raw,Chains) :-
  length(File_string2,L3), length(File_string2b,Truncate_length), (L3=<Truncate_length->File_string2=File_string2a; (append(File_string2b,_,File_string2),File_string2b=File_string2a)),
  
  % delete connectives such as and, the
-open_file_s("connectives.txt",Connectives),
+open_file_s("../Text-to-Breasonings/connectives.txt",Connectives),
 
 subtract(File_string2a,Connectives,Words1),
 

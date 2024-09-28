@@ -83,7 +83,7 @@ N6 is 5*N4,
 length(L,N6),
 append(L,L2,T62),
 
-open_file_s("connectives.txt",Connectives),
+open_file_s("../Text-to-Breasonings/connectives.txt",Connectives),
 %trace,
 divide(1,L,5,[],Br2,Keywords,Connectives),
 
