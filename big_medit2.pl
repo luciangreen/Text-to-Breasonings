@@ -63,6 +63,7 @@ bc12 :-
 working_directory1(WD,WD),
 working_directory1(_,"../Text-to-Breasonings"),
 shell1_s("./bc12.sh"),
+shell1_s("./bc12.sh"),
 working_directory1(_,WD),!.
 
 point_to_br(T) :-
