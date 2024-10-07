@@ -22,4 +22,6 @@ bash_command2(N,Z) :-
  writeln_info(blue,"Blue text: Trying: "),writeln_on_lines(Z),
  catch(bash_command(Z,_),_,(N1 is N-1,bash_command2(N1,Z))),!.
  
-writeln_on_lines(C) :- atomic_list_concat(A,"\\n",C),atomic_list_concat(A,"\n",B),writeln_info(blue,["Blue text:",B]),!.
+writeln_on_lines(C) :-
+C2 = ["Blue text:",C],
+(is_list(C2)->term_to_atom(C2,C1);C=C1),atomic_list_concat(A,"\\n",C1),atomic_list_concat(A,"\n",B),writeln_info(blue,B),!.
