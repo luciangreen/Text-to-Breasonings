@@ -24,4 +24,4 @@ bash_command2(N,Z) :-
  
 writeln_on_lines(C) :-
 C2 = ["Blue text:",C],
-(is_list(C2)->term_to_atom(C2,C1);C=C1),atomic_list_concat(A,"\\n",C1),atomic_list_concat(A,"\n",B),writeln_info(blue,B),!.
+term_to_atom(C2,C1),atomic_list_concat(A,"\\n",C1),atomic_list_concat(A,"\n",B),writeln_info(blue,B),!.
