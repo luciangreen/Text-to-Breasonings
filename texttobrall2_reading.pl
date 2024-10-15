@@ -310,7 +310,9 @@ concurrent(2,[(
 %%writeln([list2,List2]),
 	length(List2,Length2),write("Number of unique words in file: "), writeln(Length2),
 	
-	
+	%term_to_atom(List2,List2a),
+	%save_file_s("file2.txt",List2a),
+	%trace,
 	
 	((Brth=true,
 		phrase_from_file_s(string(BrthDict0), "../Text-to-Breasonings/brthdict.txt"),		splitfurther(BrthDict0,BrthDict01),
@@ -696,12 +698,14 @@ brDict03t1(BrDict4),
 	append(BrDict3t5,[[ObjectToFinishStringth4,ObjectToFinishX,ObjectToFinishY,ObjectToFinishZ]],BrDict3t6)))->true;BrDict3t6=BrDict3t5),
 
 */
-
+(String4="autobox"->true;
+(
 retractall(brDict03(_)),
 assertz(brDict03(BrDict3)),
 
 retractall(brDict03t(_)),
-assertz(brDict03t(BrDict3t1)),!.
+assertz(brDict03t(BrDict3t1))
+)),!.
 
 %br(Words,BrDict3,BrDict2,BrDict3t6,BrDict5,Brth,BrthDict3,BrthDict04,Room,RoomDict3,RoomDict04,PartOfRoom,PartOfRoomDict3,PartOfRoomDict04,Direction,DirectionDict3,DirectionDict04,ObjectToPrepare,ObjectToPrepareDict3,ObjectToPrepareDict04,ObjectToFinish,ObjectToFinishDict3,ObjectToFinishDict04).
 	%%).
