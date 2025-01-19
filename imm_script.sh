@@ -53,6 +53,8 @@ cd ../Text-to-Breasonings
 
 echo "Time travelling to 1 10 5689"
 
+./bc12.sh # Prepare apartment in 5689
+./bc12.sh
 ./bc12.sh # Time travel to 1 10 5689
 ./bc12.sh
 
@@ -113,5 +115,7 @@ echo "Time travelling to 1 10 5689"
 
 echo "Time travelling to present"
 
+./bc12.sh # Prepare apartment in present
+./bc12.sh
 ./bc12.sh # Time travel to present
 ./bc12.sh
