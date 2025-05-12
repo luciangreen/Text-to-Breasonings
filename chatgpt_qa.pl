@@ -1,5 +1,5 @@
 :- use_module(library(http/json)).
-:-include('../Text-to-Breasonings/text_to_breasonings.pl').
+:- include('../Text-to-Breasonings/text_to_breasonings.pl').
 %:-include('../listprologinterpreter/la_strings.pl').
 %:-include('../listprologinterpreter/la_maths.pl').
 %:-include('../listprologinterpreter/la_files.pl').
@@ -8,7 +8,7 @@
 %secret_key("").
 
 q(Q0,A) :-
-
+%writeln("No CGPT avail"),abort,
 SepandPad2="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\t\\\"!'0123456789", % no space
 split_string(Q0,SepandPad2,Q01),
 findall([X," "],member(X,Q01),Q02),
@@ -32,7 +32,7 @@ Command1=["curl https://api.openai.com/v1/chat/completions \c
   -H \"Content-Type: application/json\" \c
   -H \"Authorization: Bearer ",Secret_key,"\" \c
   -d '{
-    \"model\": \"gpt-4o-mini\",
+    \"model\": \"gpt-4.1-nano\",
     \"messages\": [
       {
         \"role\": \"system\",
@@ -63,7 +63,10 @@ atom_json_term(Output1, A1, []),
 %A1=json([_,_,_,_,choices=[json([text=A2|_])]|_]),
 %trace,
 %A1=json([_, _, _, _, choices=[json([_, message=json([_, content=A2])|_])]|_]),
-A1=json([_, _, _, _, choices=[json([_, message=json([_, content=A2|_])| _])]|_]),
+A1=json(B),
+member(choices=[json(C)],B),
+member(message=json(D),C),
+member(content=A2,D),
 atom_string(A2,A)
 ,writeln(A)),_,fail)->true;
 (N is 60*5,sleep(N),fail))).
