@@ -102,7 +102,7 @@ a1([File_strings,Limit],L1,File_string_a) :-
  
 
       
-(((catch(call_with_time_limit(5.0,
+(((catch(call_with_time_limit(0.84,
                           time( big_connections_with_bag3_and_mr(N,File_string_a))),
       time_limit_exceeded,
       false)),%->

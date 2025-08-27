@@ -1,10 +1,4 @@
 :- dynamic debug/1.
-
-% Performance optimizations for list operations
-% Optimized single-element append
-append_single([], Element, [Element]).
-append_single([H|T], Element, [H|NewT]) :-
-    append_single(T, Element, NewT).
 :-include('texttobr2qb').
 :-include('mindreadtestshared').
 :-include('listprologinterpreter1listrecursion4.pl').
@@ -67,34 +61,7 @@ caw00(Debug,PredicateName,Rules,MaxLength,TotalVars,_InputVarList,_OutputVarList
 	caw0(PredicateName,Rules,MaxLength,PV,OutputVarList,Program1,_Program3,Ps),
 	sort(Ps,Ps1),not(Ps1=[]),!.
 
-% Optimized random number generation with caching
-:- dynamic random_cache/2.
-
 random1(N1) :-
-	(random_cache(cached_random, CachedList) ->
-		(CachedList = [H|T] ->
-			(N1 = H, retract(random_cache(cached_random, _)), assertz(random_cache(cached_random, T)))
-		;
-			generate_random_batch(NewBatch),
-			NewBatch = [N1|Rest],
-			assertz(random_cache(cached_random, Rest))
-		)
-	;
-		generate_random_batch(NewBatch),
-		NewBatch = [N1|Rest],
-		assertz(random_cache(cached_random, Rest))
-	).
-
-% Generate a batch of random numbers for efficiency	
-generate_random_batch(Batch) :-
-	findall(R, (between(1, 50, _), random2_fast(R)), Batch).
-
-random2_fast(N) :-
-	random(R),
-	N is floor(R * 10).
-
-% Original functions kept as fallback
-random1_original(N1) :-
 	random2(N2),random2(N3), string_concat(N2,N3,S), number_string(N1,S).
 	
 random2(N) :-
@@ -119,13 +86,13 @@ randvars(0,_,V,V) :- !.
 randvars(N,L,V1,V2) :-
 	
 	random1(N0), N1 is N0/100, N2A is round(97+(N1*L)), char_code(V3,N2A), V31=[v,V3], ((member(V31,V1))->randvars(N,L,V1,V2);
-	(append_single(V1,V31,V4),
+	(append(V1,[V31],V4),
 	NA is N-1, randvars(NA,L,V4,V2))),!.
 randvars2(0,_L,V,V) :- !.
 randvars2(N,L,V1,V2) :-
 	random1(N0), N1 is N0/100, N2A is round(97+(N1*L)), char_code(V3,N2A), atom_string(V3,V4), %%V41=[v,V4],
 	((member(V4,V1))->randvars2(N,L,V1,V2);
-	(append_single(V1,V4,V5),
+	(append(V1,[V4],V5),
 	NA is N-1, randvars2(NA,L,V5,V2))),!.
 populatevars([],_,PV,PV) :- !.
 populatevars([RV1|RVs],MaxLength2,PV1,PV2) :-
@@ -133,24 +100,7 @@ populatevars([RV1|RVs],MaxLength2,PV1,PV2) :-
 	append(PV1,[[RV1,RV2]],PV3),
 	populatevars(RVs,MaxLength2,PV3,PV2),!.
 
-% Memoization for expensive computations
-:- dynamic memo_cache/3.
-
-% Memoized version of caw0 for repeated calls
 caw0(PredicateName,Rules,MaxLength,InputVarList,OutputVarList,Program1,Program2,Ps2) :-
-	% Create a cache key from the input parameters
-	Cache_Key = caw0(PredicateName,Rules,MaxLength,InputVarList,OutputVarList,Program1),
-	(memo_cache(caw0, Cache_Key, CachedResult) ->
-		% Use cached result if available
-		CachedResult = cached(Program2,Ps2)
-	;
-		% Compute and cache the result
-		caw0_compute(PredicateName,Rules,MaxLength,InputVarList,OutputVarList,Program1,Program2,Ps2),
-		assertz(memo_cache(caw0, Cache_Key, cached(Program2,Ps2)))
-	).
-
-% Original computation
-caw0_compute(PredicateName,Rules,MaxLength,InputVarList,OutputVarList,Program1,Program2,Ps2) :-
 	varnames(InputVarList,[],InputVars,[],InputValues),
 	varnames(OutputVarList,[],OutputVars,[],_OutputValues),
 	retractall(outputvars(_)),
@@ -168,9 +118,9 @@ caw1(Query,PredicateName,Rules,MaxLength,VarList,InputVars1,InputVars2,InputVars
 	MaxLength2 is MaxLength - 1,
 	addrules0(InputVars2,OutputVars,OutputVars,[],Program3),
 	%%writeln([addrules(InputVars2,OutputVars,OutputVars,[],PenultimateVars,[],Program3)]),	
-	optimise(Program1,InputVars1,InputVars2,[],Program4), %% IV2->3 - re-enabled optimization
+	%%optimise(Program1,InputVars1,InputVars2,PenultimateVars,Program4), %% IV2->3
 	%%writeln([optimise(Program1,InputVars1,InputVars2,PenultimateVars,Program4)]),
-	append(Program4,Program3,Program5),
+	append(Program1,Program3,Program5),
 	append(InputVars1,OutputVars,Vars2),
 	Program2=[
         [PredicateName,Vars2,":-",
@@ -204,7 +154,7 @@ caw1a(Query,PredicateName,Rules,MaxLength,VarList,InputVars1,InputVars2,InputVar
 	rule(RuleName,NumInputs,NumOutputs,InputVars5,InputVars4,VarList,VarList2,Rule),
 %%writeln([inputVars1,InputVars1]),
 %%	writeln([rule(RuleName,NumInputs,NumOutputs,InputVars5,InputVars4,VarList,VarList2,Rule)]),
-	append_single(Program1,Rule,Program3),
+	append(Program1,[Rule],Program3),
 	%%writeln([inputVars3,InputVars3]),
 	%%InputVars2=InputVars3,
 	%%writeln([program4,Program4]),
@@ -221,9 +171,9 @@ caw(Query,PredicateName,Rules,MaxLength,VarList,InputVars1,InputVars2,InputVars3
 	MaxLength2 is MaxLength - 1,
 	addrules(InputVars2,OutputVars,OutputVars,[],_PenultimateVars,[],Program3),
 	%%writeln([addrules(InputVars2,OutputVars,OutputVars,[],PenultimateVars,[],Program3)]),	
-	optimise(Program1,InputVars1,InputVars2,[],Program4), %% IV2->3 - re-enabled optimization
+	%%optimise(Program1,InputVars1,InputVars2,PenultimateVars,Program4), %% IV2->3
 	%%writeln([optimise(Program1,InputVars1,InputVars2,PenultimateVars,Program4)]),
-	append(Program4,Program3,Program5),
+	append(Program1,Program3,Program5),
 	append(InputVars1,OutputVars,Vars2),
 	Program2=[
         [PredicateName,Vars2,":-",
@@ -274,8 +224,8 @@ varnames([],Vars,Vars,Values,Values) :- !.
 varnames(VarList,Vars1,Vars2,Values1,Values2) :-
 	VarList=[Var|Vars3],
 	Var=[VarName,Value],
-	append_single(Vars1,VarName,Vars4),
-	append_single(Values1,Value,Values3),
+	append(Vars1,[VarName],Vars4),
+	append(Values1,[Value],Values3),
 	varnames(Vars3,Vars4,Vars2,Values3,Values2),!.
 
 addrules0(_,_,[],Program,Program) :- !.
@@ -339,7 +289,7 @@ addrules2(VarList,OutputVars1,OutputVars2,PenultimateVars1,PenultimateVars2,Prog
 	addrules2(VarList,OutputVars1,OutputVars3,PenultimateVars3,PenultimateVars2,Program3,Program2),!.
 
 %% optimise([[append,[a,a,d]],[append,[a,a,e]],[append,[a,a,f]],[append,[a,b,g]]],[g],P).
-
+/**
 optimise(Program1,InputVars1,InputVars2,PenultimateVars,Program2) :-
 	reverse(Program1,Program4),
 	findrulesflowingtopv1(Program4,InputVars1,InputVars2,PenultimateVars,[],Rules,true),

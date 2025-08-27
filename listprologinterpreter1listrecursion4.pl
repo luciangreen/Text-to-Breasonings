@@ -1,19 +1,6 @@
 :- dynamic debug/1.
 :- dynamic cut/1.
 
-% Performance optimizations for list operations
-% Optimized single-element append - more efficient than general append
-append_single(List, Element, [Element|List]) :- var(List), !.
-append_single([], Element, [Element]).
-append_single([H|T], Element, [H|NewT]) :-
-    append_single(T, Element, NewT).
-
-% Optimized multiple element operations
-append_elements(List, [], List).
-append_elements(List, [H|T], Result) :-
-    append_single(List, H, Temp),
-    append_elements(Temp, T, Result).
-
 /** List Prolog Interpreter **/
 
 interpret(Debug,Query,Functions1,Result) :-
