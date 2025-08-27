@@ -1,0 +1,10 @@
+# Performance testing files
+benchmark.pl
+performance_test.pl
+simple_test.pl
+test_optimizations.pl
+final_test.pl
+
+# Temporary files
+*.tmp
+*.cache
