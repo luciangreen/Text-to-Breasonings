@@ -32,7 +32,7 @@ Command1=["curl https://api.openai.com/v1/chat/completions \c
   -H \"Content-Type: application/json\" \c
   -H \"Authorization: Bearer ",Secret_key,"\" \c
   -d '{
-    \"model\": \"gpt-4.1-nano\",
+    \"model\": \"gpt-5-nano\",
     \"messages\": [
       {
         \"role\": \"system\",
