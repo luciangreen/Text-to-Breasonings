@@ -1,8 +1,8 @@
 :-include('../listprologinterpreter/la_strings.pl').
 
 cp(From,To) :-
-	Scp="scp -pr ",
-	concat_list([Scp,From," ",To],Command),
+	Rsync="rsync -avz ",
+	concat_list([Rsync,From," ",To],Command),
 	shell1_s(Command).
 	
 mv(From,To) :-

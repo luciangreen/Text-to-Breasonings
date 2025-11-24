@@ -28,24 +28,21 @@ fail;true),
 %split_string(Q," "," ",Q1),
 %length(Q1,L),
 %MT is 4096-L-100,
-Command1=["curl https://api.openai.com/v1/chat/completions \c
-  -H \"Content-Type: application/json\" \c
-  -H \"Authorization: Bearer ",Secret_key,"\" \c
+%trace,
+Command1=["curl \"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent\" \
+  -H \"x-goog-api-key: ",Secret_key,"\" -H 'Content-Type: application/json' -X POST \
   -d '{
-    \"model\": \"gpt-5-nano\",
-    \"messages\": [
+    \"contents\": [
       {
-        \"role\": \"system\",
-        \"content\": \"You are a helpful assistant.\"
-      },
-      {
-        \"role\": \"user\",
-        \"content\": \"",Q,"\"
+        \"parts\": [
+          {
+            \"text\": \"",Q,"\"
+          }
+        ]
       }
     ]
   }'
-"
-],
+"],
   foldr(string_concat,Command1,Command),
   
   find_first((repeat,
@@ -62,11 +59,11 @@ atom_string(Output1,Output),
 atom_json_term(Output1, A1, []),
 %A1=json([_,_,_,_,choices=[json([text=A2|_])]|_]),
 %trace,
-%A1=json([_, _, _, _, choices=[json([_, message=json([_, content=A2])|_])]|_]),
 A1=json(B),
-member(choices=[json(C)],B),
-member(message=json(D),C),
-member(content=A2,D),
+member(candidates=[json(C)],B),
+member(content=json(D),C),
+member(parts=[json(D1)],D),
+member(text=A2,D1),
 atom_string(A2,A)
 ,writeln(A)),_,fail)->true;
 (N is 60*5,sleep(N),fail))).
