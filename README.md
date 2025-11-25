@@ -204,6 +204,18 @@ W is 50*4,texttobr2(u,u,u,u,false,false,false,false,false,false,W).
 
 * Daily Regimen (<a href="README-Daily-Regimen.md">Read Me</a>) has merged with Text to Breasonings.
 
+# Breason Chunks
+
+* Breason out large files in chunks.
+
+* For faster, parallel breasoning: `brew install parallel`.
+
+* `cd ~/Dropbox/GitHub/Text-to-Breasonings`
+* If the file was copied from ChatGPT, GitHub, downloaded, or synced via iCloud/Dropbox, macOS can silently mark it as “unsafe to execute.”, so run the following: `xattr -dr com.apple.quarantine breason_chunks.sh`
+* `chmod +x breason_chunks.sh`
+
+* Run it: `./breason_chunks.sh file.txt`
+
 # Versioning
 
 We will use SemVer for versioning.
