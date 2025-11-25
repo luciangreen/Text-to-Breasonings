@@ -238,7 +238,7 @@ truncate(List1,M,String0) :-
 	
 prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03) :-
 
-concurrent(2,[(
+A=(
 	phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),
 	%%Chars="’",
 	SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
@@ -256,7 +256,9 @@ concurrent(2,[(
 	sort(BrDict01,BrDict03),
 %%writeln([brDict03,BrDict03]),
 	length(BrDict03,Length0),write("Number of words in dictionary: "), writeln(Length0)
-	),(
+	),
+	
+	B=(
 	%%writeln(''),
 	%%writeln([brdict2]),
 	phrase_from_file_s(string(BrDict0t), "../Text-to-Breasonings/brdict2.txt"),
@@ -275,7 +277,9 @@ concurrent(2,[(
 
 %%writeln([brDict03,BrDict03]),
 	length(BrDict03t,Length0t),write("Number of unique breasonings in dictionary: "), writeln(Length0t)
-	)],[]),
+	),
+(concurrent(2,[(A),(B)],[])->true;
+(A,B)),
 	
 	((Stringx1=u,
 	phrase_from_file_s(string(String001), Filex))->true;
