@@ -9,7 +9,11 @@ N2 is N1+1,
 
 get_time(TS),stamp_date_time(TS,date(Year,Month,Day,_,_,_,_,_,_),local),
 
-([Pres_D,Pres_M,Pres_Y]=[Day,Month,Year]->D=0;D=1),
+([Pres_D,Pres_M,Pres_Y]=[Day,Month,Year]->D=0;
+(date_time_stamp(date(Pres_Y,Pres_M,Pres_D,0,0,0,_,_,_),TS01),TS02 is TS-TS01,stamp_date_time(TS02,date(_Year2,_Month2,Day2,_,_,_,_,_,_),local),D is Day2-2
+%D=1
+)),
+
 Fut_D0 is ((Fut_D+D) mod 17),
 (Fut_D0=0->Fut_D1=1;Fut_D0=Fut_D1),
 
