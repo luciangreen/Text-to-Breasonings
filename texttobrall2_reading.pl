@@ -66,7 +66,7 @@ texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0,[auto,Auto]),!.
 
 texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,
-		ObjectToPrepare,ObjectToFinish,_W) :-
+		ObjectToPrepare,ObjectToFinish,W) :-
 	texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,
 	PartOfRoom,Direction,ObjectToPrepare,ObjectToFinish,0,[auto,off]),!.
 		
@@ -92,7 +92,7 @@ texttobr2_contents(N1,Filex1,Stringx1,M1,Brth,Room,PartOfRoom,Direction,ObjectTo
 
 	retractall(br_grid_record(_)),
 	assertz(br_grid_record([])),
-	test_p_woto(prep(List1,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,_BrthDict03,Room,_RoomDict03,PartOfRoom,_PartOfRoomDict03,Direction,_DirectionDict03,ObjectToPrepare,_ObjectToPrepareDict03,ObjectToFinish,_ObjectToFinishDict03)),
+	test_p_woto(prep(List1,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,PartOfRoom,PartOfRoomDict03,Direction,DirectionDict03,ObjectToPrepare,ObjectToPrepareDict03,ObjectToFinish,ObjectToFinishDict03)),
 	
 
 	retractall(n(_)),
@@ -174,7 +174,7 @@ brDict03t1(BrDict03t2),
  	*/
  	
  	length(List1,List1_length_a),
- 	_List1_length_a1 is List1_length_a*N,
+ 	List1_length_a1 is List1_length_a*N,
  	%t2b_br_adder(List1_length_a1),
  	Dividend_a is ceiling(List1_length_a/250),
  	Dividend_b is Dividend_a*3, % for graciously giving
@@ -186,7 +186,7 @@ brDict03t1(BrDict03t2),
  	
  	!.
 
-/*
+
 replace0(Input,Find,Replace,SepandPad,M,Output0) :-
 	replace00(Input,Find,Replace,SepandPad,[],Output1),
 	truncate(Output1,M,Output0),!.
@@ -227,7 +227,6 @@ split_string_onnonletter(Input1,Input2,Input3) :-
 	char_type(Input4,alpha),
 	append(Input2,[Input4],Input6),
 	split_string_onnonletter(Input5,Input6,Input3), !.
-*/
 
 %% Truncates the list if m is not undefined and m is greater than or equal to the length of string0
 truncate(List1,M,String0) :-
@@ -242,7 +241,7 @@ prep(List,BrDict03,BrDict03t,Filex,Stringx1,M,Brth,BrthDict03,Room,RoomDict03,Pa
 A=(
 	phrase_from_file_s(string(BrDict0), "../Text-to-Breasonings/brdict1.txt"),
 	%%Chars="’",
-	%SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
+	SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 	%%split_string(BrDict0,SepandPad,SepandPad,BrDict01),
 %%writeln([brDict0,BrDict0]),
 %%writeln([brdict1]),
@@ -717,9 +716,9 @@ assertz(brDict03t(BrDict3t1))
 brth(_,sweetinvincibleandprayedfor).
 
 %% finds unknown words, asks for their br in form "n of m: word", verify, (can go back x) append and sort, save
-read_string1(S,user_input, "\n", "\r", _End3, ObjectToFinishString) :-
+read_string1(S,user_input, "\n", "\r", _End, ObjectToFinishString) :-
  (auto(on)->S=ObjectToFinishString;
- read_string(user_input, "\n", "\r", _End4, ObjectToFinishString)),!.
+ read_string(user_input, "\n", "\r", _End, ObjectToFinishString)),!.
 
 
 process_t2b(A,C) :-
