@@ -1,5 +1,5 @@
 # Comment the start of a line with '#' or temporarily delete it to run specific lines or to continue from a point if the algorithm has crashed.
-./cgpt_combophil3_320.sh
+#./cgpt_combophil3_320.sh
 ./texttobr2_square.sh
 ./d.sh
 ./bc12.sh
@@ -19,7 +19,7 @@ echo "Going to present, press \"y\":"
 echo "Please think of 108 arems and 108 friendlinesses, then enter \"y\":"
 ./please_enter_y.sh
 ./group_meditation.sh
-./cgpt_combophil3_320.sh
+#./cgpt_combophil3_320.sh
 ./texttobr2_square.sh
 ./d.sh
 ./bc12.sh
@@ -38,7 +38,7 @@ echo "Please think of 108 arems and 108 friendlinesses, then enter \"y\":"
 echo "Please think of 108 arems and 108 friendlinesses, then enter \"y\":"
 ./please_enter_y.sh
 ./group_meditation.sh
-./cgpt_combophil3_320.sh
+#./cgpt_combophil3_320.sh
 ./texttobr2_square.sh
 ./d.sh
 ./bc12.sh
