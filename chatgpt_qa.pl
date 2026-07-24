@@ -45,7 +45,7 @@ Command1=["curl \"https://generativelanguage.googleapis.com/v1beta/models/gemini
 "],
   foldr(string_concat,Command1,Command),
   
-  find_first((repeat,
+  find_first((%repeat,
 catch((bash_command(Command,Output),%->
 					%true;
 					%(writeln(["Failed shell1 command: ",Command]),fail)
