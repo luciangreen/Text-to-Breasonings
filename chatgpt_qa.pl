@@ -1,4 +1,4 @@
-:- use_module(library(http/json)).
+:- use_module(library(json)).
 :- include('../Text-to-Breasonings/text_to_breasonings.pl').
 %:-include('../listprologinterpreter/la_strings.pl').
 %:-include('../listprologinterpreter/la_maths.pl').
