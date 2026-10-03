@@ -540,7 +540,7 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
  findall([X1,".\n"],member(X1,Words7),X21),
  flatten(X21,X22),
  foldr(string_concat,X22,Words81),
- foldr(string_concat,["%SN=",SN,"\n","main:-catch(a,Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n",Words8,".\n",Words81],Words9),
+ foldr(string_concat,["%SN=",SN,"\n","main:-set_prolog_flag(stack_limit, 4_294_967_296),catch(a,Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n",Words8,".\n",Words81],Words9),
  save_file_s("a.pl",Words9),
  shell1_s("swipl --goal=main --stand_alone=true -o a -c a.pl"),
  
@@ -554,7 +554,7 @@ br(Words,BrDict,BrDict2,BrDict4,BrDict5,Brth,BrthDict03,BrthDict04,Room,RoomDict
  findall(["a",","],member(_R1,Rs),R2),
  flatten(["b:-",R2],R3),
  append(R31,[_],R3),
-  flatten(["%R=",R,"\n","main:-catch(b,Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n",R31,".\n",Words8,".\n",Words81],Words92),
+  flatten(["%R=",R,"\n","main:-set_prolog_flag(stack_limit, 4_294_967_296),catch(b,Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n",R31,".\n",Words8,".\n",Words81],Words92),
 foldr(string_concat,Words92,RWords8),
 
  %foldr(string_concat,Words91,RWords8),
@@ -583,7 +583,7 @@ foldr(string_concat,Words920,RWords80),
 
 
 f(F),term_to_atom(F,F1),
- flatten([":-include('texttobr.pl').\n","main:-catch(texttobr(",R,",u,",F1,",u),Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n"],Words93),
+ flatten([":-include('texttobr.pl').\n","main:-set_prolog_flag(stack_limit, 4_294_967_296),catch(texttobr(",R,",u,",F1,",u),Err,handle_error(Err)),halt.\nhandle_error(_Err):-\n  halt(1).\nmain :- halt(1).\n"],Words93),
 foldr(string_concat,Words93,RWords81),
  save_file_s("c.pl",RWords81),
  shell1_s("swipl --goal=main --stand_alone=true -o c -c c.pl"),

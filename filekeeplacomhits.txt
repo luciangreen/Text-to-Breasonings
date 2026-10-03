@@ -67,7 +67,7 @@ time((texttobr2(u,"file2qb.txt",u,u))).
 
 ***
 
-See intructions for running texttobr before using texttobr.
+See instructions for running texttobr before using texttobr.
 -
 
 DON'T USE - for mindreading x use
